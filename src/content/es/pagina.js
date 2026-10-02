@@ -7,15 +7,14 @@ export const PORTADA = {
   kicker: 'Ingeniería de software y datos · para cualquier sector',
   titulo: 'Soluciones digitales a medida para problemas complejos',
   entradilla:
-    'Trabajamos en cualquier sector, de la industria al campo. Antes de proponer nada identificamos qué parte de su operación aporta más valor y nos centramos en eso. Nuestra especialidad son los proyectos que no se pueden comprar hechos.',
-  martesKicker: 'Un martes de octubre',
-  martes: [
-    { hora: '04:10', texto: 'En una finca de pistacheros, la yema del sector 4 baja a 2,8 grados bajo cero. La garita marca 0,4.', ancla: 'cultivo' },
-    { hora: '07:40', texto: 'Un ganadero apunta dos bajas en una nave sin cobertura. El veterinario las ve a las 07:52.', ancla: 'cebo' },
-    { hora: '09:15', texto: 'El vuelo semanal sobre la obra dice que la planta 4 va una semana tarde.', ancla: 'obra' },
-    { hora: '11:42', texto: 'La zona 3 del horno 2 pide aire. El sistema de control lo sabe antes que nadie en la sala.', ancla: 'hornos' },
-    { hora: '13:40', texto: 'Sale el presupuesto de chorreado de un granelero que entró en dique a las siete y media.', ancla: 'astilleros' },
-    { hora: '18:10', texto: 'En una boutique, diez personas esperan más de un minuto. Dos asesoras están en su descanso.', ancla: 'boutique' },
+    'Diseñamos, desarrollamos e implantamos software a medida para empresas de cualquier sector. Antes de proponer nada identificamos qué parte de su operación aporta más valor y nos centramos en eso. Nuestra especialidad son los proyectos que no se pueden comprar hechos.',
+  // Las cuatro líneas de trabajo, para que se entienda de un vistazo a qué nos dedicamos
+  lineasKicker: 'A qué nos dedicamos',
+  lineas: [
+    'Medición con cámaras y sensores',
+    'Predicción con sus propios datos',
+    'Integración con sus sistemas',
+    'Automatización de procesos',
   ],
 }
 
@@ -46,7 +45,7 @@ export const HACEMOS = {
   kicker: 'Qué hacemos',
   titulo: 'Cuatro capacidades que combinamos según cada proyecto',
   entradilla:
-    'Casi siempre partimos de algo que ya existe y nadie aprovecha del todo: una cámara, una estación meteorológica, un archivo de albaranes. Sobre eso trabajamos con cuatro capacidades, que en las secciones siguientes verá aplicadas en cuatro sectores.',
+    'Casi siempre partimos de algo que ya existe y nadie aprovecha del todo: una cámara, una estación meteorológica, un archivo de albaranes. Sobre eso trabajamos con cuatro capacidades, que en la sección siguiente verá aplicadas en siete casos de uso.',
   capacidades: [
     {
       verbo: 'Medir',
@@ -71,20 +70,31 @@ export const HACEMOS = {
   ],
 }
 
-export const MAQUETAS_CABECERA = {
-  numero: '07',
-  kicker: 'Maquetas',
-  titulo: 'Prototipos completos de varios de estos casos',
+// Los casos de uso se agrupan por sector bajo una sola sección (decisión 17)
+export const CASOS = {
+  numero: '03',
+  kicker: 'Casos de uso',
+  titulo: 'Siete casos de uso en cuatro sectores',
   entradilla:
-    'Algunos de los casos anteriores tienen detrás una maqueta entera, con muchas más pantallas de las que caben aquí. Las que se hicieron para un cliente las enseñamos en persona.',
+    'Así aplicamos el método y las capacidades anteriores a problemas reales. Los casos salen de proyectos, propuestas y maquetas nuestras, y están agrupados por sector: industria, automatización de procesos, retail, y agricultura y ganadería.',
+  estructura:
+    'Todos siguen la misma estructura: el reto, la solución con una escena animada que muestra cómo funciona, las cifras y los límites. Las escenas usan datos de demostración.',
+}
+
+export const MAQUETAS_CABECERA = {
+  numero: '04',
+  kicker: 'Maquetas',
+  titulo: 'Prototipos completos de varios casos de uso',
+  entradilla:
+    'Algunos de los casos de uso tienen detrás una maqueta entera, con muchas más pantallas de las que caben aquí. Las que se hicieron para un cliente las enseñamos en persona.',
 }
 
 export const CONTACTO = {
-  numero: '08',
+  numero: '05',
   kicker: 'Contacto',
   titulo: 'Hablemos de su proyecto',
   texto:
-    'Cuéntenos qué ocurre en su operación. Si vemos que podemos aportar valor, le proponemos un diagnóstico y un piloto acotado, como en los casos que ha visto. Si no, se lo diremos en la primera conversación.',
+    'Cuéntenos qué ocurre en su operación. Si vemos que podemos aportar valor, le proponemos un diagnóstico y un piloto acotado, como en los casos de uso que ha visto. Si no, se lo diremos en la primera conversación.',
 }
 
 export const LEGAL = {

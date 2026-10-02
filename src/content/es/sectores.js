@@ -1,13 +1,12 @@
-// Los cuatro sectores de la web, en el orden de la página (decisión 14, GUIA.md, sección 12):
+// Los cuatro sectores de los casos de uso, en el orden de la página (decisiones 14 y 17, GUIA.md, sección 12):
 // industria, automatización de procesos, retail, y agricultura y ganadería.
-// Cada sector es una sección con su ancla, lo que hacemos en él y sus ejemplos (ejemplos.js).
+// Cada sector es un apartado de la sección de casos de uso con su ancla, lo que resolvemos y sus casos (ejemplos.js).
 // El color va en tokens.css; la paleta está validada también en este orden (GUIA.md, sección 4).
 // Las líneas con `ejemplo` enlazan al capítulo que lo cuenta.
 
 export const SECTORES = [
   {
     id: 'industria',
-    numero: '03',
     nombre: 'Industria',
     color: 'industria',
     kicker: 'Industria',
@@ -23,7 +22,6 @@ export const SECTORES = [
   },
   {
     id: 'automatizacion',
-    numero: '04',
     nombre: 'Automatización',
     color: 'operaciones',
     kicker: 'Automatización de procesos',
@@ -39,7 +37,6 @@ export const SECTORES = [
   },
   {
     id: 'retail',
-    numero: '05',
     nombre: 'Retail',
     color: 'comercio',
     kicker: 'Retail',
@@ -55,7 +52,6 @@ export const SECTORES = [
   },
   {
     id: 'campo',
-    numero: '06',
     nombre: 'Campo',
     color: 'campo',
     kicker: 'Agricultura y ganadería',

@@ -67,7 +67,7 @@ export default function Ejemplo({ e, n }) {
         <div className={s.izquierda}>
           <p className="kicker">
             <span className="mark" style={{ '--c': `var(--${e.color})` }} aria-hidden="true" />
-            Caso {n + 1} · {e.kicker}
+            Caso de uso {n + 1} · {e.kicker}
           </p>
           <h3 id={`${e.id}-titulo`} className={`h2 ${s.titulo}`}>
             {e.titulo}

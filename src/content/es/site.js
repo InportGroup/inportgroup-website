@@ -16,10 +16,7 @@ export const SITE = {
 export const NAV = [
   { ancla: 'nosotros', nombre: 'Quiénes somos' },
   { ancla: 'hacemos', nombre: 'Qué hacemos' },
-  { ancla: 'industria', nombre: 'Industria' },
-  { ancla: 'automatizacion', nombre: 'Automatización' },
-  { ancla: 'retail', nombre: 'Retail' },
-  { ancla: 'campo', nombre: 'Campo' },
+  { ancla: 'casos', nombre: 'Casos de uso' },
   { ancla: 'maquetas', nombre: 'Maquetas' },
 ]
 

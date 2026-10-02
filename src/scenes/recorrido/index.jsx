@@ -14,7 +14,7 @@ const DESTINOS = [
   { id: 'dcs', nombre: 'Sistema de control', corto: 'Control' },
   { id: 'movil', nombre: 'Móvil del encargado', corto: 'Móvil' },
   { id: 'erp', nombre: 'ERP', corto: 'ERP' },
-  { id: 'informe', nombre: 'Informe del lunes', corto: 'Informe' },
+  { id: 'informe', nombre: 'Informe semanal', corto: 'Informe' },
 ]
 
 function Icono({ id, x, y, s = 1 }) {
@@ -92,24 +92,24 @@ function Scene({ film, narrow }) {
   const k = narrow ? 1.5 : 1
 
   // Posiciones de origen, equipo y destino en cada disposición
-  const origen = (i) => (narrow ? [120 + i * 220, 170] : [210, 105 + i * 130])
-  const destino = (i) => (narrow ? [120 + i * 220, 1030] : [1390, 105 + i * 130])
+  const origen = (i) => (narrow ? [120 + i * 220, 170] : [330, 105 + i * 130])
+  const destino = (i) => (narrow ? [120 + i * 220, 1030] : [1270, 105 + i * 130])
   const centro = narrow ? [450, 600] : [800, 300]
-  const caja = narrow ? { x: 120, y: 400, w: 660, h: 400 } : { x: 560, y: 70, w: 480, h: 460 }
-  const entrada = narrow ? [450, 520] : [700, 300]
-  const salida = narrow ? [450, 680] : [900, 300]
+  const caja = narrow ? { x: 120, y: 400, w: 660, h: 400 } : { x: 580, y: 70, w: 440, h: 460 }
+  const entrada = narrow ? [450, 520] : [710, 300]
+  const salida = narrow ? [450, 680] : [890, 300]
 
   const curvaIn = (i) => {
     const a = origen(i)
     const p0 = narrow ? [a[0], a[1] + 60] : [a[0] + 70, a[1]]
     const p3 = entrada
-    return narrow ? [p0, [p0[0], p0[1] + 160], [p3[0], p3[1] - 150], p3] : [p0, [p0[0] + 220, p0[1]], [p3[0] - 200, p3[1]], p3]
+    return narrow ? [p0, [p0[0], p0[1] + 160], [p3[0], p3[1] - 150], p3] : [p0, [p0[0] + 150, p0[1]], [p3[0] - 140, p3[1]], p3]
   }
   const curvaOut = (i) => {
     const b = destino(i)
     const p0 = salida
     const p3 = narrow ? [b[0], b[1] - 60] : [b[0] - 70, b[1]]
-    return narrow ? [p0, [p0[0], p0[1] + 150], [p3[0], p3[1] - 160], p3] : [p0, [p0[0] + 200, p0[1]], [p3[0] - 220, p3[1]], p3]
+    return narrow ? [p0, [p0[0], p0[1] + 150], [p3[0], p3[1] - 160], p3] : [p0, [p0[0] + 140, p0[1]], [p3[0] - 150, p3[1]], p3]
   }
   const d = (c) => `M${c[0][0]} ${c[0][1]} C${c[1][0]} ${c[1][1]} ${c[2][0]} ${c[2][1]} ${c[3][0]} ${c[3][1]}`
 
@@ -196,10 +196,10 @@ function Scene({ film, narrow }) {
       })}
       {!narrow && (
         <g fontFamily="var(--font-mono)" fontSize="12" letterSpacing="1.4" fill="var(--screen-dim)">
-          <text x={210} y={40} textAnchor="middle">
+          <text x={250} y={40} textAnchor="middle">
             LO QUE YA HAY
           </text>
-          <text x={1390} y={40} textAnchor="middle">
+          <text x={1360} y={40} textAnchor="middle">
             A QUIEN DECIDE
           </text>
         </g>

@@ -458,7 +458,7 @@ node scripts/verify.mjs hornos                          una escena: compila, con
 
 ## 7. La página
 
-Estructura y continuidad (decisión 16): las secciones van numeradas (01 Quiénes somos, 02 Qué hacemos, 03 a 06 los sectores, 07 Maquetas, 08 Contacto) y siguen un hilo. La portada presenta; quiénes somos explica el método; qué hacemos, las cuatro capacidades (medir, anticipar, integrar, automatizar), y anuncia que se verán aplicadas en cuatro sectores; cada sector abre enlazando con el anterior ("No todo el valor está en planta", "La misma forma de medir, llevada a la tienda"); las maquetas se presentan como prototipos de los casos vistos, y el contacto cierra volviendo al método (diagnóstico y piloto). Los títulos son frases claras y profesionales, sin punto final.
+Estructura y continuidad (decisiones 16 y 17): las secciones van numeradas (01 Quiénes somos, 02 Qué hacemos, 03 Casos de uso, con los cuatro sectores dentro, 04 Maquetas, 05 Contacto) y siguen un hilo. La portada presenta; quiénes somos explica el método; qué hacemos, las cuatro capacidades (medir, anticipar, integrar, automatizar), y anuncia que se verán aplicadas en cuatro sectores; cada sector abre enlazando con el anterior ("No todo el valor está en planta", "La misma forma de medir, llevada a la tienda"); las maquetas se presentan como prototipos de los casos vistos, y el contacto cierra volviendo al método (diagnóstico y piloto). Los títulos son frases claras y profesionales, sin punto final.
 
 Una sola página, de arriba abajo. Cada sección empieza con su kicker en mono, un titular en serif y una entradilla; los textos definitivos están en `src/content/es/pagina.js` y `ejemplos.js`.
 
@@ -470,6 +470,8 @@ Fija y mínima: logotipo, Quiénes somos, Qué hacemos, Industria, Automatizaci�
 
 * Kicker: Ingeniería de software y datos · para cualquier sector.
 * Titular: "Soluciones digitales a medida para problemas complejos".
+* Debajo, "A qué nos dedicamos": cuatro líneas de trabajo en una fila (medición con cámaras y sensores, predicción con sus propios datos, integración con sus sistemas, automatización de procesos), para que se entienda el oficio antes de ver nada más.
+* Bajo el panorama, una barra "Casos de uso" con los seis lugares del recorrido; cada uno salta a su sitio en el panorama y el título del caso en curso lleva a su apartado. Ya no hay horas ni "Un martes de octubre" (decisión 17).
 * Entradilla: "Hacemos soluciones digitales para cualquier sector. Antes de proponer nada buscamos qué parte de su operación aporta más valor, y nos centramos solo en eso. Nuestra especialidad son los proyectos complejos: los que no se pueden comprar hechos."
 * Debajo, a todo el ancho de la ventana, el panorama (abajo), con "Un martes de octubre" debajo: seis horas que se pueden pulsar y la frase de la hora en curso, que baja a su ejemplo.
   * 04:10 · En una finca de pistacheros, la yema del sector 4 baja a 2,8 grados bajo cero. La garita marca 0,4.
@@ -512,7 +514,11 @@ Cuatro capacidades, cada una con un ejemplo concreto en la misma frase, no con u
 
 Encima, un esquema vivo (escena `recorrido`, sin cajetín ni barra): a la izquierda lo que ya hay (cámara, sensor, papel), en el centro el equipo en sus instalaciones, a la derecha a quién llega (sistema de control, móvil, ERP, informe). Puntos de luz recorren las líneas; una frontera punteada marca lo que nunca sale de la instalación.
 
-### 7.5 Sectores (`#industria`, `#automatizacion`, `#retail`, `#campo`)
+### 7.5 Casos de uso (`#casos`)
+
+Desde la decisión 17 los cuatro sectores son apartados de una sola sección, "03 · Casos de uso: siete casos de uso en cuatro sectores". Abre con una entradilla que explica qué son (cómo aplicamos el método a problemas reales, de dónde salen y cómo se agrupan), un índice con los siete casos agrupados por sector y una línea que explica cómo se lee cada caso (el reto, la solución con su escena, las cifras y los límites). La navegación enlaza a la sección, no a cada sector.
+
+#### Apartados por sector (`#industria`, `#automatizacion`, `#retail`, `#campo`)
 
 Desde el 2 de octubre de 2026 (decisión 14) no hay una sección de especialidades y otra de ejemplos: cada sector es su propia sección, en este orden: industria, automatización de procesos, retail, y agricultura y ganadería. Las secciones alternan papel y banda gris. Cada una lleva:
 
@@ -877,6 +883,7 @@ El 2 de octubre de 2026 se aprobaron todas las propuestas de esta tabla tal y co
 | 14 | Orden de la página y automatización. | Una sección por sector en este orden: industria, automatización de procesos, retail, y agricultura y ganadería. La automatización de procesos es un sector propio con su ejemplo (`procesos`). Desaparecen las secciones de especialidades y de ejemplos. Decidido el 2 de octubre de 2026. |
 | 15 | ¿Dónde se publica? | GitHub Pages con GitHub Actions, desde `main` (publicada el 2 de octubre de 2026). `render.yaml` queda preparado como alternativa. |
 | 16 | Títulos y continuidad. | Secciones numeradas, títulos profesionales sin metáforas ni punto final, entradillas que enlazan cada sección con la anterior y casos con la estructura reto, solución, cifras y límites. El titular de la portada pasa a "Soluciones digitales a medida para problemas complejos". Decidido el 2 de octubre de 2026. |
+| 17 | Que se entienda a qué nos dedicamos y que son casos de uso. | La portada lleva cuatro líneas de trabajo bajo la entradilla; se elimina "Un martes de octubre" (horas en el panorama y su barra); los sectores pasan a ser apartados de una sección "Casos de uso" con índice; cada caso se llama "Caso de uso N". Decidido el 2 de octubre de 2026. |
 
 ---
 

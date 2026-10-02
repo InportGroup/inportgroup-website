@@ -43,7 +43,7 @@ export default function Maquetas() {
                   </TextButton>
                 )}
                 <a href={`#${m.solucion}`} className={s.ejemplo}>
-                  Ver el ejemplo
+                  Ver el caso de uso
                 </a>
               </div>
             </li>

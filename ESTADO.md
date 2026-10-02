@@ -110,6 +110,15 @@ Objetivo: que la web se vea profesional, sencilla y limpia.
 * Casos numerados (Caso 1 a Caso 7) con títulos descriptivos y la estructura el reto, la solución, en cifras y límites. Los textos de "El reto" ya no adelantan la solución.
 * Contacto con la misma cabecera que el resto de secciones.
 
+## Casos de uso y claridad: hecho (2 de octubre de 2026)
+
+* Portada: entradilla más directa (diseñamos, desarrollamos e implantamos software a medida) y "A qué nos dedicamos" con cuatro líneas de trabajo.
+* Fuera "Un martes de octubre": el panorama ya no lleva horas; la barra de debajo es "Casos de uso" y lleva a cada caso.
+* Nueva sección "03 · Casos de uso" con entradilla, índice por sector y la explicación de cómo se lee cada caso; los sectores son apartados dentro de ella. Menú: Quiénes somos, Qué hacemos, Casos de uso, Maquetas.
+* Casos renombrados "Caso de uso 1" a "Caso de uso 7"; maquetas y contacto pasan a 04 y 05.
+* Esquema de "Qué hacemos": se reequilibra para que "Albaranes y manuales" no se corte; "Informe del lunes" pasa a "Informe semanal".
+* Anotaciones del panorama ajustadas al ancho en móvil.
+
 ## Siguiente: fase 3 · Escenas completas
 
 Llevar cada escena de ejemplo a su ficha de la sección 9 (más planos, de 40 a 60 segundos, interacción con sentido), una por sesión, empezando por la que más se vaya a enseñar. Revisar de paso los rótulos pequeños en móvil de cebo y boutique.

@@ -1,18 +1,21 @@
 import { FilmGrain, useFilm } from '../../components/film/Film.jsx'
 import { Stage } from '../../components/film/Stage.jsx'
-import { PORTADA } from '../../content/es/pagina.js'
+import { EJEMPLOS } from '../../content/es/ejemplos.js'
 import { useIsNarrow } from '../../lib/hooks.js'
 import panorama, { PARADAS, paradaEn } from './index.jsx'
 import s from './Player.module.css'
 
-// Reproductor del panorama en la portada: la escena a todo el ancho, sin cajetín, y debajo las seis horas
-// de "Un martes de octubre". Cada hora salta a su lugar; la frase de la hora en curso baja a su ejemplo.
+// Reproductor del panorama en la portada: la escena a todo el ancho, sin cajetín, y debajo los casos de uso
+// que recorre. Cada caso salta a su lugar en el panorama; el título del caso en curso baja a su apartado.
+
+const numeroDe = (id) => EJEMPLOS.findIndex((e) => e.id === id) + 1
 
 export default function PanoramaPlayer() {
   const film = useFilm({ duration: panorama.duration, scenes: panorama.scenes, poster: panorama.poster })
   const narrow = useIsNarrow()
   const actual = paradaEn(film.t)
-  const frase = PORTADA.martes.find((m) => m.ancla === PARADAS[actual].id)
+  const parada = PARADAS[actual]
+  const caso = EJEMPLOS.find((e) => e.id === parada.id)
   const { Scene } = panorama
 
   return (
@@ -34,7 +37,7 @@ export default function PanoramaPlayer() {
             )}
           </svg>
         </button>
-        <p className={s.titulo}>{PORTADA.martesKicker}</p>
+        <p className={s.titulo}>Casos de uso</p>
         <ol className={s.horas}>
           {PARADAS.map((p, i) => (
             <li key={p.id}>
@@ -45,7 +48,7 @@ export default function PanoramaPlayer() {
                 onClick={() => film.seek(p.llega + 0.01)}
               >
                 <span className="mark" style={{ '--c': p.color }} aria-hidden="true" />
-                {p.hora}
+                {p.etiqueta}
               </button>
             </li>
           ))}
@@ -53,9 +56,9 @@ export default function PanoramaPlayer() {
       </div>
       <div className={`wrap ${s.frase}`} aria-live="polite">
         <p key={actual} className={s.texto}>
-          {frase?.texto}{' '}
-          <a href={`#${PARADAS[actual].id}`} className={s.ver}>
-            Ver el ejemplo
+          <span className={s.num}>Caso de uso {numeroDe(parada.id)}</span> {caso?.titulo}.{' '}
+          <a href={`#${parada.id}`} className={s.ver}>
+            Ver el caso
           </a>
         </p>
       </div>

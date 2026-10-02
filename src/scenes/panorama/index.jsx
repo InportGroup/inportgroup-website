@@ -5,19 +5,19 @@ import { clamp, easeInOut, lerp } from '../../lib/svg.js'
 import { HALO, MONO, SERIF } from '../kit.jsx'
 
 // Panorama de la portada (GUIA.md, 7.2). Un único paisaje de 7.200 unidades, del campo a la ciudad, que la
-// cámara recorre mientras avanza el día. Se para en los seis lugares de los ejemplos y en cada uno aparece
-// una anotación que baja a su capítulo. Todo a línea fina; el color solo donde pasa algo. Función pura de t.
+// cámara recorre mientras avanza el día. Se para en seis lugares, uno por caso de uso, y en cada uno aparece
+// una anotación que baja a su caso. Todo a línea fina; el color solo donde pasa algo. Función pura de t.
 
 export const W = 7200
 const HZ = 640 // horizonte
 
 export const PARADAS = [
-  { id: 'cultivo', x: 760, ax: 900, ay: HZ - 112, llega: 0, sale: 4.5, hora: '04:10', frase: 'La yema, a 2,8 bajo cero', lugar: 'Finca de pistacheros', color: 'var(--campo-s)' },
-  { id: 'cebo', x: 1330, ax: 1310, ay: HZ - 40, llega: 9.5, sale: 13.5, hora: '07:40', frase: 'Dos bajas, apuntadas sin cobertura', lugar: 'Nave de cebo', color: 'var(--campo-s)' },
-  { id: 'obra', x: 2200, ax: 2190, ay: HZ - 236, llega: 18.5, sale: 22.5, hora: '09:15', frase: 'La planta 4, una semana tarde', lugar: 'Obra residencial', color: 'var(--industria-s)' },
-  { id: 'hornos', x: 3050, ax: 3050, ay: HZ - 100, llega: 27.5, sale: 31.5, hora: '11:42', frase: 'La zona 3 del horno pide aire', lugar: 'Planta de valorización', color: 'var(--industria-s)' },
-  { id: 'astilleros', x: 4150, ax: 4060, ay: HZ + 60, llega: 36.5, sale: 40.5, hora: '13:40', frase: 'El presupuesto de dique, listo', lugar: 'Dique seco', color: 'var(--mar-s)' },
-  { id: 'boutique', x: 6260, ax: 6290, ay: HZ - 60, llega: 49.5, sale: 57, hora: '18:10', frase: 'Diez personas esperando', lugar: 'Boutique', color: 'var(--comercio-s)' },
+  { id: 'cultivo', x: 760, ax: 900, ay: HZ - 112, llega: 0, sale: 4.5, etiqueta: 'Cultivos leñosos', frase: 'La yema, a 2,8 bajo cero', lugar: 'Finca de pistacheros', color: 'var(--campo-s)' },
+  { id: 'cebo', x: 1330, ax: 1310, ay: HZ - 40, llega: 9.5, sale: 13.5, etiqueta: 'Ganadería', frase: 'Dos bajas, apuntadas sin cobertura', lugar: 'Nave de cebo', color: 'var(--campo-s)' },
+  { id: 'obra', x: 2200, ax: 2190, ay: HZ - 236, llega: 18.5, sale: 22.5, etiqueta: 'Construcción', frase: 'La planta 4, una semana tarde', lugar: 'Obra residencial', color: 'var(--industria-s)' },
+  { id: 'hornos', x: 3050, ax: 3050, ay: HZ - 100, llega: 27.5, sale: 31.5, etiqueta: 'Valorización energética', frase: 'La zona 3 del horno pide aire', lugar: 'Planta de valorización', color: 'var(--industria-s)' },
+  { id: 'astilleros', x: 4150, ax: 4060, ay: HZ + 60, llega: 36.5, sale: 40.5, etiqueta: 'Astilleros', frase: 'El presupuesto de dique, listo', lugar: 'Dique seco', color: 'var(--mar-s)' },
+  { id: 'boutique', x: 6260, ax: 6290, ay: HZ - 60, llega: 49.5, sale: 57, etiqueta: 'Retail', frase: 'Diez personas esperando', lugar: 'Boutique', color: 'var(--comercio-s)' },
 ]
 export const DURACION = 60
 
@@ -463,7 +463,8 @@ function Anotacion({ parada, cx, VW, k, narrow, i, visible }) {
   const dist = Math.abs(cx - parada.x)
   const o = visible ? clamp(1 - (dist - 60) / 300, 0, 1) : 0
   if (o <= 0) return null
-  const ancho = 400 * k
+  // En pantalla estrecha la nota ocupa el ancho del encuadre, con margen, para no salirse
+  const ancho = narrow ? VW - 48 : 470 * k
   const alto = 128 * k
   const yLabel = narrow ? 150 : 160 + (i % 2) * 34
   // Posición en pantalla del ancla y de la etiqueta (la etiqueta no se sale del encuadre)
@@ -479,14 +480,14 @@ function Anotacion({ parada, cx, VW, k, narrow, i, visible }) {
       <path d={`M${sx} ${parada.ay - 14} L${sx} ${ly + alto}`} stroke="var(--screen-dim)" strokeWidth="1.2" />
       <rect x={lx} y={ly} width={ancho} height={alto} fill="#0f1215" fillOpacity="0.88" stroke="var(--screen-line)" />
       <rect x={lx} y={ly} width="4" height={alto} fill={parada.color} />
-      <text x={lx + 24 * k} y={ly + 34 * k} fontFamily={MONO} fontSize={17 * k} letterSpacing="1.5" fill="var(--screen-dim)">
-        {parada.hora} · {parada.lugar.toUpperCase()}
+      <text x={lx + 24 * k} y={ly + 34 * k} fontFamily={MONO} fontSize={15 * k} letterSpacing="1.5" fill="var(--screen-dim)">
+        CASO DE USO · {parada.etiqueta.toUpperCase()}
       </text>
       <text x={lx + 22 * k} y={ly + 74 * k} fontFamily={SERIF} fontStyle="italic" fontWeight="300" fontSize={30 * k} fill="var(--screen-text)">
         {parada.frase}
       </text>
       <text x={lx + 24 * k} y={ly + 108 * k} fontFamily={MONO} fontSize={15 * k} fill="var(--screen-text)" textDecoration="underline">
-        Ver el ejemplo
+        Ver el caso
       </text>
     </a>
   )
@@ -599,7 +600,7 @@ export default {
   poster: 38,
   aspect: '21 / 8',
   aspectNarrow: '4 / 5',
-  frame: { lugar: 'Un martes de octubre', origen: 'Panorama', reloj: (t) => PARADAS[paradaEn(t)].hora },
-  scenes: PARADAS.map((pp) => ({ at: pp.llega, title: pp.lugar, caption: `${pp.hora} · ${pp.frase}` })),
+  frame: { lugar: 'Casos de uso', origen: 'Panorama', reloj: (t) => PARADAS[paradaEn(t)].etiqueta },
+  scenes: PARADAS.map((pp) => ({ at: pp.llega, title: pp.etiqueta, caption: pp.frase })),
   Scene,
 }

@@ -45,8 +45,8 @@
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  font-family: var(--font-mono);
-  font-size: 13px;
+  font-family: var(--font-text);
+  font-size: 14px;
   color: var(--ink-3);
   border-bottom: 1px solid transparent;
   font-variant-numeric: tabular-nums;
@@ -64,7 +64,7 @@
 
 .frase {
   padding-top: 14px;
-  min-height: 4.4em;
+  min-height: 3.2em;
 }
 
 .texto {
@@ -76,6 +76,16 @@
   line-height: 1.4;
   color: var(--ink);
   animation: aparece 700ms var(--ease) both;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-right: 6px;
 }
 
 .ver {
