@@ -103,6 +103,13 @@ Objetivo: que la web se vea profesional, sencilla y limpia.
 * Pendiente antes de darla por cerrada: completar el aviso legal (razón social, NIF, domicilio), que hoy muestra los huecos.
 * Para volver a la web de 2025: publicar desde la etiqueta `web2025` (por ejemplo, revertir la fusión en `main`).
 
+## Títulos y continuidad: hecho (2 de octubre de 2026)
+
+* Secciones numeradas de 01 a 08 con títulos profesionales; la portada pasa a "Soluciones digitales a medida para problemas complejos".
+* Hilo entre secciones: método, capacidades (medir, anticipar, integrar, automatizar), cuatro sectores que enlazan entre sí, maquetas como prototipos de los casos y contacto que vuelve al método.
+* Casos numerados (Caso 1 a Caso 7) con títulos descriptivos y la estructura el reto, la solución, en cifras y límites. Los textos de "El reto" ya no adelantan la solución.
+* Contacto con la misma cabecera que el resto de secciones.
+
 ## Siguiente: fase 3 · Escenas completas
 
 Llevar cada escena de ejemplo a su ficha de la sección 9 (más planos, de 40 a 60 segundos, interacción con sentido), una por sesión, empezando por la que más se vaya a enseñar. Revisar de paso los rótulos pequeños en móvil de cebo y boutique.

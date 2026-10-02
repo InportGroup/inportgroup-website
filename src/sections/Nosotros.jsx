@@ -5,7 +5,7 @@ import s from './Nosotros.module.css'
 export default function Nosotros() {
   return (
     <section id="nosotros" className={`wrap section ${s.nosotros}`} aria-labelledby="nosotros-titulo">
-      <Cabecera id="nosotros-titulo" kicker={NOSOTROS.kicker} titulo={NOSOTROS.titulo} entradilla={NOSOTROS.entradilla} />
+      <Cabecera id="nosotros-titulo" numero={NOSOTROS.numero} kicker={NOSOTROS.kicker} titulo={NOSOTROS.titulo} entradilla={NOSOTROS.entradilla} />
 
       <div className={s.bloque}>
         <p className="kicker">{NOSOTROS.pasosKicker}</p>

@@ -13,7 +13,9 @@ function Sector({ sec, banda }) {
   return (
     <section id={sec.id} className={`${s.sector} ${banda ? s.banda : ''}`} aria-labelledby={`${sec.id}-titulo`}>
       <div className={`wrap ${s.cabeza}`}>
-        <Cabecera id={`${sec.id}-titulo`} kicker={sec.kicker} titulo={sec.titulo} entradilla={sec.entradilla} color={sec.color} />
+        <Cabecera id={`${sec.id}-titulo`} numero={sec.numero} kicker={sec.kicker} titulo={sec.titulo} entradilla={sec.entradilla} color={sec.color} />
+        <div className={s.resolvemos}>
+          <p className="kicker">Qué resolvemos</p>
         <ul className={s.lineas}>
           {sec.lineas.map((l) => (
             <li key={l.texto} className={s.linea}>
@@ -26,6 +28,7 @@ function Sector({ sec, banda }) {
             </li>
           ))}
         </ul>
+        </div>
       </div>
       <div className={s.ejemplos}>
         {ejemplos.map((e) => (

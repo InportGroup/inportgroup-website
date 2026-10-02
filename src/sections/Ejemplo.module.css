@@ -26,12 +26,26 @@
 
 .derecha {
   display: grid;
-  gap: 14px;
+  gap: 22px;
   padding-top: 32px;
   color: var(--ink-2);
   font-size: 17px;
   max-width: 58ch;
   text-wrap: pretty;
+}
+
+.bloque {
+  display: grid;
+  gap: 8px;
+}
+
+/* Etiqueta de cada parte del caso: el reto, la solución, en cifras, límites */
+.etiqueta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
 }
 
 .entradilla {
@@ -56,7 +70,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  margin: 0;
+  margin: 10px 0 0;
 }
 
 .cifra {

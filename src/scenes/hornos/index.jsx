@@ -479,7 +479,16 @@ function Scene({ film, narrow }) {
           <rect x={150 + Math.max(0, Math.sin(t * 0.9)) * 40} y={430} width={142} height={30} fill="#11161b" stroke="var(--screen-draw)" strokeWidth="1.4" />
           <Etiqueta x={240} y={150} lx={420} ly={150} texto="Tolva de residuo" k={k} opacity={ventana(t, 1, 7.6)} />
           <Etiqueta x={640} y={gy(640) + 4} lx={660} ly={gy(640) + 120} texto="Parrilla en cuatro zonas" k={k} opacity={ventana(t, 2, 7.6)} />
-          <Etiqueta x={405} y={700} lx={250} ly={700} texto="Aire primario" k={k} anchor="end" opacity={ventana(t, 3, 7.6)} />
+          <Etiqueta
+            x={405}
+            y={700}
+            lx={narrow ? 560 : 250}
+            ly={narrow ? 830 : 700}
+            texto="Aire primario"
+            k={k}
+            anchor={narrow ? 'start' : 'end'}
+            opacity={ventana(t, 3, 7.6)}
+          />
           <Etiqueta x={CAMARA.x - 22} y={CAMARA.y} lx={1080} ly={118} texto="Cámara de parrilla" k={k} anchor="end" opacity={ventana(t, 4, 7.6)} />
         </g>
       )}

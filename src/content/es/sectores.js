@@ -7,12 +7,13 @@
 export const SECTORES = [
   {
     id: 'industria',
+    numero: '03',
     nombre: 'Industria',
     color: 'industria',
     kicker: 'Industria',
-    titulo: 'La obra, el horno y el dique, medidos.',
+    titulo: 'Medir con precisión lo que hoy se estima a ojo',
     entradilla:
-      'Una obra que se mide cada semana, un horno que manda al sistema de control lo que ve su cámara, un casco que un dron recorre en una mañana. Medidas que llegan a quien decide, con el mismo criterio en todos los turnos.',
+      'En una obra, un horno o un dique, el valor suele estar en medir con un criterio constante lo que hoy depende de quién mire, y en que esa medida llegue sin pasos manuales al sistema que decide.',
     lineas: [
       { texto: 'Avance de obra con dron frente al modelo BIM, y seguridad bajo la carga de la grúa.', ejemplo: 'obra' },
       { texto: 'Del vídeo de la parrilla al sistema de control, en plantas de valorización energética.', ejemplo: 'hornos' },
@@ -22,12 +23,13 @@ export const SECTORES = [
   },
   {
     id: 'automatizacion',
+    numero: '04',
     nombre: 'Automatización',
     color: 'operaciones',
     kicker: 'Automatización de procesos',
-    titulo: 'El trabajo repetitivo, hecho solo y bien.',
+    titulo: 'Procesos administrativos que funcionan solos',
     entradilla:
-      'Albaranes, facturas, partes e informes que hoy pasan de mano en mano. Los conectamos con el ERP, el correo y los sistemas que ya usa, para que nadie teclee lo que ya está escrito y las excepciones lleguen a quien decide.',
+      'No todo el valor está en planta. En la oficina, albaranes, facturas, partes e informes pasan de mano en mano y se teclean dos veces. Los conectamos con el ERP y el resto de sistemas para que lo rutinario se haga solo y las excepciones lleguen a quien decide.',
     lineas: [
       { texto: 'Albaranes y facturas que pasan al ERP sin teclearlos, cruzados con el pedido.', ejemplo: 'procesos' },
       { texto: 'Sistemas que no se hablan, conectados: ERP, CRM, hojas de cálculo y máquinas.' },
@@ -37,12 +39,13 @@ export const SECTORES = [
   },
   {
     id: 'retail',
+    numero: '05',
     nombre: 'Retail',
     color: 'comercio',
     kicker: 'Retail',
-    titulo: 'Lo que pasa en la tienda, contado con datos.',
+    titulo: 'Datos de tienda para decidir personal, espacio y escaparate',
     entradilla:
-      'Cuánta gente se para ante el escaparate, dónde se queda y cuánto espera hasta que alguien la atiende. Con las cámaras que ya tiene la tienda, sin caras y sin guardar imágenes.',
+      'La misma forma de medir, llevada a la tienda. Con las cámaras que ya tiene, sin caras ni imágenes guardadas, sabemos cuánta gente se para ante el escaparate, dónde se queda y cuánto espera hasta que alguien la atiende.',
     lineas: [
       { texto: 'Recorridos anónimos, calor y tiempo de espera en tiendas de lujo.', ejemplo: 'boutique' },
       { texto: 'El escaparate medido: cuántos pasan, cuántos se paran y cuántos entran.' },
@@ -52,12 +55,13 @@ export const SECTORES = [
   },
   {
     id: 'campo',
+    numero: '06',
     nombre: 'Campo',
     color: 'campo',
     kicker: 'Agricultura y ganadería',
-    titulo: 'La finca y la granja, contadas a tiempo.',
+    titulo: 'Anticiparse en el campo, donde cada día cuenta',
     entradilla:
-      'Heladas que la garita no ve, bajas que se apuntan sin cobertura, racimos que se cuentan en abril para saber qué se recogerá en septiembre. Trabajamos con la estación, las sondas y el móvil que ya hay.',
+      'En una finca o una granja, una helada o un repunte de bajas se pagan durante toda la campaña. El valor está en verlo a tiempo, con la estación, las sondas y el móvil que ya hay, y en avisar a quien puede actuar.',
     lineas: [
       { texto: 'Heladas, riego y previsión de cosecha en cultivos leñosos: pistacho, almendro, olivar.', ejemplo: 'cultivo' },
       { texto: 'Seguimiento diario de cebas de porcino, con la aplicación del ganadero y avisos al veterinario.', ejemplo: 'cebo' },

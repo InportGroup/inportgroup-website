@@ -9,7 +9,7 @@ export const EJEMPLOS = [
     sector: 'industria',
     color: 'industria',
     kicker: 'Construcción',
-    titulo: 'La obra, medida cada semana',
+    titulo: 'Control de avance de obra con dron',
     entradilla:
       'El jefe de obra sabe cómo va la estructura. Lo difícil es demostrarlo en la certificación de fin de mes y ver a tiempo qué planta se está quedando atrás.',
     parrafos: [
@@ -30,9 +30,9 @@ export const EJEMPLOS = [
     sector: 'industria',
     color: 'industria',
     kicker: 'Valorización energética',
-    titulo: 'El fuego de la parrilla, en veinte números',
+    titulo: 'La cámara del horno, conectada al sistema de control',
     entradilla:
-      'Las cámaras de los hornos enseñan fuego a quien tenga tiempo de mirarlas. Hacemos que esa imagen llegue al sistema de control como datos, cada pocos segundos y con el mismo criterio en todos los turnos.',
+      'Las cámaras de los hornos enseñan fuego a quien tenga tiempo de mirarlas. Lo que ven no queda registrado como dato, y cada turno lo interpreta a su manera.',
     parrafos: [
       'Analizamos en memoria el vídeo de las cámaras que ya existen. La imagen se divide en una malla de 5 × 4 y cada pocos segundos llegan al DCS veinte intensidades, el frente de llama y una lectura del aire. Si la lente se ensucia o la cámara se mueve, el sistema lo corrige y lo dice.',
     ],
@@ -51,9 +51,9 @@ export const EJEMPLOS = [
     sector: 'industria',
     color: 'mar',
     kicker: 'Astilleros',
-    titulo: 'Del casco escaneado al presupuesto de dique',
+    titulo: 'Inspección de cascos y presupuesto de dique en el día',
     entradilla:
-      'Cada día de un buque en dique cuesta. Medir a mano la corrosión de la obra viva lleva jornadas y depende de quién mire. Un dron recorre el casco en una mañana y por la tarde están los metros de chorreado.',
+      'Cada día de un buque en dique cuesta. Medir a mano la corrosión de la obra viva lleva jornadas, depende de quién mire y retrasa el presupuesto de la reparación.',
     parrafos: [
       'Un dron recorre casco, cubierta y bodegas con un plan de vuelo automático. Sobre el modelo 3D se marcan óxido, incrustaciones, pintura degradada y abolladuras, y salen los metros de chorreado, los litros de pintura y las horas del presupuesto.',
     ],
@@ -72,7 +72,7 @@ export const EJEMPLOS = [
     sector: 'automatizacion',
     color: 'operaciones',
     kicker: 'Administración y compras',
-    titulo: 'Del albarán al ERP sin teclear',
+    titulo: 'Albaranes y facturas al ERP, sin teclear',
     entradilla:
       'Cada semana entran cientos de albaranes y facturas por correo, en foto o en papel, y alguien los teclea uno a uno. Es lento, se cuelan errores y nadie los ve hasta que el mes no cuadra.',
     parrafos: [
@@ -93,7 +93,7 @@ export const EJEMPLOS = [
     sector: 'retail',
     color: 'comercio',
     kicker: 'Tiendas de lujo',
-    titulo: 'La tienda, leída desde el techo',
+    titulo: 'Afluencia, esperas y escaparate en tiendas de lujo',
     entradilla:
       'Un sábado de crucero la sala se llena, y nadie sabe cuánto ha esperado cada cliente hasta que alguien le atiende, ni qué parte del escaparate le hizo entrar.',
     parrafos: [
@@ -114,9 +114,9 @@ export const EJEMPLOS = [
     sector: 'campo',
     color: 'campo',
     kicker: 'Cultivos leñosos',
-    titulo: 'La helada que la garita no ve',
+    titulo: 'Detección de heladas en la yema, no en la garita',
     entradilla:
-      'En una noche despejada de marzo la estación marca 0,4 grados y la yema del pistachero ya está a 2,8 bajo cero. Medimos el frío donde hace daño, no donde está el sensor.',
+      'En una noche despejada de marzo la estación marca 0,4 grados y la yema del pistachero ya está a 2,8 bajo cero. La estación mide el aire a metro y medio, no el frío que llega a la yema.',
     parrafos: [
       'Una cámara térmica fija en el sector más expuesto mide la temperatura real de la yema y, con los datos de la estación que ya tiene, avisa con hasta 72 horas de margen. En floración, un vuelo de dron cuenta los racimos y adelanta la previsión de cosecha cinco meses.',
     ],
@@ -141,9 +141,9 @@ export const EJEMPLOS = [
     sector: 'campo',
     color: 'campo',
     kicker: 'Ganadería de cebo',
-    titulo: 'La ceba, al día y no al cierre',
+    titulo: 'Seguimiento diario de cebas de porcino',
     entradilla:
-      'Un repunte de bajas o un consumo de pienso que se dispara se suelen descubrir al cerrar la ceba, cuando ya no hay margen. Queremos que se vean el mismo martes que empiezan.',
+      'Un repunte de bajas o un consumo de pienso que se dispara se suelen descubrir al cerrar la ceba, cuando ya no hay margen. Los datos se apuntan en hojas de cálculo, tarde y a mano.',
     parrafos: [
       'El ganadero apunta bajas, pienso y movimientos en el móvil, aunque no haya cobertura, y el veterinario lo valida. Cada ceba se compara con las mejores del histórico y, si la mortalidad de los últimos siete días pasa del 0,5 %, salta el aviso.',
     ],

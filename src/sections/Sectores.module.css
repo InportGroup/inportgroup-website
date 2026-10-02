@@ -12,6 +12,11 @@
   gap: clamp(32px, 3.6vw, 48px);
 }
 
+.resolvemos {
+  display: grid;
+  gap: 14px;
+}
+
 /* Lo que hacemos en el sector: dos columnas de líneas con filete, como un índice */
 .lineas {
   display: grid;

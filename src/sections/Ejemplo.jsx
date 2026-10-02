@@ -6,7 +6,6 @@ import s from './Ejemplo.module.css'
 // Un ejemplo: filete, kicker con numeral, titular, entradilla y un párrafo; la escena; cifras con una sola
 // línea de tipo, lo que no hace y un enlace (GUIA.md, sección 7.6).
 
-const ROMANOS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']
 const ETIQUETA = { demo: 'demostración', diseño: 'especificación del sistema', proyecto: 'resultado de proyecto' }
 
 /**
@@ -68,17 +67,23 @@ export default function Ejemplo({ e, n }) {
         <div className={s.izquierda}>
           <p className="kicker">
             <span className="mark" style={{ '--c': `var(--${e.color})` }} aria-hidden="true" />
-            {ROMANOS[n]} · {e.kicker}
+            Caso {n + 1} · {e.kicker}
           </p>
           <h3 id={`${e.id}-titulo`} className={`h2 ${s.titulo}`}>
             {e.titulo}
           </h3>
         </div>
         <div className={s.derecha}>
-          <p className={s.entradilla}>{e.entradilla}</p>
-          {e.parrafos.map((p) => (
-            <p key={p.slice(0, 24)}>{p}</p>
-          ))}
+          <div className={s.bloque}>
+            <p className={s.etiqueta}>El reto</p>
+            <p className={s.entradilla}>{e.entradilla}</p>
+          </div>
+          <div className={s.bloque}>
+            <p className={s.etiqueta}>La solución</p>
+            {e.parrafos.map((p) => (
+              <p key={p.slice(0, 24)}>{p}</p>
+            ))}
+          </div>
         </div>
       </header>
 
@@ -88,6 +93,7 @@ export default function Ejemplo({ e, n }) {
 
       <footer className={s.pie}>
         <div>
+          <p className={s.etiqueta}>En cifras</p>
           <dl className={s.cifras}>
             {e.cifras.map((c) => (
               <div key={c.valor + c.texto} className={s.cifra}>
@@ -99,6 +105,7 @@ export default function Ejemplo({ e, n }) {
           <NotaCifras cifras={e.cifras} />
         </div>
         <div className={s.notas}>
+          <p className={s.etiqueta}>Límites</p>
           <p className={s.noHace}>{e.noHace}</p>
           {e.maqueta ? <EnlaceMaqueta id={e.maqueta} /> : <p className={s.origen}>{e.origen}</p>}
         </div>

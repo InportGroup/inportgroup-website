@@ -15,7 +15,7 @@ const ACCESO = {
 export default function Maquetas() {
   return (
     <section id="maquetas" className={`wrap section ${s.maquetas}`} aria-labelledby="maquetas-titulo">
-      <Cabecera id="maquetas-titulo" kicker={MAQUETAS_CABECERA.kicker} titulo={MAQUETAS_CABECERA.titulo} entradilla={MAQUETAS_CABECERA.entradilla} />
+      <Cabecera id="maquetas-titulo" numero={MAQUETAS_CABECERA.numero} kicker={MAQUETAS_CABECERA.kicker} titulo={MAQUETAS_CABECERA.titulo} entradilla={MAQUETAS_CABECERA.entradilla} />
       <ul className={s.lista}>
         {MAQUETAS.map((m) => {
           const sec = sectorPorId(m.sector)

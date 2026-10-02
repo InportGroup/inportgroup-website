@@ -1,11 +1,13 @@
-// Textos de la página única (GUIA.md, sección 7). Los ejemplos están en ejemplos.js.
+// Textos de la página única (GUIA.md, sección 7). Los sectores y casos están en sectores.js y ejemplos.js.
 // Reglas: sin guiones, sin negritas, de usted, concreto antes que abstracto (GUIA.md, sección 3).
+// Hilo de la página (decisión 16): presentamos, explicamos el método, las capacidades, las aplicamos en
+// cuatro sectores, enseñamos las maquetas y cerramos volviendo al método. Cada sección enlaza con la siguiente.
 
 export const PORTADA = {
-  kicker: 'Soluciones digitales a medida · para cualquier sector',
-  titulo: 'Primero, dónde está el valor. Después, la técnica que haga falta.',
+  kicker: 'Ingeniería de software y datos · para cualquier sector',
+  titulo: 'Soluciones digitales a medida para problemas complejos',
   entradilla:
-    'Hacemos soluciones digitales para cualquier sector. Antes de proponer nada buscamos qué parte de su operación aporta más valor, y nos centramos solo en eso. Nuestra especialidad son los proyectos complejos: los que no se pueden comprar hechos.',
+    'Trabajamos en cualquier sector, de la industria al campo. Antes de proponer nada identificamos qué parte de su operación aporta más valor y nos centramos en eso. Nuestra especialidad son los proyectos que no se pueden comprar hechos.',
   martesKicker: 'Un martes de octubre',
   martes: [
     { hora: '04:10', texto: 'En una finca de pistacheros, la yema del sector 4 baja a 2,8 grados bajo cero. La garita marca 0,4.', ancla: 'cultivo' },
@@ -18,18 +20,19 @@ export const PORTADA = {
 }
 
 export const NOSOTROS = {
+  numero: '01',
   kicker: 'Quiénes somos',
-  titulo: 'Un equipo de ingeniería que prefiere ver la máquina antes de proponer nada.',
+  titulo: 'Un equipo de ingeniería que empieza por entender su operación',
   entradilla:
-    'Juntamos ingeniería y desarrollo de software. Lo primero siempre es entender dónde está el valor: a veces en un horno, a veces en una hoja de cálculo que nadie actualiza a tiempo. No revendemos licencias ni adaptamos un producto cerrado; escribimos cada sistema para su caso y le entregamos el código.',
-  pasosKicker: 'Cómo trabajamos',
+    'Somos ingenieros y desarrolladores de software. No revendemos licencias ni adaptamos productos cerrados: diseñamos cada sistema para su caso, sobre lo que ya tiene instalado, y le entregamos el código. Todos nuestros proyectos siguen el mismo método.',
+  pasosKicker: 'Nuestro método',
   pasos: [
-    { n: '01', titulo: 'Diagnóstico', texto: 'Buscamos qué parte de la operación aporta más valor y qué falta para conseguirlo. A veces la conclusión es que no hace falta nada nuevo.' },
-    { n: '02', titulo: 'Piloto', texto: 'Un horno, una nave, un sector de la finca o una tienda, con un criterio de aceptación que se puede comprobar.' },
+    { n: '01', titulo: 'Diagnóstico', texto: 'Identificamos qué parte de la operación aporta más valor y qué falta para conseguirlo. A veces la conclusión es que no hace falta nada nuevo.' },
+    { n: '02', titulo: 'Piloto', texto: 'En un horno, una nave, un sector de la finca o una tienda, con un criterio de aceptación que se puede comprobar.' },
     { n: '03', titulo: 'Despliegue', texto: 'En el resto de la instalación, en sus servidores o en la nube, según el caso.' },
     { n: '04', titulo: 'Entrega', texto: 'Código, documentación y formación al equipo. Si quiere, nos quedamos con el mantenimiento.' },
   ],
-  principiosKicker: 'Lo que no negociamos',
+  principiosKicker: 'Nuestros compromisos',
   principios: [
     { titulo: 'Con lo que ya hay', texto: 'Las cámaras del horno, la estación de la finca, el programador de riego, el TPV de la tienda. Si hace falta algo nuevo, se lo decimos y lo compra a quien quiera.' },
     { titulo: 'En sus instalaciones, si hace falta', texto: 'El sistema puede funcionar entero dentro de la planta, sin nube y sin conexión a internet.' },
@@ -39,38 +42,49 @@ export const NOSOTROS = {
 }
 
 export const HACEMOS = {
+  numero: '02',
   kicker: 'Qué hacemos',
-  titulo: 'Lo que hacemos cabe en cuatro verbos.',
+  titulo: 'Cuatro capacidades que combinamos según cada proyecto',
   entradilla:
-    'Casi siempre empezamos por algo que ya está instalado y nadie aprovecha del todo: una cámara, una estación meteorológica, un montón de albaranes.',
+    'Casi siempre partimos de algo que ya existe y nadie aprovecha del todo: una cámara, una estación meteorológica, un archivo de albaranes. Sobre eso trabajamos con cuatro capacidades, que en las secciones siguientes verá aplicadas en cuatro sectores.',
   capacidades: [
     {
-      verbo: 'Ver',
+      verbo: 'Medir',
       texto:
-        'Convertimos lo que ven las cámaras que ya existen en medidas con fecha y lugar: la mirilla de un horno, el techo de una tienda, un dron frente a un casco, una cámara térmica en una finca.',
+        'Convertimos lo que ven las cámaras y los sensores en medidas con fecha y lugar: la mirilla de un horno, el techo de una tienda, un dron frente a un casco, una cámara térmica en una finca.',
     },
     {
-      verbo: 'Prever',
+      verbo: 'Anticipar',
       texto:
         'Con el histórico del propio sitio y lo que pasa fuera, nos adelantamos: una helada con 72 horas de margen, la cosecha en plena floración, el pienso que va a faltar, la gente que vendrá el sábado.',
     },
     {
-      verbo: 'Avisar',
+      verbo: 'Integrar',
       texto:
-        'Que la medida llegue sola adonde se decide: al sistema de control de la planta por OPC UA, al programador de riego, al ERP o al móvil del encargado, sin que nadie la teclee.',
+        'Que la medida llegue sola adonde se decide: al sistema de control de la planta, al programador de riego, al ERP o al móvil del encargado, sin que nadie la teclee.',
     },
     {
-      verbo: 'Escribir',
+      verbo: 'Automatizar',
       texto:
-        'Lo que antes era papeleo, hecho solo: un informe semanal que se lee en cinco minutos, un asistente que contesta con la página del manual, un pliego leído entero antes de ofertar.',
+        'Lo que antes era papeleo, hecho solo: documentos que pasan al ERP, un informe semanal que se lee en cinco minutos, un asistente que contesta con la página del manual.',
     },
   ],
 }
 
 export const MAQUETAS_CABECERA = {
+  numero: '07',
   kicker: 'Maquetas',
-  titulo: 'Las maquetas completas.',
-  entradilla: 'Varios de estos ejemplos tienen detrás una maqueta entera, con muchas más pantallas de las que caben aquí.',
+  titulo: 'Prototipos completos de varios de estos casos',
+  entradilla:
+    'Algunos de los casos anteriores tienen detrás una maqueta entera, con muchas más pantallas de las que caben aquí. Las que se hicieron para un cliente las enseñamos en persona.',
+}
+
+export const CONTACTO = {
+  numero: '08',
+  kicker: 'Contacto',
+  titulo: 'Hablemos de su proyecto',
+  texto:
+    'Cuéntenos qué ocurre en su operación. Si vemos que podemos aportar valor, le proponemos un diagnóstico y un piloto acotado, como en los casos que ha visto. Si no, se lo diremos en la primera conversación.',
 }
 
 export const LEGAL = {

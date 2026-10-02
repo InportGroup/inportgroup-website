@@ -7,7 +7,7 @@ export default function Hacemos() {
   return (
     <section id="hacemos" className={s.banda} aria-labelledby="hacemos-titulo">
       <div className={`wrap section ${s.hacemos}`}>
-        <Cabecera id="hacemos-titulo" kicker={HACEMOS.kicker} titulo={HACEMOS.titulo} entradilla={HACEMOS.entradilla} />
+        <Cabecera id="hacemos-titulo" numero={HACEMOS.numero} kicker={HACEMOS.kicker} titulo={HACEMOS.titulo} entradilla={HACEMOS.entradilla} />
         <Escena id="recorrido" detail="bajo" />
         <ol className={s.capacidades}>
           {HACEMOS.capacidades.map((c, i) => (

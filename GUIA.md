@@ -458,6 +458,8 @@ node scripts/verify.mjs hornos                          una escena: compila, con
 
 ## 7. La página
 
+Estructura y continuidad (decisión 16): las secciones van numeradas (01 Quiénes somos, 02 Qué hacemos, 03 a 06 los sectores, 07 Maquetas, 08 Contacto) y siguen un hilo. La portada presenta; quiénes somos explica el método; qué hacemos, las cuatro capacidades (medir, anticipar, integrar, automatizar), y anuncia que se verán aplicadas en cuatro sectores; cada sector abre enlazando con el anterior ("No todo el valor está en planta", "La misma forma de medir, llevada a la tienda"); las maquetas se presentan como prototipos de los casos vistos, y el contacto cierra volviendo al método (diagnóstico y piloto). Los títulos son frases claras y profesionales, sin punto final.
+
 Una sola página, de arriba abajo. Cada sección empieza con su kicker en mono, un titular en serif y una entradilla; los textos definitivos están en `src/content/es/pagina.js` y `ejemplos.js`.
 
 ### 7.1 Navegación
@@ -466,8 +468,8 @@ Fija y mínima: logotipo, Quiénes somos, Qué hacemos, Industria, Automatizaci�
 
 ### 7.2 Portada
 
-* Kicker: Soluciones digitales a medida · para cualquier sector.
-* Titular: "Primero, dónde está el valor. Después, la técnica que haga falta."
+* Kicker: Ingeniería de software y datos · para cualquier sector.
+* Titular: "Soluciones digitales a medida para problemas complejos".
 * Entradilla: "Hacemos soluciones digitales para cualquier sector. Antes de proponer nada buscamos qué parte de su operación aporta más valor, y nos centramos solo en eso. Nuestra especialidad son los proyectos complejos: los que no se pueden comprar hechos."
 * Debajo, a todo el ancho de la ventana, el panorama (abajo), con "Un martes de octubre" debajo: seis horas que se pueden pulsar y la frase de la hora en curso, que baja a su ejemplo.
   * 04:10 · En una finca de pistacheros, la yema del sector 4 baja a 2,8 grados bajo cero. La garita marca 0,4.
@@ -522,9 +524,9 @@ Desde el 2 de octubre de 2026 (decisión 14) no hay una sección de especialidad
 
 Siete capítulos dentro de sus sectores: obra, hornos y astilleros (industria); procesos (automatización); boutique (retail); cultivo y cebo (agricultura y ganadería). El panorama de la portada mantiene su recorrido del campo a la ciudad porque sigue las horas del día; el orden de las secciones no tiene por qué coincidir con él. Cada capítulo:
 
-1. Un filete arriba, como un capítulo. Kicker con la marca de color, el numeral y el sector (por ejemplo "IV · Industria · Valorización energética") y titular a la izquierda; entradilla y un solo párrafo breve a la derecha.
+1. Un filete arriba, como un capítulo. Kicker con la marca de color y el número de caso (por ejemplo "Caso 2 · Valorización energética") y un titular que dice qué es el caso, sin metáforas ("La cámara del horno, conectada al sistema de control"). A la derecha, dos bloques con su etiqueta: "El reto" (solo el problema, sin adelantar la solución) y "La solución".
 2. La escena a todo el ancho del contenedor, con cajetín, subtítulos y barra.
-3. Debajo, las tres cifras en fila (también en móvil) y una única línea discreta que dice de qué tipo son ("Cifras de demostración." o, si se mezclan, el tipo de cada una, con la fuente enlazada). Al lado, lo que no hace en cursiva y un solo enlace: la maqueta si existe, o el origen del ejemplo si no.
+3. Debajo, "En cifras": las tres cifras en fila (también en móvil) y una única línea discreta que dice de qué tipo son ("Cifras de demostración." o, si se mezclan, el tipo de cada una, con la fuente enlazada). Al lado, "Límites": lo que no hace en cursiva y un solo enlace: la maqueta si existe, o el origen del ejemplo si no.
 
 Principio de limpieza (revisión del 2 de octubre de 2026): cada bloque dice una cosa. Si un texto repite lo que ya cuenta la escena o la entradilla, sobra.
 
@@ -874,6 +876,7 @@ El 2 de octubre de 2026 se aprobaron todas las propuestas de esta tabla tal y co
 | 13 | ¿Cómo nos presentamos? | Soluciones digitales para cualquier sector; primero buscamos lo que aporta valor y nos centramos en eso; nuestra especialidad son los proyectos complejos. Sin hablar directamente de inteligencia artificial ni de "trabajar con las manos". Decidido el 2 de octubre de 2026. |
 | 14 | Orden de la página y automatización. | Una sección por sector en este orden: industria, automatización de procesos, retail, y agricultura y ganadería. La automatización de procesos es un sector propio con su ejemplo (`procesos`). Desaparecen las secciones de especialidades y de ejemplos. Decidido el 2 de octubre de 2026. |
 | 15 | ¿Dónde se publica? | GitHub Pages con GitHub Actions, desde `main` (publicada el 2 de octubre de 2026). `render.yaml` queda preparado como alternativa. |
+| 16 | Títulos y continuidad. | Secciones numeradas, títulos profesionales sin metáforas ni punto final, entradillas que enlazan cada sección con la anterior y casos con la estructura reto, solución, cifras y límites. El titular de la portada pasa a "Soluciones digitales a medida para problemas complejos". Decidido el 2 de octubre de 2026. |
 
 ---
 
