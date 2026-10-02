@@ -2,13 +2,13 @@
 # Es un sitio estático: Render compila con Node y sirve build/client desde su CDN. No hay servidor encendido.
 # Uso: Render > New > Blueprint > elegir el repositorio InportGroup/inportgroup-website > aplicar.
 #
-# Mientras el trabajo siga en la rama web2026, el blueprint despliega esa rama (sirve de vista previa).
-# Cuando se fusione con main, cambiar branch a main.
+# Despliega la rama main. La web pública se sirve hoy desde GitHub Pages; Render queda como alternativa.
+
 services:
   - type: web
     name: inport-web
     runtime: static
-    branch: web2026
+    branch: main
     autoDeploy: true
     buildCommand: npm ci && npm run build
     staticPublishPath: ./build/client
