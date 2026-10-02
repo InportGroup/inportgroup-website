@@ -1,0 +1,52 @@
+.banda {
+  background: var(--paper-2);
+  border-block: 1px solid var(--rule);
+}
+
+.hacemos {
+  display: grid;
+  gap: clamp(36px, 5vw, 64px);
+}
+
+.capacidades {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 32px;
+}
+
+.capacidad {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule-strong);
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.n {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.verbo {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(34px, 3.4vw, 48px);
+  line-height: 1;
+  color: var(--ink);
+}
+
+@media (max-width: 960px) {
+  .capacidades {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .capacidades {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
