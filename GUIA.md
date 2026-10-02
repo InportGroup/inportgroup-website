@@ -427,15 +427,14 @@ Los textos viven en `src/content/es/`:
 
 La web es un sitio estático: `npm run build` deja en `build/client` el HTML prerenderizado, el JavaScript y los estilos. No hace falta ningún servidor encendido; Node solo se usa para compilar.
 
-En Render (decisión 15), con `render.yaml` en la raíz:
+Publicada el 2 de octubre de 2026 en GitHub Pages: Pages está en modo "GitHub Actions" y `.github/workflows/pages.yml` compila y publica en cada subida a `main`. El dominio www.inportgroup.com y el HTTPS se configuran en Settings > Pages. La web de 2025 queda en la etiqueta `web2025`.
+
+Alternativa preparada en Render, con `render.yaml` en la raíz:
 
 * Servicio `inport-web`, tipo sitio estático. Compila con `npm ci && npm run build` y publica `./build/client`.
 * `NODE_VERSION` 22, para tener la última 22 (React Router 8 pide 22.22 o superior).
 * Cabeceras: caché de un año para `/assets/*` (los nombres llevan hash), sin caché para el HTML, `nosniff`, `Referrer-Policy` y `noindex` para el laboratorio.
-* Mientras el trabajo esté en `web2026`, el blueprint despliega esa rama como vista previa; al fusionar con `main`, se cambia `branch`.
-* Para servirla en www.inportgroup.com hay que añadir el dominio en Render y cambiar el DNS de IONOS (hoy apunta a GitHub Pages). Es un paso que se decide aparte.
-
-GitHub Pages sigue siendo una alternativa: `.github/workflows/pages.yml` está listo y solo se lanza a mano.
+* Despliega `main`. Para servir el dominio desde Render habría que añadirlo allí y cambiar el DNS de IONOS, que hoy apunta a GitHub Pages.
 
 * `public/CNAME` mantiene `www.inportgroup.com` para el caso de GitHub Pages. `public/.nojekyll` sigue.
 * Antes de cambiar el dominio de sitio se etiqueta la web actual (`web2025`) para poder volver atrás en un minuto.
@@ -874,7 +873,7 @@ El 2 de octubre de 2026 se aprobaron todas las propuestas de esta tabla tal y co
 | 12 | ¿Una web de varias páginas o una sola? | Una sola página con secciones: quiénes somos, qué hacemos, especialidades, ejemplos (los de las maquetas y propuestas que tenemos), maquetas y contacto. Decidido el 2 de octubre de 2026. |
 | 13 | ¿Cómo nos presentamos? | Soluciones digitales para cualquier sector; primero buscamos lo que aporta valor y nos centramos en eso; nuestra especialidad son los proyectos complejos. Sin hablar directamente de inteligencia artificial ni de "trabajar con las manos". Decidido el 2 de octubre de 2026. |
 | 14 | Orden de la página y automatización. | Una sección por sector en este orden: industria, automatización de procesos, retail, y agricultura y ganadería. La automatización de procesos es un sector propio con su ejemplo (`procesos`). Desaparecen las secciones de especialidades y de ejemplos. Decidido el 2 de octubre de 2026. |
-| 15 | ¿Dónde se publica? | Render, como sitio estático (`render.yaml`). GitHub Pages queda como alternativa. Decidido el 2 de octubre de 2026. |
+| 15 | ¿Dónde se publica? | GitHub Pages con GitHub Actions, desde `main` (publicada el 2 de octubre de 2026). `render.yaml` queda preparado como alternativa. |
 
 ---
 

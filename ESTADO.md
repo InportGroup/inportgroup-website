@@ -1,14 +1,14 @@
 # Estado del proyecto
 
-Última actualización: 2 de octubre de 2026, tras reorganizar la página por sectores, añadir automatización de procesos y preparar el despliegue en Render.
+Última actualización: 2 de octubre de 2026, al publicar la web nueva en www.inportgroup.com.
 
 La guía completa está en `GUIA.md`. Este documento dice qué está hecho, qué falta y cómo retomarlo.
 
 ## Dónde está el trabajo
 
-* Rama local `web2026`. La rama `main` no se ha tocado y sigue sirviendo la web de 2025 en www.inportgroup.com.
-* Nada está confirmado en git todavía: todo está en el árbol de trabajo de `web2026`.
-* La web anterior está en `legacy/index2025.html` dentro de la rama. `CNAME`, `.nojekyll` y `robots.txt` están en `public/`.
+* La web nueva está en `main` y publicada en www.inportgroup.com desde el 2 de octubre de 2026, con GitHub Pages en modo GitHub Actions: cada subida a `main` la compila y la publica.
+* La web de 2025 queda en la etiqueta `web2025` y, como referencia, en `legacy/index2025.html`.
+* La rama `web2026` contiene el mismo trabajo previo a la fusión.
 
 ## Decisiones tomadas
 
@@ -93,6 +93,15 @@ Objetivo: que la web se vea profesional, sencilla y limpia.
 * Comprobado sobre la compilación servida: reglas en verde en la página y en los cuatro planos de la escena nueva, sin errores de hidratación en móvil ni en escritorio entrando por la portada y por tres anclas, navegación sin desbordar a 1060 px.
 * Pendiente para publicar en Render: subir la rama `web2026` al repositorio, crear el blueprint en Render y, cuando se quiera usar el dominio, cambiar el DNS de IONOS.
 * Nota: `npm ci` falla si el servidor de desarrollo está arrancado (tiene abiertos archivos de `node_modules`); hay que pararlo antes.
+
+## Publicación: hecha (2 de octubre de 2026)
+
+* Etiqueta `web2025` sobre la web anterior, para volver atrás si hace falta.
+* `web2026` fusionada con `main`. Antes de subir `main`, GitHub Pages pasó de construir la rama a GitHub Actions, para que nunca se publicara la raíz sin `index.html`.
+* El flujo `pages.yml` usa las versiones actuales de las acciones y se lanza en cada subida a `main`. Primera ejecución correcta.
+* Comprobado en el dominio: www.inportgroup.com e inportgroup.com sirven la web nueva con HTTPS; reglas en verde; sin errores de hidratación en móvil ni en escritorio; 404 propia para rutas inexistentes; sitemap y robots servidos.
+* Pendiente antes de darla por cerrada: completar el aviso legal (razón social, NIF, domicilio), que hoy muestra los huecos.
+* Para volver a la web de 2025: publicar desde la etiqueta `web2025` (por ejemplo, revertir la fusión en `main`).
 
 ## Siguiente: fase 3 · Escenas completas
 

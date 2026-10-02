@@ -40,9 +40,9 @@ El laboratorio de escenas está en `/laboratorio?escena=<id>` (no se indexa).
 
 Es un sitio estático: Node solo compila; lo que se publica es `build/client`.
 
-Render (recomendado): el repositorio trae `render.yaml`. En Render: New, Blueprint, elegir `InportGroup/inportgroup-website` y aplicar. Crea el sitio estático `inport-web`, que compila con `npm ci && npm run build` y publica `build/client`. De momento despliega la rama `web2026`; al fusionar con `main`, cambiar `branch` en `render.yaml`. Para usar www.inportgroup.com hay que añadir el dominio en Render y cambiar el DNS.
+GitHub Pages (en uso): cada subida a `main` lanza `.github/workflows/pages.yml`, que compila y publica en www.inportgroup.com. Pages está en modo "GitHub Actions" y el dominio se configura en Settings > Pages. Para volver a la web de 2025: la etiqueta `web2025`.
 
-GitHub Pages (alternativa): `.github/workflows/pages.yml` compila y publica; solo se lanza a mano y los pasos previos están en el propio archivo. El dominio lo fija `public/CNAME`.
+Render (alternativa): el repositorio trae `render.yaml` (sitio estático `inport-web`, rama `main`). En Render: New, Blueprint, elegir `InportGroup/inportgroup-website` y aplicar. Para servir el dominio desde Render habría que cambiar el DNS.
 
 DNS en IONOS:
 
