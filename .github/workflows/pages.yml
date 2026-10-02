@@ -1,0 +1,44 @@
+# Compila la web y la publica en GitHub Pages.
+# Solo se lanza a mano hasta la fase 7 (GUIA.md, sección 10). Antes de la primera vez:
+#   1. Etiquetar la web actual: git tag web2025 <commit de main> && git push origin web2025
+#   2. En Settings > Pages del repositorio, cambiar Source a "GitHub Actions".
+# Después se puede añadir "push: branches: [main]" para publicar en cada subida.
+
+name: Publicar en GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

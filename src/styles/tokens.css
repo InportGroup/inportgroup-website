@@ -1,0 +1,79 @@
+/* Tokens de la casa (GUIA.md, sección 4). La paleta de sectores y datos está validada:
+   no se cambia un color sin volver a pasar el validador. */
+
+:root {
+  /* Papel y tinta */
+  --paper: #f2efe8;
+  --paper-2: #e8e4da;
+  --ink: #16181a;
+  --ink-2: #4a4d50;
+  --ink-3: #6b6e71;
+  --rule: rgba(22, 24, 26, 0.14);
+  --rule-strong: rgba(22, 24, 26, 0.32);
+
+  /* Pantalla: fondo de las escenas */
+  --screen: #0f1215;
+  --screen-2: #171b1f;
+  --screen-line: rgba(230, 232, 228, 0.16);
+  --screen-draw: rgba(230, 232, 228, 0.62);
+  --screen-dim: rgba(230, 232, 228, 0.66);
+  --screen-text: #e6e4de;
+
+  /* Sectores sobre papel. Solo para marcas, nunca para texto */
+  --campo: #1baf7a;
+  --industria: #eb6834;
+  --mar: #2a78d6;
+  --comercio: #eda100;
+  --operaciones: #4a3aa7;
+
+  /* Sectores sobre pantalla */
+  --campo-s: #199e70;
+  --industria-s: #d95926;
+  --mar-s: #3987e5;
+  --comercio-s: #c98500;
+  --operaciones-s: #9085e9;
+
+  /* Estados dentro de las escenas, siempre con forma o etiqueta */
+  --data-ok: #0ca30c;
+  --data-warn: #fab219;
+  --data-serious: #ec835a;
+  --data-alert: #d03b3b;
+  --data-forecast: #3987e5;
+
+  /* Escala de frío: cuanto más clara, más fría */
+  --cold-1: #184f95;
+  --cold-2: #256abf;
+  --cold-3: #3987e5;
+  --cold-4: #6da7ec;
+  --cold-5: #9ec5f4;
+  --cold-6: #cde2fb;
+
+  /* Escala de fuego: intensidad de 0 a 100 */
+  --fire-1: #b03a0c;
+  --fire-2: #e45a12;
+  --fire-3: #fa8c42;
+  --fire-4: #fdbb7e;
+  --fire-5: #ffe3c4;
+
+  /* Tipografía: solo pesos 300 y 400 */
+  --font-display: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --font-text: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+
+  --fs-h1: clamp(44px, 6.4vw, 104px);
+  --fs-h2: clamp(32px, 4vw, 60px);
+  --fs-h3: 24px;
+  --fs-body: 18px;
+  --fs-small: 15px;
+  --fs-kicker: 12px;
+
+  /* Composición */
+  --container: 1280px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --measure: 64ch;
+
+  /* Movimiento */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 220ms;
+  --t-med: 600ms;
+}

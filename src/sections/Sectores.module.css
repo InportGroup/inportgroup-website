@@ -1,0 +1,60 @@
+.sector {
+  padding-block: clamp(56px, 6.5vw, 104px);
+}
+
+.banda {
+  background: var(--paper-2);
+  border-block: 1px solid var(--rule);
+}
+
+.cabeza {
+  display: grid;
+  gap: clamp(32px, 3.6vw, 48px);
+}
+
+/* Lo que hacemos en el sector: dos columnas de líneas con filete, como un índice */
+.lineas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(32px, 5vw, 80px);
+  border-top: 1px solid var(--rule-strong);
+}
+
+.linea {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.ver {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.ejemplos {
+  display: grid;
+  gap: clamp(72px, 8vw, 120px);
+  margin-top: clamp(64px, 7vw, 104px);
+}
+
+@media (max-width: 900px) {
+  .lineas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .linea {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

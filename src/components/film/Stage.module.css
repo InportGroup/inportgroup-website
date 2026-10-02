@@ -1,0 +1,79 @@
+.stage {
+  position: relative;
+  width: 100%;
+  background: var(--screen);
+  color: var(--screen-text);
+  isolation: isolate;
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.screen > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Marcas de corte fuera de la pantalla, como en una prueba de imprenta */
+.mark {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  border-color: var(--rule-strong);
+  border-style: solid;
+  border-width: 0;
+}
+.tl { top: -7px; left: -7px; border-top-width: 1px; border-left-width: 1px; }
+.tr { top: -7px; right: -7px; border-top-width: 1px; border-right-width: 1px; }
+.bl { bottom: -7px; left: -7px; border-bottom-width: 1px; border-left-width: 1px; }
+.br { bottom: -7px; right: -7px; border-bottom-width: 1px; border-right-width: 1px; }
+
+/* Cajetín */
+.cajetin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  border-top: 1px solid var(--rule-strong);
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.cell {
+  padding: 7px 14px 0 0;
+  margin-right: 14px;
+  border-right: 1px solid var(--rule);
+  white-space: nowrap;
+}
+
+.clock {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  min-width: 9ch;
+}
+
+.note {
+  margin-left: auto;
+  margin-right: 0;
+  padding-right: 0;
+  border-right: 0;
+  color: var(--ink-3);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 720px) {
+  .note {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+}

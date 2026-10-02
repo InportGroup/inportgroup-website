@@ -1,0 +1,88 @@
+.segmented {
+  display: inline-flex;
+  gap: 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.segment {
+  position: relative;
+  padding: 4px 0;
+  color: var(--ink-3);
+  transition: color var(--t-fast) var(--ease);
+}
+
+.segment::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.segment:hover,
+.active {
+  color: var(--ink);
+}
+
+.active::after {
+  transform: scaleX(1);
+}
+
+.chip {
+  padding: 4px 12px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.chip:hover,
+.chipActive {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.chip:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.textButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-text);
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+
+.frame {
+  padding: 10px 20px;
+  border: 1px solid var(--ink);
+}
+
+.frame:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.line {
+  padding: 2px 0;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.line:hover {
+  border-bottom-color: var(--ink);
+}

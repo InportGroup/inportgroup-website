@@ -1,0 +1,228 @@
+/* Barra de reproducción: va sobre papel, debajo del marco */
+.bar {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 240px) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding-top: 14px;
+  font-family: var(--font-mono);
+}
+
+.play {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--rule-strong);
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition: border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
+}
+
+.play:hover {
+  border-color: var(--ink);
+  background: rgba(22, 24, 26, 0.04);
+}
+
+.sceneLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sceneNum {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.sceneTitle {
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track {
+  position: relative;
+  height: 26px;
+}
+
+.rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--rule-strong);
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--ink);
+}
+
+.tick {
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background: var(--ink-3);
+}
+
+.tickPast {
+  background: var(--ink);
+}
+
+.head {
+  position: absolute;
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+}
+
+.scrub {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.timecode {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.total {
+  color: var(--ink-3);
+}
+
+.extra {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  align-items: center;
+  padding-top: 4px;
+  font-family: var(--font-text);
+}
+
+/* Subtítulos sobre la escena */
+.subtitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  width: min(92%, 760px);
+  text-align: center;
+  pointer-events: none;
+}
+
+.bottom {
+  bottom: clamp(12px, 3vw, 32px);
+}
+
+.top {
+  top: clamp(12px, 3vw, 32px);
+}
+
+.subtitleText {
+  display: inline;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(15px, 1.6vw, 22px);
+  line-height: 1.45;
+  color: var(--screen-text);
+  padding: 3px 12px;
+  background: rgba(15, 18, 21, 0.68);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  animation: subtitleIn 900ms var(--ease) both;
+}
+
+@keyframes subtitleIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.caption {
+  margin-top: 10px;
+  min-height: 2.9em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--ink);
+  animation: subtitleIn 900ms var(--ease) both;
+}
+
+/* Grano y viñeta */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.grainTile {
+  position: absolute;
+  inset: -80px;
+  background-repeat: repeat;
+  background-size: 160px 160px;
+  opacity: var(--grain);
+  mix-blend-mode: overlay;
+  animation: grainShift 1.2s steps(4) infinite;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.42) 100%);
+}
+
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 1%); }
+  50% { transform: translate(1%, -2%); }
+  75% { transform: translate(2%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 720px) {
+  .bar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+  .sceneLabel {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grainTile {
+    animation: none;
+  }
+}

@@ -1,0 +1,22 @@
+.reserva {
+  width: 100%;
+}
+
+.pantalla {
+  width: 100%;
+  aspect-ratio: 21 / 8;
+  background: var(--screen);
+}
+
+.barra {
+  height: 130px;
+}
+
+@media (max-width: 760px) {
+  .pantalla {
+    aspect-ratio: 4 / 5;
+  }
+  .barra {
+    height: 190px;
+  }
+}

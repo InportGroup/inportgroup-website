@@ -1,0 +1,29 @@
+/* Hueco reservado mientras la escena no está dibujada. Imita las alturas reales del cajetín, el subtítulo
+   (en móvil va debajo del marco) y la barra, para que entrar por un ancla no se quede corto. */
+
+.reserva {
+  width: 100%;
+}
+
+.cajetin {
+  height: 42px;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.pantalla {
+  width: 100%;
+  background: var(--screen);
+}
+
+.barra {
+  height: 48px;
+}
+
+@media (max-width: 760px) {
+  .cajetin {
+    height: 80px;
+  }
+  .barra {
+    height: 140px;
+  }
+}

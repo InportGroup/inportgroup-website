@@ -1,0 +1,28 @@
+.cabecera {
+  display: grid;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 48px;
+  align-items: end;
+}
+
+.titulo {
+  max-width: 17ch;
+}
+
+.entradilla {
+  font-size: 19px;
+}
+
+@media (max-width: 900px) {
+  .fila {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}

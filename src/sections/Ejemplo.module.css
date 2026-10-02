@@ -1,0 +1,144 @@
+/* Cada ejemplo empieza con un filete, como un capítulo */
+.ejemplo {
+  display: grid;
+  gap: clamp(28px, 3.2vw, 44px);
+}
+
+.cabeza {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: start;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.izquierda {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.titulo {
+  font-size: clamp(32px, 3.6vw, 52px);
+  max-width: 14ch;
+}
+
+.derecha {
+  display: grid;
+  gap: 14px;
+  padding-top: 32px;
+  color: var(--ink-2);
+  font-size: 17px;
+  max-width: 58ch;
+  text-wrap: pretty;
+}
+
+.entradilla {
+  font-family: var(--font-display);
+  font-size: clamp(21px, 1.8vw, 25px);
+  line-height: 1.4;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+.escena {
+  min-width: 0;
+}
+
+.pie {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(28px, 4vw, 64px);
+}
+
+.cifras {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+}
+
+.cifra {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.valor {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(30px, 3.2vw, 46px);
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.cifraTexto {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.notaCifras {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+
+.notas {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+}
+
+.noHace {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.origen {
+  font-size: 14.5px;
+  color: var(--ink-3);
+}
+
+.enlace {
+  justify-self: start;
+  font-size: 15px;
+}
+
+@media (max-width: 960px) {
+  .cabeza,
+  .pie {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .derecha {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .cifras {
+    gap: 14px;
+  }
+  .valor {
+    font-size: 26px;
+    white-space: normal;
+  }
+  .cifraTexto {
+    font-size: 13px;
+  }
+}

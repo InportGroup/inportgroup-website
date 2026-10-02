@@ -1,0 +1,26 @@
+.lab {
+  padding-top: 40px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 28px;
+  margin-bottom: 28px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: var(--fs-small);
+}
+
+.active {
+  text-decoration-color: currentColor;
+}
+
+.mini {
+  max-width: 420px;
+}
