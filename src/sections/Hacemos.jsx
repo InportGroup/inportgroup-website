@@ -13,7 +13,7 @@ export default function Hacemos() {
           {HACEMOS.capacidades.map((c, i) => (
             <li key={c.verbo} className={s.capacidad}>
               <span className={s.n}>{String(i + 1).padStart(2, '0')}</span>
-              <h3 className={s.verbo}>{c.verbo}</h3>
+              <p className={s.verbo}>{c.verbo}</p>
               <p>{c.texto}</p>
             </li>
           ))}

@@ -58,7 +58,7 @@ export default function PanoramaPlayer() {
         <p key={actual} className={s.texto}>
           <span className={s.num}>Caso de uso {numeroDe(parada.id)}</span> {caso?.titulo}.{' '}
           <a href={`#${parada.id}`} className={s.ver}>
-            Ver el caso
+            Ver el caso<span className="visually-hidden">: {caso?.titulo}</span>
           </a>
         </p>
       </div>

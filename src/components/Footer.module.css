@@ -50,6 +50,17 @@
   margin-bottom: 6px;
 }
 
+.labelCompartir {
+  margin-top: 22px;
+}
+
+/* Enlaces para compartir: direcciones simples, sin botones de terceros ni seguimiento */
+.compartir {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+
 .legal {
   padding-bottom: 20px;
   font-size: 14px;

@@ -1,0 +1,13 @@
+{
+  "name": "Inport · Soluciones digitales a medida",
+  "short_name": "Inport",
+  "lang": "es",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f2efe8",
+  "theme_color": "#f2efe8",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

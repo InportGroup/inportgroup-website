@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 import { LEGAL } from '../content/es/pagina.js'
-import { NAV, SITE } from '../content/es/site.js'
+import { NAV, SITE, compartir } from '../content/es/site.js'
 import Logo from './Logo.jsx'
 import s from './Footer.module.css'
 
@@ -12,14 +12,14 @@ export default function Footer() {
       <div className={`wrap ${s.grid}`}>
         <div className={s.brand}>
           <Logo />
-          <p className={s.line}>Soluciones digitales a medida para cualquier sector. Lo que aporta valor, aunque sea difícil.</p>
+          <p className={s.line}>Soluciones digitales a medida para problemas complejos, en cualquier sector. Lo que aporta valor, aunque sea difícil.</p>
         </div>
         <nav aria-label="Secciones de la página">
           <ul className={s.list}>
             {NAV.map((n) => (
               <li key={n.ancla}>
                 <a href={href(n.ancla)} className={s.link}>
-                  {n.nombre}
+                  {n.pie}
                 </a>
               </li>
             ))}
@@ -31,6 +31,16 @@ export default function Footer() {
             {SITE.contacto.nombre} · {SITE.contacto.cargo}
           </p>
           <a href={`mailto:${SITE.contacto.correo}`}>{SITE.contacto.correo}</a>
+          <p className={`${s.label} ${s.labelCompartir}`}>Compartir esta página</p>
+          <ul className={s.compartir}>
+            {compartir().map((c) => (
+              <li key={c.red}>
+                <a href={c.href} className={s.link} {...(c.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+                  {c.red}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <div className={`wrap ${s.legal}`}>

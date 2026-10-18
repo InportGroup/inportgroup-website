@@ -49,7 +49,7 @@ function Sector({ sec, banda }) {
                 <span>{l.texto}</span>
                 {l.ejemplo && (
                   <a href={`#${l.ejemplo}`} className={s.ver}>
-                    Ver el caso
+                    Ver el caso<span className="visually-hidden">: {EJEMPLOS.find((e) => e.id === l.ejemplo)?.titulo}</span>
                   </a>
                 )}
               </li>

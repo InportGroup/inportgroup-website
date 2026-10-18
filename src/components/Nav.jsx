@@ -66,15 +66,18 @@ export default function Nav() {
           {open ? 'Cerrar' : 'Menú'}
         </button>
       </div>
+      {/* Los enlaces del menú móvil solo existen con el menú abierto, para no repetir la navegación en el HTML */}
       <div id="menu" className={s.panel} hidden={!open}>
-        <ul className="wrap">
-          {links}
-          <li>
-            <a className={s.link} href={href('contacto')} onClick={() => setOpen(false)}>
-              Hablemos
-            </a>
-          </li>
-        </ul>
+        {open && (
+          <ul className="wrap">
+            {links}
+            <li>
+              <a className={s.link} href={href('contacto')} onClick={() => setOpen(false)}>
+                Hablemos
+              </a>
+            </li>
+          </ul>
+        )}
       </div>
     </header>
   )

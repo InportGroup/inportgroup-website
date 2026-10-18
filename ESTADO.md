@@ -119,6 +119,18 @@ Objetivo: que la web se vea profesional, sencilla y limpia.
 * Esquema de "Qué hacemos": se reequilibra para que "Albaranes y manuales" no se corte; "Informe del lunes" pasa a "Informe semanal".
 * Anotaciones del panorama ajustadas al ancho en móvil.
 
+## Posicionamiento (SEO): hecho (18 de octubre de 2026)
+
+A partir de una auditoría externa de la portada:
+
+* Metadescripción nueva, de unos 870 px (el límite es 1.000), con las palabras del titular y las cuatro líneas de trabajo.
+* El titular se repite en el texto: la entradilla de la portada y el pie hablan de soluciones digitales a medida y problemas complejos.
+* De 33 a 21 encabezados: los pasos, los principios y los cuatro verbos son rótulos (`p` con la misma clase), no `h3`.
+* Ningún texto de enlace lleva a dos sitios distintos: "Ver el caso", "Pedir acceso" y "Abrir la maqueta" llevan el nombre del caso o de la maqueta en texto oculto, el pie dice sus enlaces de otra forma y el menú móvil solo existe abierto.
+* "Combustion Vision" va marcado con `lang="en"` para que el corrector no lo tome por "visión".
+* Imagen para compartir (`og-image.png`, 1200 × 630), tarjeta grande en X, icono de Apple, manifiesto con iconos de 192 y 512 y datos estructurados de schema.org (`ProfessionalService` y `WebSite`). Las imágenes se regeneran con `node scripts/imagenes.mjs`.
+* Enlaces para compartir en el pie (LinkedIn, X, WhatsApp, Facebook, correo), sin botones de terceros ni seguimiento.
+
 ## Siguiente: fase 3 · Escenas completas
 
 Llevar cada escena de ejemplo a su ficha de la sección 9 (más planos, de 40 a 60 segundos, interacción con sentido), una por sesión, empezando por la que más se vaya a enseñar. Revisar de paso los rótulos pequeños en móvil de cebo y boutique.

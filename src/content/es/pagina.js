@@ -7,7 +7,7 @@ export const PORTADA = {
   kicker: 'Ingeniería de software y datos · para cualquier sector',
   titulo: 'Soluciones digitales a medida para problemas complejos',
   entradilla:
-    'Diseñamos, desarrollamos e implantamos software a medida para empresas de cualquier sector. Antes de proponer nada identificamos qué parte de su operación aporta más valor y nos centramos en eso. Nuestra especialidad son los proyectos que no se pueden comprar hechos.',
+    'Diseñamos, desarrollamos e implantamos soluciones digitales a medida para empresas de industria, retail y agricultura. Antes de proponer nada identificamos qué parte de su operación aporta más valor y nos centramos en eso. Nuestra especialidad son los problemas complejos, los que no se resuelven con un producto comprado hecho.',
   // Las cuatro líneas de trabajo, para que se entienda de un vistazo a qué nos dedicamos
   lineasKicker: 'A qué nos dedicamos',
   lineas: [

@@ -7,6 +7,7 @@ export const MAQUETAS = [
   {
     id: 'combustion',
     nombre: 'Combustion Vision',
+    idioma: 'en',
     sector: 'industria',
     solucion: 'hornos',
     url: null,

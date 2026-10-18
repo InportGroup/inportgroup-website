@@ -13,7 +13,7 @@ export default function Nosotros() {
           {NOSOTROS.pasos.map((paso) => (
             <li key={paso.n} className={s.celda}>
               <span className={s.n}>{paso.n}</span>
-              <h3 className="h3">{paso.titulo}</h3>
+              <p className="h3">{paso.titulo}</p>
               <p>{paso.texto}</p>
             </li>
           ))}
@@ -25,7 +25,7 @@ export default function Nosotros() {
         <ul className={s.rejilla}>
           {NOSOTROS.principios.map((pr) => (
             <li key={pr.titulo} className={s.celda}>
-              <h3 className={s.principio}>{pr.titulo}</h3>
+              <p className={s.principio}>{pr.titulo}</p>
               <p>{pr.texto}</p>
             </li>
           ))}
