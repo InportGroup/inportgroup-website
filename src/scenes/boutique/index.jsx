@@ -348,7 +348,8 @@ function Scene({ film, narrow }) {
           </text>
           <path d={`M1240 424 H${1240 + 300 * clamp(dentroTarde / 22, 0, 1)}`} stroke="var(--comercio-s)" strokeWidth="3" />
           <text x={1240} y={460} fontFamily={SERIF} fontStyle="italic" fontWeight="300" fontSize={24} fill="var(--screen-dim)">
-            personas; dos asesoras en su descanso
+            <tspan x={1240}>personas; dos asesoras</tspan>
+            <tspan x={1240} dy={30}>en su descanso</tspan>
           </text>
         </g>
       )}
@@ -434,7 +435,8 @@ function Scene({ film, narrow }) {
                 )
               })}
               <text x={0} y={360} fontFamily={SERIF} fontStyle="italic" fontWeight="300" fontSize={24} fill="var(--screen-dim)">
-                se detienen casi el doble que en verano
+                <tspan x={0}>se detienen casi el doble</tspan>
+                <tspan x={0} dy={30}>que en verano</tspan>
               </text>
             </g>
           )}
@@ -452,11 +454,6 @@ export default {
   poster: 11,
   aspect: '16 / 9',
   aspectNarrow: '4 / 3',
-  frame: {
-    lugar: 'Boutique piloto · Canarias',
-    origen: 'Cámaras de techo',
-    reloj: (t) => (t < 7 ? `10:${String(Math.floor(t * 4)).padStart(2, '0')}` : t < 14 ? `17:${String(46 + Math.floor((t - 7) * 0.9)).padStart(2, '0')}` : t < 22 ? 'Semana 39' : 'Sábado 26'),
-  },
   scenes: [
     { at: 0, title: 'Abre la tienda', caption: '10:00 · Entran las primeras visitas. Cada punto es una persona sin nombre ni cara.' },
     { at: 7, title: 'Llega el grupo', caption: '17:50 · Llega el grupo del crucero. Tres personas llevan más de un minuto esperando.' },

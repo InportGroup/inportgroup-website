@@ -1,0 +1,38 @@
+.end {
+  padding: clamp(60px, 9vw, 130px) 0 clamp(48px, 6vw, 80px);
+}
+
+.h2 {
+  max-width: 12ch;
+  font-size: clamp(40px, 9vw, 140px);
+}
+
+.text {
+  max-width: 44ch;
+  margin: 26px 0 34px;
+  font-size: 20px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 18px 26px;
+  font-size: 15px;
+  background: var(--lime);
+  color: #0c0c0b;
+  border: 2px solid var(--lime);
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: transparent;
+  color: var(--lime);
+}
+
+.cta:focus-visible {
+  outline-color: var(--lime);
+}
+
+.persona {
+  margin-top: 26px;
+  color: var(--mute);
+}

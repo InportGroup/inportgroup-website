@@ -1,9 +1,0 @@
-.player {
-  margin: 0;
-  width: 100%;
-  min-width: 0;
-}
-
-.mini {
-  pointer-events: none;
-}

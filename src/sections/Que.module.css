@@ -1,0 +1,184 @@
+.sec {
+  padding-block: var(--section);
+}
+
+.head {
+  margin-bottom: clamp(30px, 5vw, 60px);
+}
+
+.h2 {
+  max-width: 22ch;
+  font-size: clamp(28px, 4.6vw, 66px);
+}
+
+.lead {
+  max-width: 46ch;
+  margin-top: 18px;
+  font-size: 19px;
+}
+
+/* Pestañas: los huecos de la rejilla dibujan los filetes en cualquier número de columnas */
+.tabs {
+  scroll-margin-top: calc(var(--nav-h) + 8px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  border: 2px solid var(--line);
+  background: var(--line);
+}
+
+.tab {
+  min-height: 56px;
+  padding: 16px 18px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: left;
+  background: var(--paper);
+}
+
+.tab:hover {
+  background: color-mix(in srgb, var(--lime) 25%, var(--paper));
+}
+
+.tab[aria-selected='true'] {
+  background: var(--lime);
+  color: #0c0c0b;
+}
+
+.tab:focus-visible {
+  outline-offset: -5px;
+}
+
+/* Panel: titular y textos, vídeo, otras aplicaciones, límites y prototipo */
+.panel {
+  padding: clamp(20px, 4vw, 48px);
+  border: 2px solid var(--line);
+  border-top: 0;
+}
+
+.panel:focus-visible {
+  outline-offset: -5px;
+}
+
+.panelHead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+.h3 {
+  max-width: 14ch;
+  font-size: clamp(34px, 5.4vw, 76px);
+}
+
+.textos {
+  display: grid;
+  gap: 26px;
+}
+
+.textos p {
+  max-width: 54ch;
+}
+
+.chip {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 2px 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  background: var(--lime);
+  color: #0c0c0b;
+}
+
+.video {
+  margin-top: clamp(32px, 4vw, 52px);
+}
+
+/* Otras aplicaciones */
+.otras {
+  margin-top: 52px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 18px 18px 22px;
+  border: 2px solid var(--line);
+  background: var(--paper);
+  font-size: 15px;
+}
+
+.card:nth-child(even) {
+  transform: translateY(14px);
+}
+
+/* Archivo Black por debajo de 22 px pega el punto de la i al palo en pantallas normales */
+.cardTitle {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+/* Límites y prototipo */
+.foot {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 18px clamp(18px, 4vw, 56px);
+  align-items: start;
+  margin-top: 60px;
+}
+
+.fine {
+  max-width: 70ch;
+  padding: 2px 0 2px 14px;
+  border-left: 6px solid var(--lime);
+  color: var(--mute);
+}
+
+.proto {
+  justify-self: end;
+  text-align: right;
+}
+
+.proto a {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 2px solid var(--line);
+  text-decoration: none;
+}
+
+.proto a:hover {
+  background: var(--lime);
+  color: #0c0c0b;
+  border-color: #0c0c0b;
+}
+
+.protoNota {
+  display: block;
+  margin-top: 8px;
+  color: var(--mute);
+}
+
+@media (max-width: 900px) {
+  .tabs {
+    grid-template-columns: 1fr 1fr;
+  }
+  .panelHead,
+  .foot {
+    grid-template-columns: 1fr;
+  }
+  .proto {
+    justify-self: start;
+    text-align: left;
+  }
+  .card:nth-child(even) {
+    transform: none;
+  }
+}

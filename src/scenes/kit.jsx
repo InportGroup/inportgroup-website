@@ -1,5 +1,5 @@
 // Piezas comunes de las escenas (GUIA.md, sección 5): etiquetas de ingeniero con halo, notas con cifra
-// grande, reloj por tramos y utilidades de trazado. Todo se dibuja en función de t, sin estado.
+// grande y reloj por tramos. Todo se dibuja en función de t, sin estado.
 
 import { lerp } from '../lib/svg.js'
 
@@ -7,6 +7,7 @@ import { lerp } from '../lib/svg.js'
 export const HALO = { paintOrder: 'stroke', stroke: '#0f1215', strokeWidth: 5, strokeLinejoin: 'round' }
 
 export const MONO = 'var(--font-mono)'
+// Cifras y notas grandes. Dentro del marco, --font-display apunta a Archivo (Stage.module.css)
 export const SERIF = 'var(--font-display)'
 
 /** Factor de tamaño de los textos del SVG: en pantalla estrecha crecen para no bajar de unos 11 px reales */
@@ -15,7 +16,7 @@ export const kOf = (narrow) => (narrow ? 1.7 : 1)
 export const hm = (h, m = 0, s = 0) => h * 3600 + m * 60 + s
 
 /**
- * Reloj por tramos para el cajetín, para que diga lo mismo que los subtítulos.
+ * Reloj por tramos dentro de la escena, para que diga lo mismo que los subtítulos.
  * horas: [[t, segundos desde medianoche], ...] ordenados por t.
  */
 export function relojPorTramos(horas, conSegundos = true) {
@@ -34,20 +35,6 @@ export function relojPorTramos(horas, conSegundos = true) {
     const s = Math.floor(sec % 60)
     return (conSegundos ? [h, m, s] : [h, m]).map((v) => String(v).padStart(2, '0')).join(':')
   }
-}
-
-/** Polilínea "M x y L x y ..." a partir de puntos [[x, y], ...] */
-export function linea(points) {
-  return points.map(([x, y], i) => `${i ? 'L' : 'M'}${x.toFixed(1)} ${y.toFixed(1)}`).join(' ')
-}
-
-/** Punto de una curva cúbica de Bézier en u (0..1) */
-export function bezier(p0, p1, p2, p3, u) {
-  const v = 1 - u
-  return [
-    v * v * v * p0[0] + 3 * v * v * u * p1[0] + 3 * v * u * u * p2[0] + u * u * u * p3[0],
-    v * v * v * p0[1] + 3 * v * v * u * p1[1] + 3 * v * u * u * p2[1] + u * u * u * p3[1],
-  ]
 }
 
 /** Etiqueta de ingeniero: círculo en el punto, línea guía y texto en mono con halo */

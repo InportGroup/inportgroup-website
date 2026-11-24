@@ -8,8 +8,7 @@
 // En build/client, si existe: títulos, descripciones y metadatos del HTML prerenderizado, y rutas sin guiones.
 //
 //   node scripts/check.mjs all                 todas las rutas prerenderizadas
-//   node scripts/check.mjs /campo              una ruta
-//   node scripts/check.mjs "prueba&t=14"       una escena del laboratorio
+//   node scripts/check.mjs "/#retail"          una ruta o un ancla
 //
 // Requiere el servidor de desarrollo en http://localhost:5190 (npm run dev) o INPORT_URL.
 

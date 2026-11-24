@@ -4,7 +4,7 @@ import { useSvgId } from '../../lib/hooks.js'
 import { createRng } from '../../lib/rng.js'
 import { clamp, lerp } from '../../lib/svg.js'
 import { fmtInt } from '../../lib/format.js'
-import { Etiqueta, HALO, MONO, Nota, Rotulo, hm, kOf, relojPorTramos, ventana } from '../kit.jsx'
+import { Etiqueta, HALO, MONO, Nota, Rotulo, kOf, ventana } from '../kit.jsx'
 
 // Astilleros (GUIA.md, 9.6), primera versión. Un granelero en dique seco: se vacía el dique, un dron
 // recorre el costado, el modelo segmenta lo que encuentra y el costado se despliega en plano con su
@@ -434,20 +434,6 @@ export default {
   poster: 19,
   aspect: '16 / 9',
   aspectNarrow: '4 / 3',
-  frame: {
-    lugar: 'Dique 2 · Granelero de 190 m',
-    origen: 'Dron de inspección',
-    reloj: relojPorTramos(
-      [
-        [0, hm(7, 30)],
-        [7, hm(8, 10)],
-        [15, hm(11, 20)],
-        [22, hm(13, 30)],
-        [30, hm(13, 40)],
-      ],
-      false,
-    ),
-  },
   scenes: [
     { at: 0, title: 'Entra en dique', caption: '07:30 · Se vacía el dique. Aparece la obra viva, con incrustaciones y óxido.' },
     { at: 7, title: 'El vuelo', caption: '08:10 · El dron recorre el costado en cuatro pasadas. Cada destello es una foto.' },

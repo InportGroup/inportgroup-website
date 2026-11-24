@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /laboratorio
 
 Sitemap: https://www.inportgroup.com/sitemap.xml

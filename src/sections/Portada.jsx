@@ -1,44 +1,31 @@
-import { EJEMPLOS } from '../content/es/ejemplos.js'
+import Foto from '../components/Foto.jsx'
 import { PORTADA } from '../content/es/pagina.js'
-import Panorama from './Panorama.jsx'
+import { SITE } from '../content/es/site.js'
 import s from './Portada.module.css'
 
 export default function Portada() {
+  const { titulo } = PORTADA
   return (
-    <section className={s.portada} aria-labelledby="titular">
-      <div className={`wrap ${s.cabeza}`}>
-        <div className={s.principal}>
-          <p className="kicker">{PORTADA.kicker}</p>
-          <h1 id="titular" className={`h1 ${s.titulo}`}>
-            {PORTADA.titulo}
+    <div className="wrap">
+      <header className={s.hero} id="porque">
+        <div>
+          <span className={`mono ${s.tag}`} lang="en">
+            {SITE.lema}
+          </span>
+          <h1 className={s.h1}>
+            {titulo.antes}
+            <mark>{titulo.marca}</mark>
+            {titulo.despues}
           </h1>
+          <p className={s.sub}>{PORTADA.entradilla}</p>
+          <p className={`mono ${s.sectores}`}>{PORTADA.sectores}</p>
         </div>
-        <p className={`lead ${s.entradilla}`}>{PORTADA.entradilla}</p>
-      </div>
-
-      {/* A qué nos dedicamos, en cuatro líneas de trabajo */}
-      <div className={`wrap ${s.dedicamos}`}>
-        <p className="kicker">{PORTADA.lineasKicker}</p>
-        <ul className={s.lineas}>
-          {PORTADA.lineas.map((l, i) => (
-            <li key={l} className={s.linea}>
-              <span className={s.n}>{String(i + 1).padStart(2, '0')}</span>
-              {l}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <Panorama />
-
-      {/* Los casos de uso, en texto, para lectores de pantalla y buscadores: el panorama se dibuja en el navegador */}
-      <ul className="visually-hidden">
-        {EJEMPLOS.map((e) => (
-          <li key={e.id}>
-            <a href={`#${e.id}`}>Caso de uso: {e.titulo}</a>
-          </li>
-        ))}
-      </ul>
-    </section>
+        <figure className={s.photo}>
+          <p className={`hand ${s.nota}`}>{PORTADA.nota}</p>
+          <Foto foto={PORTADA.foto} prioridad />
+          <figcaption className={s.cap}>{PORTADA.pie}</figcaption>
+        </figure>
+      </header>
+    </div>
   )
 }

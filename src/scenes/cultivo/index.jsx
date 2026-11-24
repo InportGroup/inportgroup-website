@@ -1,6 +1,5 @@
 import { memo, useMemo } from 'react'
 import { useCamera } from '../../components/film/Film.jsx'
-import { Segmented } from '../../components/Controls.jsx'
 import { useSvgId } from '../../lib/hooks.js'
 import { createRng, noise1 } from '../../lib/rng.js'
 import { lerp } from '../../lib/svg.js'
@@ -136,7 +135,7 @@ function wedge(a0, a1, r) {
   return `M${CAM.x} ${CAM.y} L${p(a0)} A${r} ${r} 0 ${large} 1 ${p(a1)} Z`
 }
 
-function Scene({ film, state, detail, narrow }) {
+function Scene({ film, detail, narrow }) {
   const ids = {
     sky: useSvgId('cielo'),
     moon: useSvgId('luna'),
@@ -158,7 +157,6 @@ function Scene({ film, state, detail, narrow }) {
   const reveal = Math.round(ease(0.2, 5) * 100) / 100
   const sweep = ease(SWEEP.from, SWEEP.to)
   const angle = lerp(SWEEP.a0, SWEEP.a1, sweep)
-  const showThermal = state.vista !== 'garita'
   // Acercamiento: el árbol más frío a un tercio por la izquierda, sin salirse del suelo.
   // En pantalla estrecha el encuadre es propio: menos cielo y el campo más cerca.
   const BASE = narrow ? [260, 250, 1120, 650] : [0, 0, W, H]
@@ -203,12 +201,12 @@ function Scene({ film, state, detail, narrow }) {
 
       <Sky ids={ids} />
 
-      {showThermal && (
+      {(
         <g mask={`url(#${ids.mask})`} opacity={1 - 0.6 * alert}>
           <Thermal trees={trees} ids={ids} />
         </g>
       )}
-      {showThermal && alert > 0 && (
+      {alert > 0 && (
         <ellipse cx={cold.x} cy={cold.y} rx={70 * coldest.s} ry={46 * coldest.s} fill={coldColor(-2.8)} opacity={alert} filter={`url(#${ids.blur})`} />
       )}
 
@@ -232,12 +230,12 @@ function Scene({ film, state, detail, narrow }) {
         <path d={`M${CAM.x} ${CAM.y + 6} L${CAM.x} 640`} />
         <rect x={CAM.x - 14} y={CAM.y - 9} width="28" height="16" rx="2" />
       </g>
-      {sweep > 0 && sweep < 1 && showThermal && (
+      {sweep > 0 && sweep < 1 && (
         <path d={wedge(angle - 4, angle + 4, 1500)} fill={`url(#${ids.beam})`} />
       )}
 
       {/* Etiquetas en las yemas que el barrido ya ha visto */}
-      {full && showThermal &&
+      {full &&
         marked.map((tr, i) => {
           const a = (Math.atan2(tr.y - 100 * tr.s - CAM.y, tr.x - CAM.x) * 180) / Math.PI
           const deg = a < 0 ? a + 360 : a
@@ -260,7 +258,7 @@ function Scene({ film, state, detail, narrow }) {
         })}
 
       {/* El aviso: una nota junto al árbol más frío, con la garita al lado para comparar */}
-      {full && alert > 0 && showThermal && (
+      {full && alert > 0 && (
         <g opacity={alert}>
           <circle cx={cold.x} cy={cold.y} r="7" fill="none" stroke="var(--screen-text)" strokeWidth="1.4" />
           <path d={`M${cold.x + 7} ${cold.y - 4} L${cold.x + 96} ${cold.y - 52}`} fill="none" stroke="var(--screen-dim)" strokeWidth="1" />
@@ -286,43 +284,6 @@ function Scene({ film, state, detail, narrow }) {
   )
 }
 
-function Controls({ state, setState }) {
-  return (
-    <Segmented
-      label="Qué temperatura se ve"
-      value={state.vista}
-      onChange={(v) => setState((st) => ({ ...st, vista: v }))}
-      options={[
-        { value: 'yema', label: 'Yema' },
-        { value: 'garita', label: 'Solo garita' },
-      ]}
-    />
-  )
-}
-
-// Hora simulada por tramos, para que el cajetín diga lo mismo que los subtítulos.
-const HORAS = [
-  [0, 2 * 3600 + 40 * 60],
-  [6, 3 * 3600 + 55 * 60],
-  [12.4, 4 * 3600 + 10 * 60],
-  [18, 4 * 3600 + 12 * 60],
-]
-function reloj(t) {
-  let sec = HORAS[HORAS.length - 1][1]
-  for (let i = 0; i < HORAS.length - 1; i++) {
-    const [t0, s0] = HORAS[i]
-    const [t1, s1] = HORAS[i + 1]
-    if (t <= t1) {
-      sec = lerp(s0, s1, Math.max(0, (t - t0) / (t1 - t0)))
-      break
-    }
-  }
-  const h = Math.floor(sec / 3600)
-  const m = Math.floor((sec % 3600) / 60)
-  const s = Math.floor(sec % 60)
-  return [h, m, s].map((v) => String(v).padStart(2, '0')).join(':')
-}
-
 export default {
   id: 'cultivo',
   label: 'Una finca de pistacheros de noche. Una cámara térmica barre el sector bajo y encuentra yemas por debajo de cero mientras la garita marca 0,4 grados.',
@@ -330,13 +291,10 @@ export default {
   poster: 15,
   aspect: '16 / 9',
   aspectNarrow: '4 / 3',
-  frame: { lugar: 'Finca de pistacheros · Sector 4', origen: 'Cámara térmica 2', reloj },
-  initialState: { vista: 'yema' },
   scenes: [
     { at: 0, title: 'La finca, de noche', caption: '02:40 · Cielo despejado, sin viento. La garita marca 0,9 grados.' },
     { at: 6, title: 'La cámara barre el sector', caption: '03:55 · El frío baja y se queda en la parte baja de la finca.' },
     { at: 12.4, title: 'Aviso', caption: '04:10 · La yema está a 2,8 bajo cero. La garita sigue en 0,4.' },
   ],
   Scene,
-  Controls,
 }

@@ -540,11 +540,6 @@ export default {
   poster: 19,
   aspect: '16 / 9',
   aspectNarrow: '4 / 3',
-  frame: {
-    lugar: 'Horno 2 · Planta de valorización',
-    origen: 'Cámara de parrilla',
-    reloj: frameReloj,
-  },
   scenes: [
     { at: 0, title: 'La parrilla, de lado', caption: '11:40 · El residuo entra por la tolva y avanza por la parrilla mientras arde.' },
     { at: 8.4, title: 'Lo que ve la cámara', caption: '11:41 · La cámara del fondo ve la parrilla en perspectiva. Encima se dibuja la malla.' },

@@ -1,11 +1,12 @@
-// Textos generales de la web: marca, navegación, contacto y pie.
+// Textos generales de la web: marca, navegación, contacto y metadatos.
 
 export const SITE = {
   nombre: 'Inport',
+  lema: 'Engineering the unexpected',
   dominio: 'https://www.inportgroup.com',
-  // Metadescripción: por debajo de 1.000 px en el buscador (unos 145 caracteres) y con las palabras del titular
+  // Metadescripción: unos 145 caracteres, con las palabras del título
   descripcion:
-    'Soluciones digitales a medida para problemas complejos en industria, retail y agricultura: medición, predicción, integración y automatización.',
+    'Soluciones digitales a medida para procesos que funcionan peor de lo que deberían, en industria, sector marítimo, agricultura, ganadería y retail.',
   // Imagen para compartir (1200 × 630) e iconos: se generan con scripts/imagenes.mjs
   imagen: '/og-image.png',
   contacto: {
@@ -15,19 +16,17 @@ export const SITE = {
   },
 }
 
-// Navegación de la página única: cada enlace baja a su sección (GUIA.md, sección 7.1).
-// pie: el mismo enlace en el pie, dicho de otra forma para no repetir el texto de la cabecera.
+// Navegación: cada enlace baja a su sección. Contacto va aparte, como botón.
 export const NAV = [
-  { ancla: 'nosotros', nombre: 'Quiénes somos', pie: 'Equipo y método de trabajo' },
-  { ancla: 'hacemos', nombre: 'Qué hacemos', pie: 'Medir, anticipar, integrar y automatizar' },
-  { ancla: 'casos', nombre: 'Casos de uso', pie: 'Casos de industria, retail y campo' },
-  { ancla: 'maquetas', nombre: 'Maquetas', pie: 'Prototipos completos' },
+  { ancla: 'porque', nombre: 'Por qué' },
+  { ancla: 'como', nombre: 'Cómo' },
+  { ancla: 'que', nombre: 'Qué' },
 ]
 
 /** Metadatos de una página: título, descripción, canónica, tarjetas para compartir y datos estructurados */
 export function seo({ titulo, descripcion = SITE.descripcion, ruta = '/', indexar = true }) {
   const title = titulo ? `${titulo} · Inport` : 'Inport · Soluciones digitales a medida para problemas complejos'
-  const url = `${SITE.dominio}${ruta === '/' ? '/' : ruta}`
+  const url = `${SITE.dominio}${ruta}`
   const imagen = `${SITE.dominio}${SITE.imagen}`
   return [
     { title },
@@ -61,6 +60,7 @@ function datosEstructurados() {
         '@type': 'ProfessionalService',
         '@id': id,
         name: SITE.nombre,
+        slogan: SITE.lema,
         url: `${SITE.dominio}/`,
         logo: `${SITE.dominio}/icon-512.png`,
         image: `${SITE.dominio}${SITE.imagen}`,
@@ -71,12 +71,12 @@ function datosEstructurados() {
         knowsAbout: [
           'Desarrollo de software a medida',
           'Visión artificial',
-          'Predicción con datos',
+          'Inspección con dron',
           'Integración de sistemas',
-          'Automatización de procesos',
+          'Sector marítimo y portuario',
           'Industria',
-          'Retail',
           'Agricultura y ganadería',
+          'Retail',
         ],
         contactPoint: {
           '@type': 'ContactPoint',
@@ -98,22 +98,7 @@ function datosEstructurados() {
   }
 }
 
-/** Enlaces para compartir la página, sin botones de terceros ni seguimiento: solo direcciones */
-export function compartir(ruta = '/') {
-  const url = `${SITE.dominio}${ruta}`
-  const texto = 'Inport · Soluciones digitales a medida para problemas complejos'
-  const u = encodeURIComponent(url)
-  const t = encodeURIComponent(texto)
-  return [
-    { red: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
-    { red: 'X', href: `https://twitter.com/intent/tweet?url=${u}&text=${t}` },
-    { red: 'WhatsApp', href: `https://wa.me/?text=${t}%20${u}` },
-    { red: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
-    { red: 'Correo', href: `mailto:?subject=${t}&body=${u}` },
-  ]
-}
-
-/** Enlace de correo con el asunto ya escrito según la página de origen */
+/** Enlace de correo con el asunto ya escrito */
 export function mailto(asunto = 'Una consulta desde la web') {
   return `mailto:${SITE.contacto.correo}?subject=${encodeURIComponent(asunto)}`
 }

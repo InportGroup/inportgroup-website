@@ -34,7 +34,3 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
-      # El laboratorio de escenas es interno: que no se indexe aunque alguien lo enlace.
-      - path: /laboratorio/*
-        name: X-Robots-Tag
-        value: noindex, nofollow

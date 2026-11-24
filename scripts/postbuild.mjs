@@ -1,6 +1,6 @@
 // Después de compilar: deja build/client listo para GitHub Pages.
 //   404.html      la página de reserva de la SPA, para rutas que no se prerenderizaron
-//   sitemap.xml   todas las rutas prerenderizadas menos el laboratorio
+//   sitemap.xml   todas las rutas prerenderizadas
 //   CNAME y .nojekyll, por si la copia de public/ no los hubiera traído
 
 import { copyFileSync, existsSync, writeFileSync } from 'node:fs'
@@ -21,7 +21,7 @@ else console.warn('Aviso: no encuentro __spa-fallback.html; no se crea 404.html.
 if (!existsSync(path.join(out, 'CNAME'))) writeFileSync(path.join(out, 'CNAME'), 'www.inportgroup.com\n')
 if (!existsSync(path.join(out, '.nojekyll'))) writeFileSync(path.join(out, '.nojekyll'), '')
 
-const rutas = (await config.prerender()).filter((r) => !r.startsWith('/laboratorio'))
+const rutas = await config.prerender()
 const hoy = new Date().toISOString().slice(0, 10)
 const urls = rutas
   .map((r) => `  <url>\n    <loc>${SITE.dominio}${r}</loc>\n    <lastmod>${hoy}</lastmod>\n    <priority>${r === '/' ? '1.0' : '0.8'}</priority>\n  </url>`)

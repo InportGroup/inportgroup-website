@@ -1,12 +1,14 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from 'react-router'
+import Aviso from './components/Aviso.jsx'
 import Footer from './components/Footer.jsx'
 import Nav from './components/Nav.jsx'
 import './styles/tokens.css'
 import './styles/base.css'
 
-// Solo pesos 300 y 400 (GUIA.md, sección 4): el navegador no tiene de dónde sacar una negrita.
+// Solo peso 400 (GUIA.md, sección 4): el navegador no tiene de dónde sacar una negrita.
+// La cursiva de Archivo solo la usan las notas dentro de los vídeos.
 const FONTS =
-  'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@300;400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap'
+  'https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;1,400&family=Caveat:wght@400&family=Space+Mono:wght@400&display=swap'
 
 export const links = () => [
   { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
@@ -22,8 +24,8 @@ export function Layout({ children }) {
     <html lang="es">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#f2efe8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#ecece8" />
         <Meta />
         <Links />
       </head>
@@ -48,16 +50,6 @@ export function HydrateFallback() {
 }
 
 export function ErrorBoundary({ error }) {
-  const titulo = isRouteErrorResponse(error) && error.status === 404 ? 'Esta página no existe' : 'Algo ha fallado'
-  return (
-    <section className="wrap section">
-      <p className="kicker">Error</p>
-      <h1 className="h2" style={{ marginTop: 16 }}>
-        {titulo}
-      </h1>
-      <p className="lead" style={{ marginTop: 20 }}>
-        Puede volver a la <a href="/">portada</a>. Si el problema sigue, escríbanos y lo miramos.
-      </p>
-    </section>
-  )
+  const titulo = isRouteErrorResponse(error) && error.status === 404 ? 'Esta página no existe.' : 'Algo ha fallado.'
+  return <Aviso titulo={titulo} texto="Si el problema sigue, escríbenos y lo miramos." />
 }

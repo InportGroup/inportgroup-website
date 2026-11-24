@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Web de Inport: inteligencia artificial y automatización para el campo, la industria y el comercio",
+  "description": "Web de Inport: soluciones digitales a medida para problemas complejos",
   "scripts": {
     "dev": "react-router dev --port 5190 --strictPort",
     "build": "react-router build && node scripts/postbuild.mjs",
