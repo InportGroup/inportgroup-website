@@ -6,8 +6,9 @@ import './styles/tokens.css'
 import './styles/base.css'
 
 // Solo peso 400 (GUIA.md, sección 4): el navegador no tiene de dónde sacar una negrita.
+// La cursiva de Archivo solo la usan las notas dentro de los vídeos.
 const FONTS =
-  'https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400&family=Caveat:wght@400&family=Space+Mono:wght@400&display=swap'
+  'https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;1,400&family=Caveat:wght@400&family=Space+Mono:wght@400&display=swap'
 
 export const links = () => [
   { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },

@@ -2,7 +2,7 @@
 
 Fuente de verdad de www.inportgroup.com: idea, tono, sistema visual, estructura, arquitectura y decisiones. Si algo no encaja, se cambia primero aquí y después en el código.
 
-Versión del 24 de noviembre de 2026 (rediseño V2). La guía anterior, con las escenas animadas en SVG y las fichas de cada solución, está en el historial de Git (commit `cbb7893`, rama `main` antes del rediseño).
+Versión del 24 de noviembre de 2026 (rediseño V2). La guía anterior, con la especificación completa de las escenas y las fichas de cada solución, está en el historial de Git (commit `cbb7893`, rama `main` antes del rediseño).
 
 Este documento sigue las mismas reglas de redacción que la web: sin guiones en el texto y sin negritas.
 
@@ -18,7 +18,7 @@ La página sigue el orden por qué, cómo y qué:
 
 1. Por qué: hay procesos que podrían ir mucho mejor y nadie ha encontrado cómo. Eso es lo que nos mueve.
 2. Cómo: cuatro fases (diagnóstico, diseño, piloto, despliegue). Si una no da resultado, no se pasa a la siguiente.
-3. Qué: un caso por sector, con el problema, la solución, cómo funciona, otras aplicaciones, sus límites y el prototipo.
+3. Qué: un caso por sector, con el problema, la solución, un vídeo corto que lo enseña funcionando, otras aplicaciones, sus límites y el prototipo.
 
 Quien llega tiene que entender en diez segundos qué hacemos y para qué sectores. La técnica (visión artificial, dron, predicción) se nombra dentro de los casos, nunca como etiqueta de la empresa. No nos vendemos como empresa de inteligencia artificial.
 
@@ -87,7 +87,9 @@ Tipografía, todo en peso 400:
 * Space Mono: navegación, etiquetas, pestañas, límites y botones.
 * Caveat: notas a mano. Una por bloque como mucho.
 
-Fotos: marco con marcas de recorte. Mientras no hay imagen se ve un hueco rayado con lo que tiene que ir. Para poner una foto basta con dejarla en `public/fotos/` y escribir su ruta en `foto.src` (`pagina.js` para la portada, `sectores.js` para cada sector).
+Foto de la portada: marco con marcas de recorte. Mientras no hay imagen se ve un hueco rayado con lo que tiene que ir. Para ponerla basta con dejarla en `public/fotos/` y escribir su ruta en `PORTADA.foto.src` (`pagina.js`).
+
+Vídeos de los casos: escenas dibujadas en SVG, de 18 a 30 segundos, que vienen de la web anterior. Pantalla oscura con filete de 2 px, subtítulo por plano y debajo una barra mínima: reproducir o pausar, la línea de tiempo con la cabeza en lima y la nota "Escena ilustrativa · datos de demostración". Arrancan solas al verse, hacen bucle, se paran fuera de pantalla y con movimiento reducido se quedan en un fotograma cartel. Dentro del marco las cifras grandes van en Archivo (no en Archivo Black) y los colores de dato son los de cada sector.
 
 Lo que evitamos: rejillas de fondo con brillos, degradados morados, tarjetas iguales con icono, filas de cifras genéricas, animaciones de entrada, ilustraciones de cerebros o robots.
 
@@ -107,22 +109,22 @@ Una sola página. Las anclas son una palabra sin guiones.
 | `#contacto` | Contacto (banda oscura) | Titular, texto, botón de correo y persona de contacto |
 | | Pie | Año y aviso legal desplegable |
 
-Cada panel de sector tiene siempre el mismo orden: titular y foto, el problema y la solución, cómo funciona (de cuatro a cinco pasos en una línea), otras aplicaciones (tres o cuatro tarjetas), límites y prototipo.
+Cada panel de sector tiene siempre el mismo orden: titular junto al problema y la solución, el vídeo a todo el ancho, otras aplicaciones (tres o cuatro tarjetas), límites y prototipo.
 
-Las pestañas cumplen el patrón de WAI-ARIA: flechas, Inicio y Fin. Todos los paneles salen en el HTML prerenderizado, los inactivos con `hidden`, para que el buscador los lea.
+Las pestañas cumplen el patrón de WAI-ARIA: flechas, Inicio y Fin. Todos los paneles salen en el HTML prerenderizado, los inactivos con `hidden`, para que el buscador los lea. Los vídeos no se prerenderizan: solo se carga el del sector abierto, cuando se acerca a la pantalla.
 
 ### Casos elegidos y descartados
 
 Se queda lo que es difícil, está respaldado por un proyecto, una propuesta o un prototipo, y no se compra hecho:
 
-| Sector | Caso principal | Respaldo |
-|---|---|---|
-| Marítimo y portuario | Inspección de cascos con dron y presupuesto en el día | Prototipo abierto de inspección naval |
-| Industria | Cámaras del horno conectadas al DCS | Propuesta para una planta de valorización y prototipo privado |
-| Agricultura y ganadería | Heladas medidas en la yema | Prototipo abierto del pistacho; las cebas de porcino son un proyecto en marcha |
-| Retail | Recorridos, esperas y escaparate | Prototipo privado con una tienda piloto |
+| Sector | Caso principal | Vídeo | Respaldo |
+|---|---|---|---|
+| Marítimo y portuario | Inspección de cascos con dron y presupuesto en el día | `astilleros` | Prototipo abierto de inspección naval |
+| Industria | Cámaras del horno conectadas al DCS | `hornos` | Propuesta para una planta de valorización y prototipo privado |
+| Agricultura y ganadería | Heladas medidas en la yema | `cultivo` | Prototipo abierto del pistacho; las cebas de porcino son un proyecto en marcha |
+| Retail | Recorridos, esperas y escaparate | `boutique` | Prototipo privado con una tienda piloto |
 
-Descartados en el rediseño: automatización de albaranes al ERP (es un producto de mercado y diluye el mensaje), control de obra con dron (propuesta sin prototipo y repetía la idea del dron), vacuno de leche y acuicultura (sin respaldo), las escenas animadas, la sección de maquetas (los prototipos van dentro de cada sector), los botones de compartir y las cifras de demostración.
+Descartados en el rediseño: automatización de albaranes al ERP (es un producto de mercado y diluye el mensaje), control de obra con dron (propuesta sin prototipo y repetía la idea del dron), vacuno de leche y acuicultura (sin respaldo), el panorama de la portada y las escenas de obra, cebo, procesos y recorrido, el cajetín y el grano de los vídeos, el conmutador de la escena de heladas, la sección de maquetas (los prototipos van dentro de cada sector), los botones de compartir y las filas de cifras.
 
 ---
 
@@ -132,6 +134,7 @@ Descartados en el rediseño: automatización de albaranes al ERP (es un producto
 * JavaScript con JSX, CSS Modules por componente más `tokens.css` y `base.css`. Sin librerías de componentes ni de animación.
 * Textos en `src/content/es/`: `site.js` (marca, contacto, navegación, metadatos y datos estructurados), `pagina.js` (portada, lo que nos mueve, cómo, qué, contacto y aviso legal) y `sectores.js` (los cuatro casos).
 * Secciones en `src/sections/`: Portada, Mueve, Como, Que, Contacto. Componentes en `src/components/`: Nav, Footer, Foto, Aviso.
+* Vídeos: `src/components/film/Film.jsx` (reloj de la escena y movimiento de cámara), `src/components/film/Escena.jsx` (carga diferida, pantalla, subtítulo y barra), `src/scenes/` (las cuatro escenas, `kit.jsx` con sus piezas comunes y `registry.js`) y `src/lib/` (utilidades que usan las escenas). Los tokens de color de las escenas viven en `Escena.module.css`, solo dentro del marco.
 * `scripts/`: `check.mjs` (reglas de la casa), `shot.mjs` (capturas), `imagenes.mjs` (iconos e imagen para compartir), `postbuild.mjs` (404.html, sitemap y CNAME), `serve.mjs` (sirve la compilación como GitHub Pages) y `cdp.mjs` (Chrome sin interfaz).
 
 ### Publicación
@@ -164,4 +167,5 @@ Descartados en el rediseño: automatización de albaranes al ERP (es un producto
 | 8 | Aviso legal | Faltan razón social, NIF y domicilio. |
 | 11 | Analítica | Ninguna, así no hace falta aviso de cookies. |
 | 15 | Publicación | GitHub Pages con GitHub Actions desde `main`. |
-| 18 | Rediseño V2 (24 de noviembre de 2026) | Estructura por qué, cómo y qué; papel, tinta y lima; de tú; un caso por sector en pestañas; fuera escenas, maquetas como sección, automatización y obra. Sustituye a las decisiones 9, 10, 12, 13, 14, 16 y 17 de la guía anterior. |
+| 18 | Rediseño V2 (24 de noviembre de 2026) | Estructura por qué, cómo y qué; papel, tinta y lima; de tú; un caso por sector en pestañas; fuera maquetas como sección, automatización y obra. Sustituye a las decisiones 9, 10, 12, 13, 14, 16 y 17 de la guía anterior. |
+| 19 | Vídeos (24 de noviembre de 2026) | Vuelven las escenas de la web anterior, una por sector, con un reproductor mínimo. Sustituyen a la foto de cada sector y a la línea de pasos. |

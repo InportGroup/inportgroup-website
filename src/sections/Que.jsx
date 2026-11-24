@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import Foto from '../components/Foto.jsx'
+import Escena from '../components/film/Escena.jsx'
 import { QUE } from '../content/es/pagina.js'
 import { SECTORES } from '../content/es/sectores.js'
 import s from './Que.module.css'
@@ -84,31 +84,21 @@ function Panel({ sector: x }) {
     <>
       <div className={s.panelHead}>
         <h3 className={s.h3}>{x.titulo}</h3>
-        <Foto foto={x.foto} ratio="4 / 3" />
-      </div>
-
-      <div className={s.cols}>
-        <div>
-          <h4 className={s.chip}>El problema</h4>
-          <p>{x.problema}</p>
-        </div>
-        <div>
-          <h4 className={s.chip}>La solución</h4>
-          <p>{x.solucion}</p>
+        <div className={s.textos}>
+          <div>
+            <h4 className={s.chip}>El problema</h4>
+            <p>{x.problema}</p>
+          </div>
+          <div>
+            <h4 className={s.chip}>La solución</h4>
+            <p>{x.solucion}</p>
+          </div>
         </div>
       </div>
 
-      <ol className={s.flow} style={{ '--n': x.pasos.length }} aria-label="Cómo funciona">
-        {x.pasos.map((p, i) => (
-          <li key={p.verbo}>
-            <span className={s.flowNum} aria-hidden="true">
-              {i + 1}
-            </span>
-            <span className={s.flowVerb}>{p.verbo}</span>
-            <span className={s.flowText}>{p.texto}</span>
-          </li>
-        ))}
-      </ol>
+      <div className={s.video}>
+        <Escena id={x.escena} />
+      </div>
 
       <div className={s.otras}>
         <h4 className={s.chip}>Otras aplicaciones</h4>
