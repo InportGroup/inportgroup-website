@@ -1,0 +1,71 @@
+.frame {
+  position: relative;
+}
+
+.crop {
+  position: absolute;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--line);
+}
+
+.a {
+  left: -8px;
+  top: -8px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.b {
+  right: -8px;
+  bottom: -8px;
+  border-left: 0;
+  border-top: 0;
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+  border: 2px solid var(--line);
+}
+
+.ph {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  border: 2px solid var(--line);
+  background: repeating-linear-gradient(135deg, transparent 0 11px, var(--ph-hatch) 11px 12px), var(--ph-bg);
+}
+
+.ph::before,
+.ph::after {
+  content: '';
+  position: absolute;
+  background: var(--line);
+  opacity: 0.25;
+}
+
+.ph::before {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.ph::after {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}

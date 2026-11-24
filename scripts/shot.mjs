@@ -1,9 +1,8 @@
 // Captura de pantalla con emulación real de dispositivo (CDP). Traído de InLux y adaptado a las rutas.
 //
-//   node scripts/shot.mjs <ruta o escena> [ancho] [alto] [salida.png] [espera_ms]
+//   node scripts/shot.mjs <ruta> [ancho] [alto] [salida.png] [espera_ms]
 //   node scripts/shot.mjs / 1440 1800
-//   node scripts/shot.mjs /campo 390 1500
-//   node scripts/shot.mjs "prueba&t=14&freeze=1" 1440 1000      escena del laboratorio, segundo 14, congelada
+//   node scripts/shot.mjs "/#retail" 390 1500      entrando por el ancla de un sector
 //
 // Requiere el servidor de desarrollo en http://localhost:5190 (npm run dev) o INPORT_URL.
 

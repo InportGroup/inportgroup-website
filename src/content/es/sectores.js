@@ -1,70 +1,116 @@
-// Los cuatro sectores de los casos de uso, en el orden de la página (decisiones 14 y 17, GUIA.md, sección 12):
-// industria, automatización de procesos, retail, y agricultura y ganadería.
-// Cada sector es un apartado de la sección de casos de uso con su ancla, lo que resolvemos y sus casos (ejemplos.js).
-// El color va en tokens.css; la paleta está validada también en este orden (GUIA.md, sección 4).
-// Las líneas con `ejemplo` enlazan al capítulo que lo cuenta.
+// Un caso por sector, en el orden de las pestañas (GUIA.md, sección 7.4). El id es también su ancla: /#retail.
+// Sin nombres de clientes (GUIA.md, sección 2.4). Cada caso: el problema, la solución, cómo funciona,
+// otras aplicaciones en el mismo sector, sus límites y el prototipo si existe.
+// prototipo.url: solo prototipos abiertos. Los privados no llevan dirección: este repositorio es público.
+// foto.src: ruta en public/ (por ejemplo '/fotos/maritimo.jpg'). Mientras sea null se ve el hueco rayado.
 
 export const SECTORES = [
   {
+    id: 'maritimo',
+    letra: 'A',
+    nombre: 'Marítimo y portuario',
+    titulo: 'El casco medido y presupuestado en un día.',
+    foto: { src: null, alt: 'Dron inspeccionando el casco de un buque en dique seco', pendiente: 'dron sobre un casco en dique seco' },
+    problema:
+      'Cada día de un buque en dique cuesta dinero. Medir a mano la corrosión de la obra viva exige andamios, lleva jornadas y depende de quién mire. Mientras tanto, el presupuesto de la reparación espera.',
+    solucion:
+      'Digitalizamos el buque con dron y visión artificial, y conectamos lo que se ve con un motor de medición y presupuesto. El astillero empieza la reparación con el alcance ya definido.',
+    pasos: [
+      { verbo: 'Volamos', texto: 'Un plan de vuelo automático recorre casco, cubierta y bodegas.' },
+      { verbo: 'Reconstruimos', texto: 'Un modelo 3D del buque con cada daño en su sitio.' },
+      { verbo: 'Medimos', texto: 'Metros cuadrados de óxido, incrustación y pintura degradada.' },
+      { verbo: 'Presupuestamos', texto: 'Chorreado, pintura y horas, en partidas revisables.' },
+      { verbo: 'Planificamos', texto: 'Equipos y materiales asignados el mismo día.' },
+    ],
+    otras: [
+      { titulo: 'Plataformas y unidades FPSO', texto: 'La misma inspección con dron donde el acceso es difícil y cada hora de andamio cuesta.' },
+      { titulo: 'Cubiertas y carga', texto: 'El estado de cubiertas y bodegas documentado con dron, para revisarlo desde la oficina.' },
+      { titulo: 'Contenedores en terminal', texto: 'Cámaras en la puerta que registran los daños visibles de cada contenedor al entrar.' },
+    ],
+    limites: 'La medición y el presupuesto los valida personal cualificado. No sustituye la inspección de la sociedad de clasificación.',
+    prototipo: { texto: 'Ver el prototipo de inspección naval', url: 'https://arnaucarol-inportgroup.github.io/naval-solutions/' },
+  },
+  {
     id: 'industria',
+    letra: 'B',
     nombre: 'Industria',
-    color: 'industria',
-    kicker: 'Industria',
-    titulo: 'Medir con precisión lo que hoy se estima a ojo',
-    entradilla:
-      'En una obra, un horno o un dique, el valor suele estar en medir con un criterio constante lo que hoy depende de quién mire, y en que esa medida llegue sin pasos manuales al sistema que decide.',
-    lineas: [
-      { texto: 'Avance de obra con dron frente al modelo BIM, y seguridad bajo la carga de la grúa.', ejemplo: 'obra' },
-      { texto: 'Del vídeo de la parrilla al sistema de control, en plantas de valorización energética.', ejemplo: 'hornos' },
-      { texto: 'Inspección de cascos en dique con dron, y presupuesto de reparación el mismo día.', ejemplo: 'astilleros' },
-      { texto: 'Lectura de pliegos y revisión de ofertas, con la página citada en cada hallazgo.' },
+    titulo: 'El fuego de la parrilla, en veinte números.',
+    foto: { src: null, alt: 'Imagen de la cámara de un horno de parrilla', pendiente: 'la imagen de la cámara de un horno' },
+    problema:
+      'En una planta de valorización energética la combustión condiciona toda la operación. Las cámaras del horno enseñan el fuego a quien tenga tiempo de mirarlas, pero lo que ven no queda registrado y cada turno lo interpreta a su manera.',
+    solucion:
+      'Convertimos el vídeo de las cámaras que ya existen en medidas que llegan al DCS junto a temperaturas, caudales y aire. Todo se analiza en memoria y no se graba ninguna imagen.',
+    pasos: [
+      { verbo: 'Capturamos', texto: 'El vídeo de las cámaras que ya tiene el horno.' },
+      { verbo: 'Dividimos', texto: 'La imagen en una malla de 5 × 4 celdas.' },
+      { verbo: 'Medimos', texto: 'Intensidad por celda, frente de llama y aire.' },
+      { verbo: 'Enviamos', texto: 'Veinte valores al DCS cada dos a cinco segundos.' },
+      { verbo: 'Vigilamos', texto: 'Si la lente se ensucia o la cámara se mueve, lo dice.' },
     ],
-  },
-  {
-    id: 'automatizacion',
-    nombre: 'Automatización',
-    color: 'operaciones',
-    kicker: 'Automatización de procesos',
-    titulo: 'Procesos administrativos que funcionan solos',
-    entradilla:
-      'No todo el valor está en planta. En la oficina, albaranes, facturas, partes e informes pasan de mano en mano y se teclean dos veces. Los conectamos con el ERP y el resto de sistemas para que lo rutinario se haga solo y las excepciones lleguen a quien decide.',
-    lineas: [
-      { texto: 'Albaranes y facturas que pasan al ERP sin teclearlos, cruzados con el pedido.', ejemplo: 'procesos' },
-      { texto: 'Sistemas que no se hablan, conectados: ERP, CRM, hojas de cálculo y máquinas.' },
-      { texto: 'Informes semanales escritos a partir de los datos, para leer en cinco minutos.' },
-      { texto: 'Un asistente que contesta con los manuales y procedimientos, citando la página.' },
+    otras: [
+      { titulo: 'Estabilidad de la combustión', texto: 'Patrones de la llama relacionados con los cambios de carga, aire y empujadores.' },
+      { titulo: 'Aviso temprano', texto: 'Comportamientos inusuales señalados para revisarlos antes de que afecten a la operación.' },
+      { titulo: 'Histórico por turno', texto: 'Lo que antes se veía y se olvidaba queda registrado para comparar ajustes y resultados.' },
     ],
-  },
-  {
-    id: 'retail',
-    nombre: 'Retail',
-    color: 'comercio',
-    kicker: 'Retail',
-    titulo: 'Datos de tienda para decidir personal, espacio y escaparate',
-    entradilla:
-      'La misma forma de medir, llevada a la tienda. Con las cámaras que ya tiene, sin caras ni imágenes guardadas, sabemos cuánta gente se para ante el escaparate, dónde se queda y cuánto espera hasta que alguien la atiende.',
-    lineas: [
-      { texto: 'Recorridos anónimos, calor y tiempo de espera en tiendas de lujo.', ejemplo: 'boutique' },
-      { texto: 'El escaparate medido: cuántos pasan, cuántos se paran y cuántos entran.' },
-      { texto: 'Interés por pieza: lo que se prueba mucho y se vende poco.' },
-      { texto: 'Previsión de afluencia con cruceros, festivos y el tiempo.' },
-    ],
+    limites:
+      'No regula el horno: entrega medidas y la lógica de control sigue en el DCS. Si la imagen no tiene calidad suficiente, deja de corregir y avisa de que el dato no vale.',
+    prototipo: { texto: 'Prototipo privado. Te lo enseñamos en una reunión.' },
   },
   {
     id: 'campo',
-    nombre: 'Campo',
-    color: 'campo',
-    kicker: 'Agricultura y ganadería',
-    titulo: 'Anticiparse en el campo, donde cada día cuenta',
-    entradilla:
-      'En una finca o una granja, una helada o un repunte de bajas se pagan durante toda la campaña. El valor está en verlo a tiempo, con la estación, las sondas y el móvil que ya hay, y en avisar a quien puede actuar.',
-    lineas: [
-      { texto: 'Heladas, riego y previsión de cosecha en cultivos leñosos: pistacho, almendro, olivar.', ejemplo: 'cultivo' },
-      { texto: 'Seguimiento diario de cebas de porcino, con la aplicación del ganadero y avisos al veterinario.', ejemplo: 'cebo' },
-      { texto: 'Cojeras y celo en vacuno de leche, con una cámara a la salida de la sala de ordeño.' },
-      { texto: 'Biomasa y alimentación en jaulas de acuicultura, sin sacar un pez.' },
+    letra: 'C',
+    nombre: 'Agricultura y ganadería',
+    titulo: 'La helada se mide en la yema, no en la garita.',
+    foto: { src: null, alt: 'Cámara térmica en una finca de pistacheros', pendiente: 'cámara térmica en una finca' },
+    problema:
+      'En una noche despejada de marzo la estación marca 0,4 grados y la yema del pistachero ya está a 2,8 bajo cero. La estación mide el aire a metro y medio, no el frío que llega a la yema, y cuando avisa ya es tarde.',
+    solucion:
+      'Medimos el frío donde hace daño y lo cruzamos con lo que ya hay en la finca. El técnico recibe el aviso con margen para actuar.',
+    pasos: [
+      { verbo: 'Medimos', texto: 'La temperatura de la yema con una cámara térmica fija.' },
+      { verbo: 'Cruzamos', texto: 'Con la estación, las sondas y la previsión.' },
+      { verbo: 'Anticipamos', texto: 'El riesgo de helada con hasta 72 horas de margen.' },
+      { verbo: 'Avisamos', texto: 'Al técnico, a tiempo de encender ventiladores o riego.' },
     ],
+    otras: [
+      { titulo: 'Previsión de cosecha', texto: 'Un vuelo de dron en floración cuenta los racimos y adelanta la previsión cinco meses.' },
+      { titulo: 'Riego y estrés hídrico', texto: 'Un mapa árbol a árbol para regar donde hace falta.' },
+      { titulo: 'Plagas', texto: 'Trampas con cámara que clasifican los insectos capturados.' },
+      {
+        titulo: 'Cebas de porcino',
+        texto: 'Bajas y pienso apuntados en el móvil, aunque no haya cobertura, con aviso al veterinario si la mortalidad se dispara.',
+      },
+    ],
+    limites: 'No sustituye al técnico de campo ni decide por él. Si un sensor de la finca deriva, se marca y no se usa hasta revisarlo.',
+    prototipo: {
+      texto: 'Ver el prototipo para el pistacho',
+      url: 'https://pistacho-mockup.onrender.com/',
+      nota: 'La primera carga puede tardar un minuto.',
+    },
+  },
+  {
+    id: 'retail',
+    letra: 'D',
+    nombre: 'Retail',
+    titulo: 'Qué pasa en la tienda antes de que alguien compre.',
+    foto: { src: null, alt: 'Sala de una tienda con el mapa de recorridos', pendiente: 'la sala de una tienda' },
+    problema:
+      'El TPV dice qué vendes y cuánto. No dice por dónde se mueven los clientes, dónde se paran ni qué piezas pasan desapercibidas. Sin esos datos, el personal, el espacio y el escaparate se deciden a ojo.',
+    solucion:
+      'Las cámaras que ya tiene la tienda convierten cada visita en un punto anónimo sobre el plano. Lo cruzamos con las ventas para saber qué zonas atraen, cuáles venden y cuáles solo se atraviesan.',
+    pasos: [
+      { verbo: 'Contamos', texto: 'Quién pasa, quién se para ante el escaparate y quién entra.' },
+      { verbo: 'Seguimos', texto: 'Recorridos anónimos sobre el plano de la sala.' },
+      { verbo: 'Medimos', texto: 'Permanencia y espera hasta el primer saludo.' },
+      { verbo: 'Cruzamos', texto: 'Con las ventas, por zona, día y hora.' },
+    ],
+    otras: [
+      { titulo: 'Personal', texto: 'Previsión de afluencia con cruceros, festivos y el tiempo, para ajustar los turnos.' },
+      { titulo: 'Espacio y producto', texto: 'Qué ubicación capta más interés y qué piezas se prueban mucho y se venden poco.' },
+      { titulo: 'Entre tiendas', texto: 'Qué funciona en una tienda y merece probarse en otra.' },
+    ],
+    limites:
+      'No reconoce caras ni identifica a nadie. El análisis es anónimo, no se guardan imágenes y se diseña conforme a la normativa de protección de datos.',
+    prototipo: { texto: 'Prototipo privado. Te lo enseñamos en una reunión.' },
   },
 ]
-
-export const sectorPorId = (id) => SECTORES.find((s) => s.id === id) || null

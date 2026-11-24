@@ -21,16 +21,10 @@ export function findChrome() {
     .find((c) => existsSync(c))
 }
 
-/**
- * Ruta o escena → URL.
- *   "/industria/hornos"            una página
- *   "prueba&t=12&freeze=1"         una escena en el laboratorio, en el segundo 12 y congelada
- */
+/** Ruta → URL: "/" o "/#retail" */
 export function urlFor(spec = '/') {
   const str = String(spec)
-  if (str.startsWith('/')) return `${BASE}${str}`
-  const [key, ...extra] = str.split('&')
-  return `${BASE}/laboratorio?${[`escena=${key}`, ...extra].join('&')}`
+  return `${BASE}${str.startsWith('/') ? str : `/${str}`}`
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))

@@ -5,42 +5,38 @@
 //
 //   node scripts/imagenes.mjs
 //
-// Solo hace falta volver a lanzarlo si cambian el logotipo, el titular o los colores.
+// Solo hace falta volver a lanzarlo si cambian la marca, el titular o los colores.
 
 import { writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { withPage } from './cdp.mjs'
 import { PORTADA } from '../src/content/es/pagina.js'
+import { SITE } from '../src/content/es/site.js'
 
-const PAPER = '#f2efe8'
-const INK = '#16181a'
-const FONTS =
-  'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Newsreader:opsz,wght@6..72,300&display=swap'
+const PAPER = '#ecece8'
+const INK = '#0c0c0b'
+const LIME = '#ccff00'
+const FONTS = 'https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400&family=Space+Mono&display=swap'
 
-// El mismo trazo que src/components/Logo.jsx
-const marca = (size, stroke = 1.6) =>
-  `<svg width="${size}" height="${size}" viewBox="0 0 28 28"><path d="M11 5.5H22.5V22.5H11" fill="none" stroke="${INK}" stroke-width="${stroke}"/><circle cx="6" cy="14" r="2.4" fill="${INK}"/></svg>`
+// El mismo dibujo que public/favicon.svg: una I y un punto sobre lima
+const marca = (size) =>
+  `<svg width="${size}" height="${size}" viewBox="0 0 28 28"><rect width="28" height="28" fill="${LIME}"/><rect x="8" y="5" width="5.5" height="18" fill="${INK}"/><rect x="16" y="17.5" width="5.5" height="5.5" fill="${INK}"/></svg>`
 
-const icono = (size) => `<!doctype html><html><body style="margin:0;width:${size}px;height:${size}px;background:${PAPER};display:grid;place-items:center">
-${marca(Math.round(size * 0.62), 1.9)}</body></html>`
+const icono = (size) => `<!doctype html><html><body style="margin:0;width:${size}px;height:${size}px;overflow:hidden">${marca(size)}</body></html>`
 
-const SECTORES = [
-  ['Industria', '#eb6834'],
-  ['Automatización de procesos', '#4a3aa7'],
-  ['Retail', '#eda100'],
-  ['Agricultura y ganadería', '#1baf7a'],
-]
-
+const { antes, marca: resaltado, despues } = PORTADA.titulo
 const og = `<!doctype html><html><head><link rel="stylesheet" href="${FONTS}"><style>
-body{margin:0;width:1200px;height:630px;background:${PAPER};color:${INK};box-sizing:border-box;padding:72px 80px;display:flex;flex-direction:column;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:14px;font:300 44px 'Newsreader',Georgia,serif}
-h1{margin:0;font:300 76px/1.04 'Newsreader',Georgia,serif;letter-spacing:-0.015em;max-width:980px}
-.pie{display:flex;justify-content:space-between;align-items:flex-end;font:15px 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#4a4d50;border-top:1px solid rgba(22,24,26,.32);padding-top:22px}
-.sec{display:flex;gap:26px}.sec span{display:flex;align-items:center;gap:9px}.sec i{width:10px;height:10px;display:inline-block}
+body{margin:0;width:1200px;height:630px;background:${PAPER};color:${INK};box-sizing:border-box;padding:56px 72px;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid ${INK};padding-bottom:20px}
+.logo{font:400 40px 'Archivo Black',sans-serif;letter-spacing:-.03em}
+.tag{font:400 17px 'Space Mono',monospace;border:2px solid ${INK};padding:4px 12px}
+h1{margin:0;font:400 92px/.95 'Archivo Black',sans-serif;letter-spacing:-.02em;max-width:1040px}
+mark{background:linear-gradient(transparent .2em,${LIME} .2em,${LIME} calc(100% - .2em),transparent calc(100% - .2em));color:${INK};padding:0 .1em}
+.pie{display:flex;justify-content:space-between;font:400 19px 'Space Mono',monospace}
 </style></head><body>
-<div class="logo">${marca(46)}inport</div>
-<h1>${PORTADA.titulo}</h1>
-<div class="pie"><div class="sec">${SECTORES.map(([n, c]) => `<span><i style="background:${c}"></i>${n}</span>`).join('')}</div><span>inportgroup.com</span></div>
+<div class="top"><span class="logo">INPORT</span><span class="tag">${SITE.lema}</span></div>
+<h1>${antes}<mark>${resaltado}</mark>${despues}</h1>
+<div class="pie"><span>Soluciones digitales a medida</span><span>inportgroup.com</span></div>
 </body></html>`
 
 const TAREAS = [
@@ -52,7 +48,7 @@ const TAREAS = [
 
 for (const [nombre, html, width, height] of TAREAS) {
   const url = `data:text/html;charset=utf-8,${encodeURIComponent(html)}`
-  await withPage({ url, width, height, mobile: false, wait: 1500 }, async (page) => {
+  await withPage({ url, width, height, mobile: false, wait: 2000 }, async (page) => {
     const { data } = await page.send('Page.captureScreenshot', { format: 'png' })
     const out = path.resolve('public', nombre)
     writeFileSync(out, Buffer.from(data, 'base64'))

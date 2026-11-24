@@ -1,100 +1,79 @@
-// Textos de la página única (GUIA.md, sección 7). Los sectores y casos están en sectores.js y ejemplos.js.
-// Reglas: sin guiones, sin negritas, de usted, concreto antes que abstracto (GUIA.md, sección 3).
-// Hilo de la página (decisión 16): presentamos, explicamos el método, las capacidades, las aplicamos en
-// cuatro sectores, enseñamos las maquetas y cerramos volviendo al método. Cada sección enlaza con la siguiente.
+// Textos de la página (GUIA.md, sección 7). Los sectores están en sectores.js.
+// Reglas: sin guiones, sin negritas, sin emojis ni flechas, de tú, concreto antes que abstracto (GUIA.md, sección 3).
+// Orden: por qué (portada y lo que nos mueve), cómo (las cuatro fases), qué (un caso por sector) y contacto.
 
+// foto.src: ruta en public/ (por ejemplo '/fotos/equipo.jpg'). Mientras sea null se ve el hueco rayado.
 export const PORTADA = {
-  kicker: 'Ingeniería de software y datos · para cualquier sector',
-  titulo: 'Soluciones digitales a medida para problemas complejos',
+  titulo: { antes: '¿Y si no tuviera por qué hacerse ', marca: 'así', despues: '?' },
   entradilla:
-    'Diseñamos, desarrollamos e implantamos soluciones digitales a medida para empresas de industria, retail y agricultura. Antes de proponer nada identificamos qué parte de su operación aporta más valor y nos centramos en eso. Nuestra especialidad son los problemas complejos, los que no se resuelven con un producto comprado hecho.',
-  // Las cuatro líneas de trabajo, para que se entienda de un vistazo a qué nos dedicamos
-  lineasKicker: 'A qué nos dedicamos',
-  lineas: [
-    'Medición con cámaras y sensores',
-    'Predicción con sus propios datos',
-    'Integración con sus sistemas',
-    'Automatización de procesos',
+    'Hay procesos en plantas, diques, fincas y tiendas que funcionan peor de lo que deberían. Los estudiamos desde dentro y construimos la solución digital a medida que los arregla.',
+  sectores: 'Marítimo · Industria · Agricultura y ganadería · Retail',
+  nota: 'Ingenieros que pisan la planta.',
+  foto: { src: null, alt: 'El equipo de Inport trabajando en campo', pendiente: 'el equipo trabajando en campo' },
+  pie: 'El equipo al que llamas cuando una operación podría funcionar mucho mejor y nadie ha encontrado cómo.',
+}
+
+export const MUEVE = {
+  titulo: 'Lo que nos mueve',
+  lista: [
+    'Los problemas que en tu sector se dan por imposibles.',
+    'Desmontar lo complejo hasta entender cada pieza.',
+    'Encontrar el punto exacto donde se pierde tiempo, dinero o calidad.',
+    'Que lo que hoy se hace a mano, a ojo o tarde pase a hacerse solo.',
   ],
 }
 
-export const NOSOTROS = {
-  numero: '01',
-  kicker: 'Quiénes somos',
-  titulo: 'Un equipo de ingeniería que empieza por entender su operación',
-  entradilla:
-    'Somos ingenieros y desarrolladores de software. No revendemos licencias ni adaptamos productos cerrados: diseñamos cada sistema para su caso, sobre lo que ya tiene instalado, y le entregamos el código. Todos nuestros proyectos siguen el mismo método.',
-  pasosKicker: 'Nuestro método',
-  pasos: [
-    { n: '01', titulo: 'Diagnóstico', texto: 'Identificamos qué parte de la operación aporta más valor y qué falta para conseguirlo. A veces la conclusión es que no hace falta nada nuevo.' },
-    { n: '02', titulo: 'Piloto', texto: 'En un horno, una nave, un sector de la finca o una tienda, con un criterio de aceptación que se puede comprobar.' },
-    { n: '03', titulo: 'Despliegue', texto: 'En el resto de la instalación, en sus servidores o en la nube, según el caso.' },
-    { n: '04', titulo: 'Entrega', texto: 'Código, documentación y formación al equipo. Si quiere, nos quedamos con el mantenimiento.' },
-  ],
-  principiosKicker: 'Nuestros compromisos',
-  principios: [
-    { titulo: 'Con lo que ya hay', texto: 'Las cámaras del horno, la estación de la finca, el programador de riego, el TPV de la tienda. Si hace falta algo nuevo, se lo decimos y lo compra a quien quiera.' },
-    { titulo: 'En sus instalaciones, si hace falta', texto: 'El sistema puede funcionar entero dentro de la planta, sin nube y sin conexión a internet.' },
-    { titulo: 'El código es suyo', texto: 'Se entrega con la documentación, para que cualquier equipo cualificado pueda mantenerlo y cambiarlo.' },
-    { titulo: 'Si el dato no vale, se dice', texto: 'Una lente sucia o una sonda que deriva no dan un valor falso. El sistema avisa de que esa lectura no es fiable.' },
-  ],
-}
-
-export const HACEMOS = {
-  numero: '02',
-  kicker: 'Qué hacemos',
-  titulo: 'Cuatro capacidades que combinamos según cada proyecto',
-  entradilla:
-    'Casi siempre partimos de algo que ya existe y nadie aprovecha del todo: una cámara, una estación meteorológica, un archivo de albaranes. Sobre eso trabajamos con cuatro capacidades, que en la sección siguiente verá aplicadas en siete casos de uso.',
-  capacidades: [
-    {
-      verbo: 'Medir',
-      texto:
-        'Convertimos lo que ven las cámaras y los sensores en medidas con fecha y lugar: la mirilla de un horno, el techo de una tienda, un dron frente a un casco, una cámara térmica en una finca.',
-    },
-    {
-      verbo: 'Anticipar',
-      texto:
-        'Con el histórico del propio sitio y lo que pasa fuera, nos adelantamos: una helada con 72 horas de margen, la cosecha en plena floración, el pienso que va a faltar, la gente que vendrá el sábado.',
-    },
-    {
-      verbo: 'Integrar',
-      texto:
-        'Que la medida llegue sola adonde se decide: al sistema de control de la planta, al programador de riego, al ERP o al móvil del encargado, sin que nadie la teclee.',
-    },
-    {
-      verbo: 'Automatizar',
-      texto:
-        'Lo que antes era papeleo, hecho solo: documentos que pasan al ERP, un informe semanal que se lee en cinco minutos, un asistente que contesta con la página del manual.',
-    },
-  ],
-}
-
-// Los casos de uso se agrupan por sector bajo una sola sección (decisión 17)
-export const CASOS = {
-  numero: '03',
-  kicker: 'Casos de uso',
-  titulo: 'Siete casos de uso en cuatro sectores',
-  entradilla:
-    'Así aplicamos el método y las capacidades anteriores a problemas reales. Los casos salen de proyectos, propuestas y maquetas nuestras, y están agrupados por sector: industria, automatización de procesos, retail, y agricultura y ganadería.',
-  estructura:
-    'Todos siguen la misma estructura: el reto, la solución con una escena animada que muestra cómo funciona, las cifras y los límites. Las escenas usan datos de demostración.',
-}
-
-export const MAQUETAS_CABECERA = {
+export const COMO = {
   numero: '04',
-  kicker: 'Maquetas',
-  titulo: 'Prototipos completos de varios casos de uso',
+  titulo: 'Cuatro fases. Si una no da resultado, no pasamos a la siguiente.',
   entradilla:
-    'Algunos de los casos de uso tienen detrás una maqueta entera, con muchas más pantallas de las que caben aquí. Las que se hicieron para un cliente las enseñamos en persona.',
+    'No vendemos licencias ni productos cerrados. Partimos de lo que ya tienes instalado y solo añadimos lo que aporte algo que se pueda comprobar.',
+  fases: [
+    {
+      n: '01',
+      titulo: 'Bajamos a planta.',
+      texto:
+        'Vemos cómo se trabaja de verdad, hablamos con quien lo hace y medimos antes de opinar. A veces la conclusión es que no hace falta nada nuevo, y te lo decimos.',
+      nota: 'ahí se pierde el tiempo',
+      fase: 'Fase 1 · Diagnóstico',
+    },
+    {
+      n: '02',
+      titulo: 'Diseñamos con lo que ya hay.',
+      texto:
+        'Cámaras, sensores, el sistema de control, el ERP. Solo añadimos software, visión artificial o un dron si el diagnóstico demuestra que hace falta.',
+      nota: 'solo si suma',
+      fase: 'Fase 2 · Diseño',
+    },
+    {
+      n: '03',
+      titulo: 'Lo probamos en pequeño.',
+      texto:
+        'En un horno, una nave, un sector de la finca o una tienda. Antes de empezar acordamos qué resultado tiene que dar y cómo se mide.',
+      nota: 'si no da, se para',
+      fase: 'Fase 3 · Piloto',
+    },
+    {
+      n: '04',
+      titulo: 'Si funciona, se queda.',
+      texto:
+        'Lo extendemos al resto de la operación, en tus servidores o en la nube. Entregamos el código, la documentación y la formación, y si quieres nos quedamos con el mantenimiento.',
+      nota: 'el código es tuyo',
+      fase: 'Fase 4 · Despliegue',
+    },
+  ],
+}
+
+export const QUE = {
+  titulo: 'Algunas de las cosas que hemos desmontado para que funcionen mejor.',
+  entradilla: 'Un caso por sector, con el problema, la solución y sus límites. Elige uno.',
 }
 
 export const CONTACTO = {
-  numero: '05',
-  kicker: 'Contacto',
-  titulo: 'Hablemos de su proyecto',
+  titulo: 'Cuéntanos qué no funciona.',
   texto:
-    'Cuéntenos qué ocurre en su operación. Si vemos que podemos aportar valor, le proponemos un diagnóstico y un piloto acotado, como en los casos de uso que ha visto. Si no, se lo diremos en la primera conversación.',
+    'Si vemos que podemos ayudar, te proponemos un diagnóstico y un piloto acotado. Si no, te lo decimos en la primera conversación.',
+  boton: 'Escríbenos',
 }
 
 export const LEGAL = {
@@ -102,6 +81,6 @@ export const LEGAL = {
   parrafos: [
     'Titular de esta web: razón social pendiente de completar, NIF pendiente, domicilio pendiente.',
     'Esta web no usa cookies de seguimiento ni herramientas de analítica.',
-    'Si nos escribe, usaremos su correo solo para contestarle. No lo cedemos a nadie y puede pedirnos que lo borremos cuando quiera.',
+    'Si nos escribes, usaremos tu correo solo para contestarte. No lo cedemos a nadie y puedes pedirnos que lo borremos cuando quieras.',
   ],
 }

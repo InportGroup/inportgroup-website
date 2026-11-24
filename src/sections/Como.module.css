@@ -1,0 +1,121 @@
+.sec {
+  padding-block: var(--section);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(16px, 4vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(30px, 5vw, 60px);
+}
+
+.ring {
+  font-family: var(--font-display);
+  font-size: clamp(70px, 14vw, 200px);
+  line-height: 0.8;
+  color: var(--lime);
+}
+
+.h2 {
+  max-width: 20ch;
+  font-size: clamp(28px, 4.6vw, 66px);
+}
+
+.lead {
+  max-width: 46ch;
+  margin-top: 18px;
+  font-size: 19px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 2px solid var(--line);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 380px;
+  padding: 22px 20px 26px;
+  border-right: 2px solid var(--line);
+}
+
+.step:last-child {
+  border-right: 0;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 9vw, 128px);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
+
+.title {
+  font-size: clamp(22px, 2vw, 27px);
+  line-height: 1;
+}
+
+.text {
+  font-size: 16px;
+}
+
+.nota {
+  font-size: 25px;
+  color: var(--lime);
+  transform: rotate(-2deg);
+  transform-origin: left center;
+}
+
+.fase {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+
+/* La última fase va sobre lima: el resultado */
+.final {
+  --line: rgba(12, 12, 11, 0.9);
+  background: var(--lime);
+  color: #0c0c0b;
+}
+
+.final .nota {
+  color: #0c0c0b;
+}
+
+@media (max-width: 900px) {
+  .head {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .step {
+    min-height: 0;
+    border-bottom: 2px solid var(--line);
+  }
+  .step:nth-child(2n) {
+    border-right: 0;
+  }
+  .step:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .step,
+  .step:nth-last-child(2) {
+    border-right: 0;
+    border-bottom: 2px solid var(--line);
+  }
+  .step:last-child {
+    border-bottom: 0;
+  }
+}
