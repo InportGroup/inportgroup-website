@@ -1,4 +1,4 @@
-/* Base: ningún peso por encima de 400 en toda la web. La jerarquía la dan el tamaño, la familia y la lima. */
+/* Base: ningún peso por encima de 400, salvo <strong>. La jerarquía la dan el tamaño, la familia y la lima. */
 
 *,
 *::before,
@@ -10,6 +10,8 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* Imán suave: solo actúa cerca de los elementos con scroll-snap-align (el vídeo de cada caso) */
+  scroll-snap-type: y proximity;
 }
 
 /* Las secciones con ancla no quedan debajo de la navegación fija */
@@ -35,7 +37,6 @@ h5,
 h6,
 th,
 b,
-strong,
 button,
 input,
 select,
@@ -43,6 +44,11 @@ textarea,
 legend,
 summary {
   font-weight: 400;
+}
+
+/* La única negrita: <strong> para la frase que se destaca en un bloque (GUIA.md, sección 3, regla 2) */
+strong {
+  font-weight: 700; /* negrita permitida */
 }
 
 h1,

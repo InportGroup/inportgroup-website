@@ -49,7 +49,7 @@
   outline-offset: -5px;
 }
 
-/* Panel: titular y textos, vídeo, otras aplicaciones, límites y prototipo */
+/* Panel: titular y textos, vídeo, límites y prototipo */
 .panel {
   padding: clamp(20px, 4vw, 48px);
   border: 2px solid var(--line);
@@ -86,11 +86,6 @@
   margin-bottom: 8px;
 }
 
-/* Frase destacada del caso: la única negrita de la web (GUIA.md, sección 3, regla 2) */
-.cols strong {
-  font-weight: 700; /* negrita permitida */
-}
-
 .chip {
   display: inline-block;
   margin: 0 0 10px;
@@ -102,38 +97,16 @@
   color: #0c0c0b;
 }
 
+/* El vídeo es un punto de imán suave (scroll-snap-type: y proximity en base.css): si el scroll se para cerca,
+   la página se recoloca con el vídeo centrado bajo la barra. Lejos de él, el scroll es libre. */
 .video {
-  margin-top: clamp(32px, 4vw, 52px);
-}
-
-/* Otras aplicaciones */
-.otras {
-  margin-top: 52px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  padding: 18px 18px 22px;
-  border: 2px solid var(--line);
-  background: var(--paper);
-  font-size: 15px;
-}
-
-.card:nth-child(even) {
-  transform: translateY(14px);
-}
-
-/* Archivo Black por debajo de 22 px pega el punto de la i al palo en pantallas normales */
-.cardTitle {
-  margin-bottom: 8px;
-  font-family: var(--font-display);
-  font-size: 22px;
-  line-height: 1.1;
+  /* Un pelín más estrecho que el panel, y nunca tan alto que al centrarlo no quede margen arriba y abajo:
+     el alto disponible bajo la barra, menos 140 px de aire y de barra del vídeo, pasado a ancho en 16:9 */
+  width: min(94%, calc((100vh - var(--nav-h) - 140px) * 16 / 9));
+  width: min(94%, calc((100svh - var(--nav-h) - 140px) * 16 / 9));
+  margin: clamp(32px, 4vw, 52px) auto 0;
+  scroll-snap-align: center;
+  scroll-margin-top: var(--nav-h);
 }
 
 /* Límites y prototipo */
@@ -172,8 +145,5 @@
   .proto {
     justify-self: start;
     text-align: left;
-  }
-  .card:nth-child(even) {
-    transform: none;
   }
 }

@@ -22,12 +22,6 @@
   font-size: clamp(28px, 4.6vw, 66px);
 }
 
-.lead {
-  max-width: 46ch;
-  margin-top: 18px;
-  font-size: 19px;
-}
-
 .big {
   margin-top: 20px;
   padding: 2px 14px;
@@ -37,93 +31,60 @@
   transform: rotate(-2deg);
 }
 
-.steps {
+/* Lo que nos mueve: etiqueta grande e inclinada sobre lima y tres puntos numerados */
+.mueve {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 2px solid var(--line);
+  grid-template-columns: auto 1fr;
+  gap: 22px clamp(24px, 5vw, 72px);
+  align-items: center;
+  padding-top: clamp(30px, 4.5vw, 52px);
+  border-top: 2px solid var(--line);
 }
 
-.step {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-height: 380px;
-  padding: 22px 20px 26px;
-  border-right: 2px solid var(--line);
-}
-
-.step:last-child {
-  border-right: 0;
-}
-
-.num {
-  font-family: var(--font-display);
-  font-size: clamp(80px, 9vw, 128px);
-  line-height: 0.8;
-  letter-spacing: -0.05em;
-}
-
-.title {
-  font-size: clamp(20px, 2vw, 27px);
-  line-height: 1;
-}
-
-.text {
-  font-size: 16px;
-}
-
-.nota {
-  font-size: 23px;
-  color: var(--lime);
+.label {
+  justify-self: start;
+  padding: 4px 14px;
+  font-family: var(--font-mono);
+  font-size: clamp(24px, 2.8vw, 40px);
+  line-height: 1.2;
+  letter-spacing: 0;
+  white-space: nowrap;
+  background: var(--lime);
+  color: #0c0c0b;
   transform: rotate(-2deg);
 }
 
-.fase {
-  margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px dashed var(--line);
+.list {
+  counter-reset: m;
+  display: grid;
+  gap: 4px;
 }
 
-/* La última fase va sobre lima: el resultado */
-.final {
-  --line: rgba(12, 12, 11, 0.9);
-  background: var(--lime);
-  color: #0c0c0b;
+.list li {
+  counter-increment: m;
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  padding: 7px 0;
+  font-size: clamp(18px, 1.9vw, 24px);
+  line-height: 1.25;
 }
 
-.final .nota {
-  color: #0c0c0b;
+.list li::before {
+  content: counter(m);
+  flex: none;
+  min-width: 30px;
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1;
 }
 
 @media (max-width: 900px) {
-  .head {
+  .head,
+  .mueve {
     grid-template-columns: 1fr;
   }
-  .steps {
-    grid-template-columns: 1fr 1fr;
-  }
-  .step {
-    min-height: 0;
-    border-bottom: 2px solid var(--line);
-  }
-  .step:nth-child(2n) {
-    border-right: 0;
-  }
-  .step:nth-last-child(-n + 2) {
-    border-bottom: 0;
-  }
-}
-
-@media (max-width: 520px) {
-  .steps {
-    grid-template-columns: 1fr;
-  }
-  .step,
-  .step:nth-last-child(2) {
-    border-right: 0;
-    border-bottom: 2px solid var(--line);
-  }
-  .step:last-child {
-    border-bottom: 0;
+  .mueve {
+    align-items: start;
   }
 }

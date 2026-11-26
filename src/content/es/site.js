@@ -13,15 +13,11 @@ export const SITE = {
     nombre: 'Beatriz Abuelo',
     cargo: 'Directora de soluciones',
     correo: 'beatriz.abuelo@inportgroup.com',
+    // Se muestra con espacios; el enlace tel: lleva el prefijo de España
+    telefono: '674 35 25 00',
+    telefonoEnlace: '+34674352500',
   },
 }
-
-// Navegación: cada enlace baja a su sección. Contacto va aparte, como botón.
-export const NAV = [
-  { ancla: 'porque', nombre: 'Por qué' },
-  { ancla: 'como', nombre: 'Cómo' },
-  { ancla: 'que', nombre: 'Qué' },
-]
 
 /** Metadatos de una página: título, descripción, canónica, tarjetas para compartir y datos estructurados */
 export function seo({ titulo, descripcion = SITE.descripcion, ruta = '/', indexar = true }) {
@@ -85,6 +81,7 @@ function datosEstructurados() {
           contactType: 'sales',
           name: SITE.contacto.nombre,
           email: SITE.contacto.correo,
+          telephone: SITE.contacto.telefonoEnlace,
           availableLanguage: ['es', 'en'],
         },
       },

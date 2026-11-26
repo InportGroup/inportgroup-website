@@ -1,7 +1,9 @@
 import { COMO } from '../content/es/pagina.js'
 import s from './Como.module.css'
 
+/** Banda oscura con el "04": titular, nota sobre lima y lo que nos mueve en tres puntos numerados. */
 export default function Como() {
+  const { mueve } = COMO
   return (
     <section className={`dark ${s.sec}`} id="como" aria-labelledby="como-titulo">
       <div className="wrap">
@@ -13,24 +15,27 @@ export default function Como() {
             <h2 id="como-titulo" className={s.h2}>
               {COMO.titulo}
             </h2>
-            <p className={s.lead}>{COMO.entradilla}</p>
             <p className={`hand ${s.big}`}>{COMO.nota}</p>
           </div>
         </div>
 
-        <ol className={s.steps}>
-          {COMO.fases.map((f, i) => (
-            <li key={f.n} className={`${s.step} ${i === COMO.fases.length - 1 ? s.final : ''}`}>
-              <p className={s.num} aria-hidden="true">
-                {f.n}
-              </p>
-              <h3 className={s.title}>{f.titulo}</h3>
-              <p className={s.text}>{f.texto}</p>
-              <p className={`hand ${s.nota}`}>{f.nota}</p>
-              <p className={`mono ${s.fase}`}>{f.fase}</p>
-            </li>
-          ))}
-        </ol>
+        <div className={s.mueve}>
+          <h3 className={`mono ${s.label}`}>{mueve.titulo}</h3>
+          <ol className={s.list}>
+            {mueve.lista.map((item) =>
+              typeof item === 'string' ? (
+                <li key={item}>{item}</li>
+              ) : (
+                <li key={item.negrita}>
+                  <span>
+                    {item.antes}
+                    <strong>{item.negrita}</strong>
+                  </span>
+                </li>
+              ),
+            )}
+          </ol>
+        </div>
       </div>
     </section>
   )

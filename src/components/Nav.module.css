@@ -22,39 +22,6 @@
   text-decoration: none;
 }
 
-.links {
-  display: flex;
-  align-items: center;
-  gap: clamp(12px, 2.4vw, 24px);
-}
-
-.links a {
-  display: inline-block;
-  padding: 4px 2px;
-  text-decoration: none;
-}
-
-.links a:hover {
-  background: var(--lime);
-  color: #0c0c0b;
-}
-
-.links a.active {
-  text-decoration: underline 2px;
-  text-underline-offset: 6px;
-}
-
-.links a.cta {
-  border: 2px solid var(--line);
-  padding: 6px 10px;
-}
-
-.links a.ctaActive {
-  background: var(--lime);
-  color: #0c0c0b;
-  border-color: #0c0c0b;
-}
-
 .skip {
   position: absolute;
   left: -9999px;

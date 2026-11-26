@@ -13,6 +13,12 @@
   font-size: 20px;
 }
 
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .cta {
   display: inline-block;
   padding: 18px 26px;
@@ -30,6 +36,17 @@
 
 .cta:focus-visible {
   outline-color: var(--lime);
+}
+
+/* Llamar: mismo botón, en contorno, para que el principal siga siendo escribir */
+.secundario {
+  background: transparent;
+  color: var(--lime);
+}
+
+.secundario:hover {
+  background: var(--lime);
+  color: #0c0c0b;
 }
 
 .persona {

@@ -112,18 +112,6 @@ function Panel({ sector: x }) {
         <Escena id={x.escena} />
       </div>
 
-      <div className={s.otras}>
-        <h4 className={s.chip}>Otras aplicaciones</h4>
-        <ul className={s.cards}>
-          {x.otras.map((o) => (
-            <li key={o.titulo} className={s.card}>
-              <p className={s.cardTitle}>{o.titulo}</p>
-              <p>{o.texto}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <div className={s.foot}>
         <p className={`mono ${s.fine}`}>{x.limites}</p>
         <p className={`mono ${s.proto}`}>{x.prototipo.texto}</p>

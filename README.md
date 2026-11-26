@@ -1,6 +1,6 @@
 # Inport · www.inportgroup.com
 
-Web de Inport en una sola página, ordenada en por qué, cómo y qué: la portada, lo que nos mueve, las cuatro fases de trabajo, un caso por sector (marítimo y portuario, industria, construcción, agricultura, ganadería, retail) en pestañas, cada uno con su vídeo, y el contacto.
+Web de Inport en una sola página, ordenada en por qué, cómo y qué: la portada, lo que nos mueve, un caso por sector (marítimo y portuario, industria, construcción, agricultura, ganadería, retail) en pestañas, cada uno con su vídeo, y el contacto.
 
 Node 22, React 19, Vite 8 y React Router 8 en modo framework con prerenderizado: la página sale como HTML estático en `build/client` y se sirve desde GitHub Pages. Los vídeos son escenas dibujadas en SVG que se cargan en el navegador cuando se acercan a la pantalla.
 

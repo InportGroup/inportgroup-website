@@ -4,6 +4,8 @@
   --paper: #ecece8;
   --ink: #0c0c0b;
   --lime: #ccff00;
+  /* Rojo: solo el subrayado del giro de la portada. Es el mismo rojo de los avisos de los vídeos */
+  --rojo: #d03b3b;
   --mute: #6b6b66;
   --line: rgba(12, 12, 11, 0.9);
   --ph-bg: #dcdcd6;

@@ -47,9 +47,9 @@ const INSPECT = `(() => {
   if (dash.test(document.title)) problems.push('Guion en el título de la página: "' + document.title + '"')
   const desc = document.querySelector('meta[name="description"]')
   if (desc && dash.test(desc.content)) problems.push('Guion en la descripción: "' + desc.content.slice(0, 120) + '"')
-  // Única negrita permitida: la frase destacada de cada caso de uso, un <strong> dentro de #que (GUIA.md, sección 3, regla 2)
-  const permitida = (el) => el.matches('#que strong')
-  if ([...document.querySelectorAll('b, strong')].some((el) => !permitida(el))) problems.push('Hay etiquetas <b> o <strong> fuera de la frase destacada de los casos.')
+  // Única negrita permitida: <strong> para la frase que se destaca en un bloque (GUIA.md, sección 3, regla 2). Nunca <b>.
+  const permitida = (el) => el.closest('strong') !== null
+  if (document.querySelector('b')) problems.push('Hay etiquetas <b>: la negrita va con <strong>.')
   const heavy = new Set()
   document.querySelectorAll('body *').forEach((el) => {
     const hasText = Array.from(el.childNodes).some((c) => c.nodeType === 3 && c.nodeValue.trim())
@@ -100,7 +100,7 @@ for (const f of walk(path.resolve('src')).filter((f) => /\.(css|jsx?|mjs)$/.test
   const src = readFileSync(f, 'utf8')
   for (const m of src.matchAll(/font-?weight\s*[:=]\s*['"{]?\s*['"]?(\d{3}|bold|bolder)/gi)) {
     const linea = src.slice(src.lastIndexOf('\n', m.index) + 1, src.indexOf('\n', m.index))
-    if (linea.includes('negrita permitida')) continue // la frase destacada de los casos (Que.module.css)
+    if (linea.includes('negrita permitida')) continue // el peso de <strong> (base.css)
     const v = m[1].toLowerCase()
     if (v === 'bold' || v === 'bolder' || Number(v) > 400) problems.push(`${path.relative(process.cwd(), f)}: ${m[0]}`)
   }
@@ -127,4 +127,4 @@ if (problems.length) {
   for (const p of unique) console.log(`  ${p}`)
   process.exit(2)
 }
-console.log('Sin guiones visibles, sin negritas fuera de la frase destacada de los casos, sin desbordamientos y sin errores en consola.')
+console.log('Sin guiones visibles, negrita solo en <strong>, sin desbordamientos y sin errores en consola.')

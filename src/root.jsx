@@ -5,7 +5,7 @@ import Nav from './components/Nav.jsx'
 import './styles/tokens.css'
 import './styles/base.css'
 
-// Peso 400 en todo (GUIA.md, sección 4). Archivo 700 solo para la frase destacada de cada caso de uso.
+// Peso 400 en todo (GUIA.md, sección 4). Archivo 700 solo para las frases destacadas con <strong>.
 // La cursiva de Archivo solo la usan las notas dentro de los vídeos.
 const FONTS =
   'https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400&family=Space+Mono:wght@400&display=swap'

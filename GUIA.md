@@ -12,13 +12,13 @@ Este documento sigue las mismas reglas de redacción que la web: sin guiones en 
 
 Inport hace soluciones digitales a medida para procesos que funcionan peor de lo que deberían. Se mete donde no basta con comprar un producto: el casco de un buque en dique, el horno de una planta de valorización, una finca en noche de helada, la sala de una tienda.
 
-Lema: "Engineering the unexpected". Se queda en inglés, como marca.
+Lema: "Engineering the unexpected". Se queda en inglés, como marca. No sale en la página: solo en los datos estructurados y en la imagen para compartir.
 
 La página sigue el orden por qué, cómo y qué:
 
 1. Por qué: hay procesos que podrían ir mucho mejor y nadie ha encontrado cómo. Eso es lo que nos mueve.
-2. Cómo: cuatro fases (diagnóstico, diseño, piloto, despliegue). Si una no da resultado, no se pasa a la siguiente.
-3. Qué: un caso por sector, con el problema, la solución, un vídeo corto que lo enseña funcionando, otras aplicaciones, sus límites y el prototipo.
+2. Cómo: lo que nos mueve, en tres puntos: meternos en retos que quitan el sueño, destripar lo complejo y buscar la fisura, y convertir un caos de proceso en algo fino, ágil y automático.
+3. Qué: un caso por sector, con el problema, la solución, un vídeo corto que lo enseña funcionando, sus límites y el prototipo.
 
 Quien llega tiene que entender en diez segundos qué hacemos y para qué sectores. La técnica (visión artificial, dron, predicción) se nombra dentro de los casos, nunca como etiqueta de la empresa. No nos vendemos como empresa de inteligencia artificial.
 
@@ -49,7 +49,7 @@ Quien visita la web es director de operaciones, jefe de planta, responsable de r
 Obligatorias en textos, títulos, metadatos, botones, `aria-label`, `alt` y `title`.
 
 1. Ningún guion de ningún tipo (-, ‐, –, —, −). Rangos: "de dos a cinco segundos". Temperaturas bajo cero: "2,8 bajo cero". Compuestos: "en tiempo real", "correo".
-2. Nada en negrita. Ningún peso tipográfico calculado mayor que 400, ni `<b>` ni `<strong>`. Archivo Black es gruesa de diseño y se usa en peso 400. Única excepción: la frase destacada de cada caso de uso, un `<strong>` en Archivo 700 dentro de `#que`, como en la plantilla V2.
+2. Nada en negrita salvo la frase que se destaca en un bloque, siempre con `<strong>` (Archivo 700): la de cada caso de uso, el giro de la portada ("peor de lo que deberían.", que va en Archivo Black y no suma peso) y la parte destacada de lo que nos mueve. Nunca `<b>` ni otro peso mayor que 400. Archivo Black es gruesa de diseño y se usa en peso 400.
 3. Ni emojis, ni flechas, ni iconos decorativos, ni puntos suspensivos.
 4. Nada que suene a inteligencia artificial:
    * Palabras: revolucionar, potenciar, impulsar, desbloquear, transformar, sin fisuras, sin fricción, de vanguardia, innovador, disruptivo, ecosistema, sinergia, holístico, robusto, escalable, inteligente como adorno, clave como muletilla.
@@ -74,17 +74,18 @@ Papel, tinta y lima. Filetes de 2 px, esquinas rectas, sin sombras ni degradados
 | `--paper` | `#ECECE8` | `#141413` | Fondo |
 | `--ink` | `#0C0C0B` | `#ECECE8` | Texto y filetes |
 | `--lime` | `#CCFF00` | `#CCFF00` | Resaltado, etiquetas, botón, fase final |
+| `--rojo` | `#D03B3B` | `#D03B3B` | Solo el subrayado del giro de la portada |
 | `--mute` | `#6B6B66` | `#9A9A94` | Texto secundario |
 
 * La lima nunca se usa para texto sobre papel claro (no contrasta). Sobre lima, el texto va siempre en `#0C0C0B`.
 * Bandas oscuras (`.dark`): cómo, contacto y pie. Redefinen los tokens, así que lo de dentro se invierte solo.
 * La web sigue el modo oscuro del sistema.
 
-Tipografía, todo en peso 400 salvo la frase destacada de cada caso de uso (Archivo 700):
+Tipografía, todo en peso 400 salvo las frases destacadas con `<strong>` (Archivo 700):
 
 * Archivo Black: titulares, números grandes, títulos de tarjeta. Nunca por debajo de 22 px: en pantallas normales el punto de la i se pega al palo.
 * Archivo: texto.
-* Space Mono: navegación, etiquetas, pestañas, límites y botones.
+* Space Mono: etiquetas, pestañas, límites y botones.
 * Caveat: notas a mano. Una por bloque como mucho.
 
 Foto de la portada: marco con marcas de recorte. Mientras no hay imagen se ve un hueco rayado con lo que tiene que ir. Para ponerla basta con dejarla en `public/fotos/` y escribir su ruta en `PORTADA.foto.src` (`pagina.js`).
@@ -101,15 +102,14 @@ Una sola página. Las anclas son una palabra sin guiones.
 
 | Ancla | Bloque | Contenido |
 |---|---|---|
-| `#porque` | Portada | Lema, titular con "así" en lima, entradilla con qué hacemos, sectores, foto del equipo con nota a mano y pie |
-| | Lo que nos mueve | Cinco frases numeradas en una columna |
-| `#como` | Cómo (banda oscura) | "04" en lima, titular, entradilla, nota a mano sobre lima y las cuatro fases; la última sobre lima |
+| `#porque` | Portada | Titular con "así" en lima y "El mundo está lleno de cosas que funcionan", que caben en la primera pantalla sin scroll. Con un poco de scroll sube debajo el giro, "peor de lo que deberían.", en Archivo Black, con los sectores, y se dibuja su subrayado en rojo. A la derecha, la foto del equipo con nota a mano y pie |
+| `#como` | Cómo (banda oscura) | "04" en lima, titular, nota a mano sobre lima y lo que nos mueve: etiqueta grande e inclinada sobre lima y tres puntos numerados; el último con su parte destacada en negrita |
 | `#que` | Qué | Titular, entradilla y seis pestañas, una por sector |
 | `#maritimo`, `#industria`, `#construccion`, `#campo`, `#ganaderia`, `#retail` | Pestaña de cada sector | Abren su pestaña al entrar y se actualizan al cambiar de pestaña, para poder compartir el enlace |
-| `#contacto` | Contacto (banda oscura) | Titular, texto, botón de correo y persona de contacto |
+| `#contacto` | Contacto (banda oscura) | "¿Quieres hacer algo disruptivo?", "Llámanos o escríbenos.", botón de correo, botón de llamada y persona de contacto con correo y teléfono |
 | | Pie | Año y aviso legal desplegable |
 
-Cada panel de sector tiene siempre el mismo orden: nota a mano, titular, el problema y la solución en dos columnas, el vídeo a todo el ancho, otras aplicaciones (tres o cuatro tarjetas), límites y prototipo.
+Cada panel de sector tiene siempre el mismo orden: nota a mano, titular, el problema y la solución en dos columnas, el vídeo a todo el ancho, límites y prototipo. Al acercarse al vídeo el scroll lo centra con un imán suave (scroll-snap de proximidad), sin bloquearlo.
 
 Las pestañas cumplen el patrón de WAI-ARIA: flechas, Inicio y Fin. Todos los paneles salen en el HTML prerenderizado, los inactivos con `hidden`, para que el buscador los lea. Los vídeos no se prerenderizan: solo se carga el del sector abierto, cuando se acerca a la pantalla.
 
@@ -134,8 +134,8 @@ Descartados en el rediseño: automatización de albaranes al ERP (es un producto
 
 * Node 22, React 19, Vite 8 y React Router 8 en modo framework con `ssr: false` y prerenderizado: la página sale como HTML estático en `build/client`.
 * JavaScript con JSX, CSS Modules por componente más `tokens.css` y `base.css`. Sin librerías de componentes ni de animación.
-* Textos en `src/content/es/`: `site.js` (marca, contacto, navegación, metadatos y datos estructurados), `pagina.js` (portada, lo que nos mueve, cómo, qué, contacto y aviso legal) y `sectores.js` (los seis casos).
-* Secciones en `src/sections/`: Portada, Mueve, Como, Que, Contacto. Componentes en `src/components/`: Nav, Footer, Foto, Aviso.
+* Textos en `src/content/es/`: `site.js` (marca, contacto, metadatos y datos estructurados), `pagina.js` (portada, cómo con lo que nos mueve, qué, contacto y aviso legal) y `sectores.js` (los seis casos).
+* Secciones en `src/sections/`: Portada, Como, Que, Contacto. Componentes en `src/components/`: Nav, Footer, Foto, Aviso.
 * Vídeos: `src/components/film/Film.jsx` (reloj de la escena y movimiento de cámara), `src/components/film/Escena.jsx` (carga diferida, pantalla, subtítulo y barra), `src/scenes/` (las cuatro escenas, `kit.jsx` con sus piezas comunes y `registry.js`) y `src/lib/` (utilidades que usan las escenas). Los tokens de color de las escenas viven en `Escena.module.css`, solo dentro del marco.
 * `scripts/`: `check.mjs` (reglas de la casa), `shot.mjs` (capturas), `imagenes.mjs` (iconos e imagen para compartir), `postbuild.mjs` (404.html, sitemap y CNAME), `serve.mjs` (sirve la compilación como GitHub Pages) y `cdp.mjs` (Chrome sin interfaz).
 
@@ -150,7 +150,7 @@ Descartados en el rediseño: automatización de albaranes al ERP (es un producto
 
 ## 7. Lista de comprobación
 
-1. `node scripts/check.mjs all` en verde: sin guiones, sin negritas fuera de la frase destacada de los casos, sin desbordamientos, sin errores en consola, a 1440 y 390 px.
+1. `node scripts/check.mjs all` en verde: sin guiones, negrita solo en `<strong>`, sin desbordamientos, sin errores en consola, a 1440 y 390 px.
 2. Ningún nombre de cliente.
 3. Ningún enlace a otras webs.
 4. Cada caso dice sus límites.

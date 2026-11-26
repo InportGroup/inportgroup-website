@@ -6,15 +6,11 @@
   padding: clamp(28px, 5vw, 64px) 0 clamp(40px, 6vw, 80px);
 }
 
-.tag {
-  display: inline-block;
-  margin-bottom: 22px;
-  padding: 3px 9px;
-  border: 2px solid var(--line);
-}
-
+/* El tamaño lo limita el ancho de la columna y también el alto de la ventana:
+   el titular y la frase caben en la primera pantalla sin scroll */
 .h1 {
-  font-size: clamp(46px, 8.6vw, 132px);
+  font-size: clamp(40px, 8.6vw, 120px);
+  font-size: clamp(40px, min(9vw, 13svh), 120px);
 }
 
 /* Archivo Black ocupa 1,35 em de alto y la línea mide 0,95: la lima se recorta a la altura de la línea
@@ -24,10 +20,70 @@
 }
 
 .sub {
-  max-width: 36ch;
+  max-width: 32ch;
   margin-top: 28px;
-  font-size: clamp(18px, 2vw, 24px);
-  line-height: 1.3;
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.2;
+}
+
+/* El giro, en Archivo Black y en tinta: sube debajo de la frase con los primeros 200 px de scroll */
+.giro {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.6vw, 66px);
+  /* 1,2 y no menos: con la frase en dos líneas, el subrayado y las letras con rabo (p, q) de la primera
+     no tocan las letras altas de la segunda */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* Archivo Black ya es negra de diseño: el strong marca el énfasis sin sumar peso.
+   El subrayado rojo es una decoración del texto, no un fondo: sigue a cada línea y se ve incluso con el
+   texto seleccionado (la selección de la web es lima). */
+.giro strong {
+  font-weight: 400;
+  text-decoration-line: underline;
+  text-decoration-color: var(--rojo);
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.12em;
+}
+
+@keyframes sube {
+  from {
+    opacity: 0;
+    transform: translateY(56px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes subraya {
+  from {
+    text-decoration-color: transparent;
+  }
+  to {
+    text-decoration-color: var(--rojo);
+  }
+}
+
+/* Donde el navegador no sabe animar con el scroll, el giro y su subrayado están ahí desde el principio.
+   Primero sube la frase (0 a 200 px de scroll) y después aparece el subrayado. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .sube {
+      animation: sube linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px 200px;
+    }
+    .giro strong {
+      animation: subraya linear both;
+      animation-timeline: scroll(root);
+      animation-range: 160px 360px;
+    }
+  }
 }
 
 .sectores {
@@ -65,6 +121,10 @@
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+  /* A una columna el titular tiene todo el ancho */
+  .h1 {
+    font-size: clamp(40px, min(13vw, 15svh), 120px);
   }
   .photo {
     max-width: 480px;

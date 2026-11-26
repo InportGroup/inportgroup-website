@@ -1,6 +1,6 @@
 // Un caso por sector, en el orden de las pestañas (GUIA.md, sección 7.4). El id es también su ancla: /#retail.
 // Sin nombres de clientes (GUIA.md, sección 2.4). Cada caso: nota a mano, titular, el problema y la solución (un párrafo por elemento; { negrita } es la frase destacada del caso, una por sector), su vídeo
-// (escena en src/scenes/registry.js), otras aplicaciones en el mismo sector, sus límites y el prototipo si existe.
+// (escena en src/scenes/registry.js), sus límites y el prototipo.
 // Sin enlaces a otras webs: los prototipos no llevan dirección y se enseñan en una reunión.
 
 export const SECTORES = [
@@ -19,11 +19,6 @@ export const SECTORES = [
       'Digitalizamos el activo con drones, reconstrucción 3D y visión artificial. Sobre ese modelo documentamos corrosión, pintura deteriorada o incrustaciones y los conectamos con un motor de medición y presupuestación.',
       'Resultado: llegar al dique con el alcance mucho mejor definido.',
     ],
-    otras: [
-      { titulo: 'Plataformas y unidades FPSO', texto: 'La misma inspección con dron donde el acceso es difícil y cada hora de andamio cuesta.' },
-      { titulo: 'Cubiertas y carga', texto: 'El estado de cubiertas y bodegas documentado con dron, para revisarlo desde la oficina.' },
-      { titulo: 'Contenedores en terminal', texto: 'Cámaras en la puerta que registran los daños visibles de cada contenedor al entrar.' },
-    ],
     limites: 'La medición y el presupuesto los valida personal cualificado. No sustituye la inspección de la sociedad de clasificación.',
     prototipo: { texto: 'Prototipo privado. Te lo enseñamos en una reunión.' },
   },
@@ -41,11 +36,6 @@ export const SECTORES = [
     solucion: [
       'Conectamos las cámaras de combustión con una plataforma que convierte imágenes en información operativa en tiempo real, y la cruzamos con los datos de planta (PLC, SCADA, DCS).',
       'No es otra pantalla en la sala de control: es dar significado a lo que ya se está viendo.',
-    ],
-    otras: [
-      { titulo: 'Estabilidad de la combustión', texto: 'Patrones de la llama relacionados con los cambios de carga, aire y empujadores.' },
-      { titulo: 'Aviso temprano', texto: 'Comportamientos inusuales señalados para revisarlos antes de que afecten a la operación.' },
-      { titulo: 'Histórico por turno', texto: 'Lo que antes se veía y se olvidaba queda registrado para comparar ajustes y resultados.' },
     ],
     limites:
       'No regula el horno: entrega medidas y la lógica de control sigue en el DCS. Si la imagen no tiene calidad suficiente, deja de corregir y avisa de que el dato no vale.',
@@ -66,12 +56,6 @@ export const SECTORES = [
       'Un vuelo de dron por semana se compara con el modelo BIM y la planificación. Sale lo ejecutado por partida y lo que va retrasado.',
       'Resultado: la medición de fin de mes llega preparada para que la firme el jefe de obra.',
     ],
-    otras: [
-      { titulo: 'Vaciado y acopios', texto: 'El vuelo semanal mide lo excavado y lo que queda en acopio.' },
-      { titulo: 'Estructura frente al plan', texto: 'Lo hecho frente a lo previsto, planta a planta, para ver qué zona va tarde.' },
-      { titulo: 'Bajo la carga de la grúa', texto: 'Las cámaras de obra avisan al gruista y al encargado si alguien entra bajo la carga, sin guardar caras.' },
-      { titulo: 'Certificación por partidas', texto: 'Lo medido pasa a las partidas de la certificación. Con apoyo RTK, la precisión ronda los 2 cm.' },
-    ],
     limites: 'No certifica por su cuenta: prepara la medición y la firma el jefe de obra. No vigila a las personas, solo zonas.',
     prototipo: { texto: 'Propuesta para constructoras, todavía sin prototipo. Te la contamos en una reunión.' },
   },
@@ -88,11 +72,6 @@ export const SECTORES = [
     solucion: [
       'Conectar sensores, imágenes, datos satelitales e IA para ver mejor lo que ocurre en cada explotación.',
       { negrita: 'Resultado: más visibilidad y capacidad de anticiparse antes de que haya pérdidas.' },
-    ],
-    otras: [
-      { titulo: 'Previsión de cosecha', texto: 'Un vuelo de dron en floración cuenta los racimos y adelanta la previsión cinco meses.' },
-      { titulo: 'Riego y estrés hídrico', texto: 'Un mapa árbol a árbol para regar donde hace falta.' },
-      { titulo: 'Plagas', texto: 'Trampas con cámara que clasifican los insectos capturados.' },
     ],
     limites: 'No sustituye al técnico de campo ni decide por él. Si un sensor de la finca deriva, se marca y no se usa hasta revisarlo.',
     prototipo: { texto: 'Prototipo privado. Te lo enseñamos en una reunión.' },
@@ -112,12 +91,6 @@ export const SECTORES = [
       'El ganadero apunta bajas, pienso y movimientos en el móvil, aunque no haya cobertura, y el veterinario lo valida. Cada ceba se compara con las mejores del histórico.',
       'Resultado: si la mortalidad de los últimos siete días pasa del 0,5 %, salta el aviso al veterinario.',
     ],
-    otras: [
-      { titulo: 'Sin cobertura', texto: 'Lo apuntado dentro de la nave se guarda en el móvil y se envía solo al volver la señal.' },
-      { titulo: 'Índice de conversión', texto: 'Pienso por animal y día frente a la curva de las mejores cebas, mientras todavía se puede corregir.' },
-      { titulo: 'Pienso en el silo', texto: 'Una previsión del pienso que va a faltar, para pedirlo antes de que se vacíe el silo.' },
-      { titulo: 'Tres perfiles', texto: 'Ganadero, veterinario y administración trabajan sobre los mismos datos de cada ceba.' },
-    ],
     limites: 'No sustituye la visita del veterinario ni toma decisiones sanitarias. Lo que apunta el ganadero se conserva siempre, aunque después se corrija.',
     prototipo: { texto: 'Proyecto en marcha. Te lo enseñamos en una reunión.' },
   },
@@ -135,11 +108,6 @@ export const SECTORES = [
     solucion: [
       'Visión artificial y analítica para convertir la actividad en tienda en mapas de calor, recorridos y tiempos de permanencia, cruzados cuando se puede con ventas y otras fuentes.',
       'Capturamos. Interpretamos. Conectamos. Mejoramos.',
-    ],
-    otras: [
-      { titulo: 'Personal', texto: 'Previsión de afluencia con cruceros, festivos y el tiempo, para ajustar los turnos.' },
-      { titulo: 'Espacio y producto', texto: 'Qué ubicación capta más interés y qué piezas se prueban mucho y se venden poco.' },
-      { titulo: 'Entre tiendas', texto: 'Qué funciona en una tienda y merece probarse en otra.' },
     ],
     limites:
       'No reconoce caras ni identifica a nadie. El análisis es anónimo, no se guardan imágenes y se diseña conforme a la normativa de protección de datos.',
