@@ -49,7 +49,7 @@ Quien visita la web es director de operaciones, jefe de planta, responsable de r
 Obligatorias en textos, títulos, metadatos, botones, `aria-label`, `alt` y `title`.
 
 1. Ningún guion de ningún tipo (-, ‐, –, —, −). Rangos: "de dos a cinco segundos". Temperaturas bajo cero: "2,8 bajo cero". Compuestos: "en tiempo real", "correo".
-2. Nada en negrita salvo la frase que se destaca en un bloque, siempre con `<strong>` (Archivo 700): la de cada caso de uso, el giro de la portada ("peor de lo que deberían.", que va en Archivo Black y no suma peso) y la parte destacada de lo que nos mueve. Nunca `<b>` ni otro peso mayor que 400. Archivo Black es gruesa de diseño y se usa en peso 400.
+2. Nada en negrita salvo la frase que se destaca en un bloque, siempre con `<strong>` (Archivo 700): la de cada caso de uso, el giro de la portada ("peor de lo que deberían", que va en Archivo Black y no suma peso) y la parte destacada de lo que nos mueve. Nunca `<b>` ni otro peso mayor que 400. Archivo Black es gruesa de diseño y se usa en peso 400.
 3. Ni emojis, ni flechas, ni iconos decorativos, ni puntos suspensivos.
 4. Nada que suene a inteligencia artificial:
    * Palabras: revolucionar, potenciar, impulsar, desbloquear, transformar, sin fisuras, sin fricción, de vanguardia, innovador, disruptivo, ecosistema, sinergia, holístico, robusto, escalable, inteligente como adorno, clave como muletilla.
@@ -74,7 +74,6 @@ Papel, tinta y lima. Filetes de 2 px, esquinas rectas, sin sombras ni degradados
 | `--paper` | `#ECECE8` | `#141413` | Fondo |
 | `--ink` | `#0C0C0B` | `#ECECE8` | Texto y filetes |
 | `--lime` | `#CCFF00` | `#CCFF00` | Resaltado, etiquetas, botón, fase final |
-| `--rojo` | `#D03B3B` | `#D03B3B` | Solo el subrayado del giro de la portada |
 | `--mute` | `#6B6B66` | `#9A9A94` | Texto secundario |
 
 * La lima nunca se usa para texto sobre papel claro (no contrasta). Sobre lima, el texto va siempre en `#0C0C0B`.
@@ -102,11 +101,11 @@ Una sola página. Las anclas son una palabra sin guiones.
 
 | Ancla | Bloque | Contenido |
 |---|---|---|
-| `#porque` | Portada | Titular con "así" en lima y "El mundo está lleno de cosas que funcionan", que caben en la primera pantalla sin scroll. Con un poco de scroll sube debajo el giro, "peor de lo que deberían.", en Archivo Black, con los sectores, y se dibuja su subrayado en rojo. A la derecha, la foto del equipo con nota a mano y pie |
+| `#porque` | Portada | Titular con "así" en lima y "El mundo está lleno de cosas que funcionan", que caben en la primera pantalla sin scroll. Con un poco de scroll sube debajo el giro, "peor de lo que deberían", sin punto ni subrayado, en Archivo Black, con los sectores. A la derecha, la foto del equipo con nota a mano y pie |
 | `#como` | Cómo (banda oscura) | "04" en lima, titular, nota a mano sobre lima y lo que nos mueve: etiqueta grande e inclinada sobre lima y tres puntos numerados; el último con su parte destacada en negrita |
 | `#que` | Qué | Titular, entradilla y seis pestañas, una por sector |
 | `#maritimo`, `#industria`, `#construccion`, `#campo`, `#ganaderia`, `#retail` | Pestaña de cada sector | Abren su pestaña al entrar y se actualizan al cambiar de pestaña, para poder compartir el enlace |
-| `#contacto` | Contacto (banda oscura) | "¿Quieres hacer algo disruptivo?", "Llámanos o escríbenos.", botón de correo, botón de llamada y persona de contacto con correo y teléfono |
+| `#contacto` | Contacto (banda oscura) | "¿Quieres hacer algo disruptivo?", botón de correo, botón de llamada y persona de contacto con correo y teléfono |
 | | Pie | Año y aviso legal desplegable |
 
 Cada panel de sector tiene siempre el mismo orden: nota a mano, titular, el problema y la solución en dos columnas, el vídeo a todo el ancho, límites y prototipo. Al acercarse al vídeo el scroll lo centra con un imán suave (scroll-snap de proximidad), sin bloquearlo.

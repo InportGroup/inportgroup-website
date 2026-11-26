@@ -4,7 +4,7 @@ import s from './Portada.module.css'
 
 /**
  * Portada: el titular y la primera mitad de la frase caben en la primera pantalla.
- * Con un poco de scroll sube el giro, "peor de lo que deberían.", debajo de la frase. La foto va a la derecha.
+ * Con un poco de scroll sube el giro, "peor de lo que deberían", debajo de la frase. La foto va a la derecha.
  */
 export default function Portada() {
   const { titulo, entradilla } = PORTADA

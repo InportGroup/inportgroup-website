@@ -31,22 +31,16 @@
   margin-top: 12px;
   font-family: var(--font-display);
   font-size: clamp(32px, 4.6vw, 66px);
-  /* 1,2 y no menos: con la frase en dos líneas, el subrayado y las letras con rabo (p, q) de la primera
+  /* 1,2 y no menos: con la frase en dos líneas, las letras con rabo (p, q) de la primera
      no tocan las letras altas de la segunda */
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
 
-/* Archivo Black ya es negra de diseño: el strong marca el énfasis sin sumar peso.
-   El subrayado rojo es una decoración del texto, no un fondo: sigue a cada línea y se ve incluso con el
-   texto seleccionado (la selección de la web es lima). */
+/* Archivo Black ya es negra de diseño: el strong marca el énfasis sin sumar peso */
 .giro strong {
   font-weight: 400;
-  text-decoration-line: underline;
-  text-decoration-color: var(--rojo);
-  text-decoration-thickness: 0.09em;
-  text-underline-offset: 0.12em;
 }
 
 @keyframes sube {
@@ -60,28 +54,13 @@
   }
 }
 
-@keyframes subraya {
-  from {
-    text-decoration-color: transparent;
-  }
-  to {
-    text-decoration-color: var(--rojo);
-  }
-}
-
-/* Donde el navegador no sabe animar con el scroll, el giro y su subrayado están ahí desde el principio.
-   Primero sube la frase (0 a 200 px de scroll) y después aparece el subrayado. */
+/* Donde el navegador no sabe animar con el scroll, el giro está ahí desde el principio */
 @supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) {
     .sube {
       animation: sube linear both;
       animation-timeline: scroll(root);
       animation-range: 0px 200px;
-    }
-    .giro strong {
-      animation: subraya linear both;
-      animation-timeline: scroll(root);
-      animation-range: 160px 360px;
     }
   }
 }

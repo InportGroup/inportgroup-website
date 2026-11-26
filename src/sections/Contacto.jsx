@@ -12,7 +12,6 @@ export default function Contacto() {
         <h2 id="contacto-titulo" className={s.h2}>
           {CONTACTO.titulo}
         </h2>
-        <p className={s.text}>{CONTACTO.texto}</p>
         <div className={s.botones}>
           <a className={`mono ${s.cta}`} href={mailto()}>
             {CONTACTO.boton}

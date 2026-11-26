@@ -6,7 +6,7 @@
 export const PORTADA = {
   titulo: { antes: '¿Y si no tuviera por qué hacerse ', marca: 'así', despues: '?' },
   // La frase se parte en dos: la primera mitad cierra la primera pantalla y el giro, en negrita, aparece al bajar.
-  entradilla: { antes: 'El mundo está lleno de cosas que funcionan', giro: 'peor de lo que deberían.' },
+  entradilla: { antes: 'El mundo está lleno de cosas que funcionan', giro: 'peor de lo que deberían' },
   sectores: 'Marítimo · Industria · Construcción · Agricultura · Ganadería · Retail',
   nota: 'Mitad ingenieros. Mitad cirujanos de procesos.',
   foto: { src: null, alt: 'El equipo de Inport trabajando en campo', pendiente: 'el equipo trabajando en campo' },
@@ -35,7 +35,6 @@ export const QUE = {
 
 export const CONTACTO = {
   titulo: '¿Quieres hacer algo disruptivo?',
-  texto: 'Llámanos o escríbenos.',
   boton: 'Escríbenos',
   llamar: 'Llámanos',
 }

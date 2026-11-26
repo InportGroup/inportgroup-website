@@ -7,13 +7,8 @@
   font-size: clamp(40px, 9vw, 140px);
 }
 
-.text {
-  max-width: 44ch;
-  margin: 26px 0 34px;
-  font-size: 20px;
-}
-
 .botones {
+  margin-top: 34px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
