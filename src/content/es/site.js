@@ -6,7 +6,7 @@ export const SITE = {
   dominio: 'https://www.inportgroup.com',
   // Metadescripción: unos 145 caracteres, con las palabras del título
   descripcion:
-    'Soluciones digitales a medida para procesos que funcionan peor de lo que deberían, en industria, sector marítimo, agricultura, ganadería y retail.',
+    'Soluciones digitales a medida para procesos que funcionan peor de lo que deberían: industria, construcción, marítimo, agricultura, ganadería y retail.',
   // Imagen para compartir (1200 × 630) e iconos: se generan con scripts/imagenes.mjs
   imagen: '/og-image.png',
   contacto: {
@@ -75,7 +75,9 @@ function datosEstructurados() {
           'Integración de sistemas',
           'Sector marítimo y portuario',
           'Industria',
-          'Agricultura y ganadería',
+          'Construcción',
+          'Agricultura',
+          'Ganadería',
           'Retail',
         ],
         contactPoint: {

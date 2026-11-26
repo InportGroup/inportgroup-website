@@ -104,8 +104,8 @@ Una sola página. Las anclas son una palabra sin guiones.
 | `#porque` | Portada | Lema, titular con "así" en lima, entradilla con qué hacemos, sectores, foto del equipo con nota a mano y pie |
 | | Lo que nos mueve | Cinco frases numeradas en una columna |
 | `#como` | Cómo (banda oscura) | "04" en lima, titular, entradilla, nota a mano sobre lima y las cuatro fases; la última sobre lima |
-| `#que` | Qué | Titular, entradilla y cuatro pestañas, una por sector |
-| `#maritimo`, `#industria`, `#campo`, `#retail` | Pestaña de cada sector | Abren su pestaña al entrar y se actualizan al cambiar de pestaña, para poder compartir el enlace |
+| `#que` | Qué | Titular, entradilla y seis pestañas, una por sector |
+| `#maritimo`, `#industria`, `#construccion`, `#campo`, `#ganaderia`, `#retail` | Pestaña de cada sector | Abren su pestaña al entrar y se actualizan al cambiar de pestaña, para poder compartir el enlace |
 | `#contacto` | Contacto (banda oscura) | Titular, texto, botón de correo y persona de contacto |
 | | Pie | Año y aviso legal desplegable |
 
@@ -119,12 +119,14 @@ Se queda lo que es difícil, está respaldado por un proyecto, una propuesta o u
 
 | Sector | Caso principal | Vídeo | Respaldo |
 |---|---|---|---|
-| Marítimo y portuario | Inspección de cascos con dron y presupuesto en el día | `astilleros` | Prototipo abierto de inspección naval |
+| Marítimo y portuario | Inspección de cascos con dron y presupuesto en el día | `astilleros` | Prototipo de inspección naval |
 | Industria | Cámaras del horno conectadas al DCS | `hornos` | Propuesta para una planta de valorización y prototipo privado |
-| Agricultura y ganadería | Heladas medidas en la yema | `cultivo` | Prototipo abierto del pistacho; las cebas de porcino son un proyecto en marcha |
+| Construcción | Avance de obra con dron frente al modelo BIM | `obra` | Propuesta para constructoras, todavía sin prototipo |
+| Agricultura | Heladas medidas en la yema | `cultivo` | Prototipo del pistacho |
+| Ganadería | Seguimiento diario de cebas de porcino | `cebo` | Proyecto en marcha con una integradora de porcino |
 | Retail | Recorridos, esperas y escaparate | `boutique` | Prototipo privado con una tienda piloto |
 
-Descartados en el rediseño: automatización de albaranes al ERP (es un producto de mercado y diluye el mensaje), control de obra con dron (propuesta sin prototipo y repetía la idea del dron), vacuno de leche y acuicultura (sin respaldo), el panorama de la portada y las escenas de obra, cebo, procesos y recorrido, el cajetín y el grano de los vídeos, el conmutador de la escena de heladas, la sección de maquetas (los prototipos van dentro de cada sector), los botones de compartir y las filas de cifras.
+Descartados en el rediseño: automatización de albaranes al ERP (es un producto de mercado y diluye el mensaje), vacuno de leche y acuicultura (sin respaldo), el panorama de la portada y las escenas de procesos y recorrido, el cajetín y el grano de los vídeos, el conmutador de la escena de heladas, la sección de maquetas (los prototipos van dentro de cada sector), los botones de compartir y las filas de cifras.
 
 ---
 
@@ -132,7 +134,7 @@ Descartados en el rediseño: automatización de albaranes al ERP (es un producto
 
 * Node 22, React 19, Vite 8 y React Router 8 en modo framework con `ssr: false` y prerenderizado: la página sale como HTML estático en `build/client`.
 * JavaScript con JSX, CSS Modules por componente más `tokens.css` y `base.css`. Sin librerías de componentes ni de animación.
-* Textos en `src/content/es/`: `site.js` (marca, contacto, navegación, metadatos y datos estructurados), `pagina.js` (portada, lo que nos mueve, cómo, qué, contacto y aviso legal) y `sectores.js` (los cuatro casos).
+* Textos en `src/content/es/`: `site.js` (marca, contacto, navegación, metadatos y datos estructurados), `pagina.js` (portada, lo que nos mueve, cómo, qué, contacto y aviso legal) y `sectores.js` (los seis casos).
 * Secciones en `src/sections/`: Portada, Mueve, Como, Que, Contacto. Componentes en `src/components/`: Nav, Footer, Foto, Aviso.
 * Vídeos: `src/components/film/Film.jsx` (reloj de la escena y movimiento de cámara), `src/components/film/Escena.jsx` (carga diferida, pantalla, subtítulo y barra), `src/scenes/` (las cuatro escenas, `kit.jsx` con sus piezas comunes y `registry.js`) y `src/lib/` (utilidades que usan las escenas). Los tokens de color de las escenas viven en `Escena.module.css`, solo dentro del marco.
 * `scripts/`: `check.mjs` (reglas de la casa), `shot.mjs` (capturas), `imagenes.mjs` (iconos e imagen para compartir), `postbuild.mjs` (404.html, sitemap y CNAME), `serve.mjs` (sirve la compilación como GitHub Pages) y `cdp.mjs` (Chrome sin interfaz).

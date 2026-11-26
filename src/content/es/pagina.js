@@ -7,7 +7,7 @@ export const PORTADA = {
   titulo: { antes: '¿Y si no tuviera por qué hacerse ', marca: 'así', despues: '?' },
   entradilla:
     'El mundo está lleno de cosas que funcionan peor de lo que deberían.',
-  sectores: 'Marítimo · Industria · Agricultura y ganadería · Retail',
+  sectores: 'Marítimo · Industria · Construcción · Agricultura · Ganadería · Retail',
   nota: 'Mitad ingenieros. Mitad cirujanos de procesos.',
   foto: { src: null, alt: 'El equipo de Inport trabajando en campo', pendiente: 'el equipo trabajando en campo' },
   pie: 'El equipo al que llamas cuando una operación podría funcionar muchísimo mejor, pero nadie ha encontrado cómo.',
@@ -68,7 +68,7 @@ export const COMO = {
 
 export const QUE = {
   titulo: 'Algunas de las cosas que hemos desmontado para que funcionen mejor.',
-  entradilla: 'Cuatro sectores, una misma manera de mirar. Elige uno.',
+  entradilla: 'Seis sectores, una misma manera de mirar. Elige uno.',
 }
 
 export const CONTACTO = {

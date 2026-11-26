@@ -21,7 +21,7 @@
 .tabs {
   scroll-margin-top: calc(var(--nav-h) + 8px);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 2px;
   border: 2px solid var(--line);
   background: var(--line);
@@ -160,6 +160,10 @@
 @media (max-width: 900px) {
   .tabs {
     grid-template-columns: 1fr 1fr;
+  }
+  /* Con un número impar de pestañas, la última ocupa la fila entera: el fondo de la rejilla no queda a la vista */
+  .tab:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
   .cols,
   .foot {

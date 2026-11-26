@@ -292,9 +292,9 @@ export default {
   aspect: '16 / 9',
   aspectNarrow: '4 / 3',
   scenes: [
-    { at: 0, title: 'La finca, de noche', caption: '02:40 · Cielo despejado, sin viento. La garita marca 0,9 grados.' },
-    { at: 6, title: 'La cámara barre el sector', caption: '03:55 · El frío baja y se queda en la parte baja de la finca.' },
-    { at: 12.4, title: 'Aviso', caption: '04:10 · La yema está a 2,8 bajo cero. La garita sigue en 0,4.' },
+    { at: 0, title: 'La finca, de noche', caption: 'Cielo despejado, sin viento. La garita marca 0,9 grados.' },
+    { at: 6, title: 'La cámara barre el sector', caption: 'El frío baja y se queda en la parte baja de la finca.' },
+    { at: 12.4, title: 'Aviso', caption: 'La yema está a 2,8 bajo cero. La garita sigue en 0,4.' },
   ],
   Scene,
 }

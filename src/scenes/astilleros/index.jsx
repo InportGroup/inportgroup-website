@@ -435,10 +435,10 @@ export default {
   aspect: '16 / 9',
   aspectNarrow: '4 / 3',
   scenes: [
-    { at: 0, title: 'Entra en dique', caption: '07:30 · Se vacía el dique. Aparece la obra viva, con incrustaciones y óxido.' },
-    { at: 7, title: 'El vuelo', caption: '08:10 · El dron recorre el costado en cuatro pasadas. Cada destello es una foto.' },
-    { at: 15, title: 'Lo que encuentra', caption: '11:20 · El modelo separa óxido, incrustaciones, pintura degradada y una abolladura.' },
-    { at: 22, title: 'El presupuesto', caption: '13:40 · El costado, desplegado en plano. Salen los metros y el presupuesto.' },
+    { at: 0, title: 'Entra en dique', caption: 'Se vacía el dique. Aparece la obra viva, con incrustaciones y óxido.' },
+    { at: 7, title: 'El vuelo', caption: 'El dron recorre el costado en cuatro pasadas. Cada destello es una foto.' },
+    { at: 15, title: 'Lo que encuentra', caption: 'El modelo separa óxido, incrustaciones, pintura degradada y una abolladura.' },
+    { at: 22, title: 'El presupuesto', caption: 'El costado, desplegado en plano. Salen los metros y el presupuesto.' },
   ],
   Scene,
 }

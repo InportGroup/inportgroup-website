@@ -455,10 +455,10 @@ export default {
   aspect: '16 / 9',
   aspectNarrow: '4 / 3',
   scenes: [
-    { at: 0, title: 'Abre la tienda', caption: '10:00 · Entran las primeras visitas. Cada punto es una persona sin nombre ni cara.' },
-    { at: 7, title: 'Llega el grupo', caption: '17:50 · Llega el grupo del crucero. Tres personas llevan más de un minuto esperando.' },
-    { at: 14, title: 'El calor de la semana', caption: 'Semana 39 · La mesa central concentra la permanencia. La zona de viaje, casi nada.' },
-    { at: 22, title: 'La calle', caption: 'El escaparate de otoño · De cada cien que pasan, catorce se detienen y seis entran.' },
+    { at: 0, title: 'Abre la tienda', caption: 'Entran las primeras visitas. Cada punto es una persona sin nombre ni cara.' },
+    { at: 7, title: 'La espera', caption: 'Tres personas llevan más de un minuto esperando.' },
+    { at: 14, title: 'El calor de la semana', caption: 'La mesa central concentra la permanencia de la semana. La zona de viaje, casi nada.' },
+    { at: 22, title: 'La calle', caption: 'Con el escaparate de otoño, de cada cien que pasan, catorce se detienen y seis entran.' },
   ],
   Scene,
 }

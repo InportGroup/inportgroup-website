@@ -1,6 +1,6 @@
 # Inport · www.inportgroup.com
 
-Web de Inport en una sola página, ordenada en por qué, cómo y qué: la portada, lo que nos mueve, las cuatro fases de trabajo, un caso por sector (marítimo y portuario, industria, agricultura y ganadería, retail) en pestañas, cada uno con su vídeo, y el contacto.
+Web de Inport en una sola página, ordenada en por qué, cómo y qué: la portada, lo que nos mueve, las cuatro fases de trabajo, un caso por sector (marítimo y portuario, industria, construcción, agricultura, ganadería, retail) en pestañas, cada uno con su vídeo, y el contacto.
 
 Node 22, React 19, Vite 8 y React Router 8 en modo framework con prerenderizado: la página sale como HTML estático en `build/client` y se sirve desde GitHub Pages. Los vídeos son escenas dibujadas en SVG que se cargan en el navegador cuando se acercan a la pantalla.
 
@@ -11,7 +11,7 @@ Node 22, React 19, Vite 8 y React Router 8 en modo framework con prerenderizado:
 
 ## Textos y fotos
 
-Todos los textos están en `src/content/es/`: `pagina.js` (portada, cómo, qué, contacto, aviso legal), `sectores.js` (los cuatro casos) y `site.js` (marca, contacto y metadatos).
+Todos los textos están en `src/content/es/`: `pagina.js` (portada, cómo, qué, contacto, aviso legal), `sectores.js` (los seis casos) y `site.js` (marca, contacto y metadatos).
 
 Para poner la foto de la portada: dejarla en `public/fotos/` y escribir su ruta en `PORTADA.foto.src`, por ejemplo `src: '/fotos/equipo.jpg'`. Mientras sea `null` se ve el hueco rayado con lo que tiene que ir.
 

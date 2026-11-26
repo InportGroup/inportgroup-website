@@ -541,10 +541,10 @@ export default {
   aspect: '16 / 9',
   aspectNarrow: '4 / 3',
   scenes: [
-    { at: 0, title: 'La parrilla, de lado', caption: '11:40 · El residuo entra por la tolva y avanza por la parrilla mientras arde.' },
-    { at: 8.4, title: 'Lo que ve la cámara', caption: '11:41 · La cámara del fondo ve la parrilla en perspectiva. Encima se dibuja la malla.' },
-    { at: 15, title: 'La malla de 5 × 4', caption: '11:42 · Veinte celdas con su intensidad, el frente de llama y el aire de cada zona.' },
-    { at: 22, title: 'Al sistema de control', caption: '11:43 · La lente se ensucia. El sistema corrige el valor y avisa al DCS.' },
+    { at: 0, title: 'La parrilla, de lado', caption: 'El residuo entra por la tolva y avanza por la parrilla mientras arde.' },
+    { at: 8.4, title: 'Lo que ve la cámara', caption: 'La cámara del fondo ve la parrilla en perspectiva. Encima se dibuja la malla.' },
+    { at: 15, title: 'La malla de 5 × 4', caption: 'Veinte celdas con su intensidad, el frente de llama y el aire de cada zona.' },
+    { at: 22, title: 'Al sistema de control', caption: 'La lente se ensucia. El sistema corrige el valor y avisa al DCS.' },
   ],
   Scene,
 }
