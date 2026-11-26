@@ -11,7 +11,7 @@ export const PORTADA = {
   nota: 'Mitad ingenieros. Mitad cirujanos de procesos.',
   foto: {
     src: '/fotos/equipo.jpg',
-    alt: 'El equipo de Inport en su taller: pantallas con la nube de puntos de un barco, un dron sobre la mesa, una cámara térmica junto a una llama de ensayo y maletas de equipo en el suelo.',
+    alt: 'El equipo de Inport en su oficina taller: el modelo 3D de un casco en pantalla, un dron en montaje, una impresora 3D y, al fondo, un ensayo con llama.',
     pendiente: 'el equipo trabajando en campo',
   },
   pie: 'El equipo al que llamas cuando una operación podría funcionar muchísimo mejor, pero nadie ha encontrado cómo.',
@@ -41,6 +41,14 @@ export const CONTACTO = {
   titulo: '¿Quieres hacer algo disruptivo?',
   boton: 'Escríbenos',
   llamar: 'Llámanos',
+}
+
+// Pie: qué hace Inport con las palabras de la descripción de la página (para el buscador y para quien llega al final)
+// y un enlace a cada caso, ya que la barra de arriba no tiene menú.
+export const PIE = {
+  texto:
+    'Inport: soluciones digitales a medida en industria, construcción, sector marítimo y portuario, agricultura, ganadería y retail. Software, visión artificial, drones y sensores conectados a lo que ya tienes.',
+  casos: 'Casos por sector',
 }
 
 export const LEGAL = {

@@ -97,16 +97,16 @@ Lo que evitamos: rejillas de fondo con brillos, degradados morados, tarjetas igu
 
 ## 5. La página
 
-Una sola página. Las anclas son una palabra sin guiones.
+Una sola página. Las anclas son una palabra sin guiones. Cada sección ocupa al menos una pantalla (el alto visible bajo la barra) y tiene un imán suave al principio (scroll-snap de proximidad): si el scroll se para cerca, la sección queda sola en pantalla. La portada no lleva imán para que el giro pueda subir con los primeros píxeles de scroll; el pie sí, para poder leerlo al final.
 
 | Ancla | Bloque | Contenido |
 |---|---|---|
-| `#porque` | Portada | Titular con "así" en lima y "El mundo está lleno de cosas que funcionan", que caben en la primera pantalla sin scroll. Con un poco de scroll sube debajo el giro, "peor de lo que deberían", sin punto ni subrayado, en Archivo Black, con los sectores. A la derecha, la foto del equipo con nota a mano y pie |
+| `#porque` | Portada | Titular con "así" en lima y "El mundo está lleno de cosas que funcionan", que caben en la primera pantalla sin scroll. Con un poco de scroll sube debajo el giro, "peor de lo que deberían", sin punto ni subrayado, en Archivo Black, con los sectores. A la derecha, la foto del equipo con nota a mano y pie pequeño; la foto se ajusta al alto de la ventana para caber entera |
 | `#como` | Cómo (banda oscura) | "04" en lima, titular, nota a mano sobre lima y lo que nos mueve: etiqueta grande e inclinada sobre lima y tres puntos numerados; el último con su parte destacada en negrita |
 | `#que` | Qué | Titular, entradilla y seis pestañas, una por sector |
 | `#maritimo`, `#industria`, `#construccion`, `#campo`, `#ganaderia`, `#retail` | Pestaña de cada sector | Abren su pestaña al entrar y se actualizan al cambiar de pestaña, para poder compartir el enlace |
 | `#contacto` | Contacto (banda oscura) | "¿Quieres hacer algo disruptivo?", botón de correo, botón de llamada y persona de contacto con correo y teléfono |
-| | Pie | Año y aviso legal desplegable |
+| | Pie | Qué hace Inport (con las palabras del título, para el buscador), un enlace a cada caso y a contacto, año y aviso legal desplegable |
 
 Cada panel de sector tiene siempre el mismo orden: nota a mano, titular, el problema y la solución en dos columnas, el vídeo a todo el ancho, límites y prototipo. Al acercarse al vídeo el scroll lo centra con un imán suave (scroll-snap de proximidad), sin bloquearlo.
 

@@ -19,6 +19,23 @@ html {
   scroll-margin-top: calc(var(--nav-h) + 8px);
 }
 
+/* Una sección por pantalla: ocupa al menos el alto visible bajo la barra y centra su contenido.
+   Si el contenido no cabe (móvil, casos con vídeo), la sección crece y se lee con scroll normal. */
+.pantalla {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
+}
+
+/* Imán suave al principio de cada sección (scroll-snap de proximidad, ver html): si el scroll se para
+   cerca, la sección queda justo bajo la barra y no asoma la anterior. Lejos, el scroll es libre. */
+.iman {
+  scroll-snap-align: start;
+  scroll-margin-top: var(--nav-h);
+}
+
 body {
   margin: 0;
   background: var(--paper);

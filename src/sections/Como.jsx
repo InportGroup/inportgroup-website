@@ -5,7 +5,7 @@ import s from './Como.module.css'
 export default function Como() {
   const { mueve } = COMO
   return (
-    <section className={`dark ${s.sec}`} id="como" aria-labelledby="como-titulo">
+    <section className={`dark pantalla iman ${s.sec}`} id="como" aria-labelledby="como-titulo">
       <div className="wrap">
         <div className={s.head}>
           <p className={s.ring} aria-hidden="true">

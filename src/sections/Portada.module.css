@@ -1,9 +1,13 @@
+/* Primera pantalla: al menos el alto visible bajo la barra, con el contenido centrado en vertical */
 .hero {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
   gap: clamp(20px, 4vw, 56px);
   align-items: start;
-  padding: clamp(28px, 5vw, 64px) 0 clamp(40px, 6vw, 80px);
+  align-content: center;
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
+  padding-block: clamp(20px, 3vh, 40px);
 }
 
 /* El tamaño lo limita el ancho de la columna y también el alto de la ventana:
@@ -72,8 +76,13 @@
   letter-spacing: 0.04em;
 }
 
+/* La foto (4:5) se ajusta al alto de la ventana: con su nota y su pie cabe entera en la primera pantalla.
+   200 px es lo que ocupan la nota, el pie y el aire de arriba y abajo. */
 .photo {
   position: relative;
+  justify-self: end;
+  width: min(100%, calc((100vh - var(--nav-h) - 200px) * 0.8));
+  width: min(100%, calc((100svh - var(--nav-h) - 200px) * 0.8));
   margin: 8px 0 0;
 }
 
@@ -92,9 +101,9 @@
 }
 
 .cap {
-  margin-top: 18px;
-  font-size: clamp(18px, 1.9vw, 24px);
-  line-height: 1.25;
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 @media (max-width: 900px) {
@@ -105,7 +114,10 @@
   .h1 {
     font-size: clamp(40px, min(13vw, 15svh), 120px);
   }
+  /* En una columna la foto va debajo del texto: ya no tiene que caber en la primera pantalla */
   .photo {
+    justify-self: start;
+    width: 100%;
     max-width: 480px;
     margin: 18px 10px 0;
   }

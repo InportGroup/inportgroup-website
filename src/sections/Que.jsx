@@ -41,7 +41,7 @@ export default function Que() {
   }
 
   return (
-    <section className={s.sec} id="que" aria-labelledby="que-titulo">
+    <section className={`iman ${s.sec}`} id="que" aria-labelledby="que-titulo">
       <div className="wrap">
         <div className={s.head}>
           <h2 id="que-titulo" className={s.h2}>

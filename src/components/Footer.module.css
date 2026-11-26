@@ -1,3 +1,47 @@
+/* El final de la página también es un punto del imán: sin él, al bajar del todo el imán de contacto
+   devolvería la página arriba y el pie no se podría leer */
+.pie {
+  scroll-snap-align: end;
+}
+
+/* Qué hace Inport y un enlace a cada caso */
+.mapa {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 18px clamp(24px, 5vw, 72px);
+  align-items: start;
+  padding-block: 36px 28px;
+  border-top: 2px solid var(--line);
+}
+
+.que {
+  max-width: 60ch;
+  color: var(--mute);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.enlaces a {
+  text-decoration: none;
+}
+
+.enlaces a:hover {
+  background: var(--lime);
+  color: #0c0c0b;
+}
+
+@media (max-width: 760px) {
+  .mapa {
+    grid-template-columns: 1fr;
+  }
+}
+
 .row {
   display: flex;
   justify-content: space-between;

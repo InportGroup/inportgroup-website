@@ -7,7 +7,7 @@ export default function Contacto() {
   const { contacto } = SITE
   const tel = `tel:${contacto.telefonoEnlace}`
   return (
-    <section className={`dark ${s.end}`} id="contacto" aria-labelledby="contacto-titulo">
+    <section className={`dark pantalla iman ${s.end}`} id="contacto" aria-labelledby="contacto-titulo">
       <div className="wrap">
         <h2 id="contacto-titulo" className={s.h2}>
           {CONTACTO.titulo}

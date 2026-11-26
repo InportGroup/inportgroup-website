@@ -21,7 +21,8 @@ export const SITE = {
 
 /** Metadatos de una página: título, descripción, canónica, tarjetas para compartir y datos estructurados */
 export function seo({ titulo, descripcion = SITE.descripcion, ruta = '/', indexar = true }) {
-  const title = titulo ? `${titulo} · Inport` : 'Inport · Soluciones digitales a medida para problemas complejos'
+  // Solo la marca en la portada: en el buscador sale "Inport" y debajo la descripción
+  const title = titulo ? `${titulo} · Inport` : 'Inport'
   const url = `${SITE.dominio}${ruta}`
   const imagen = `${SITE.dominio}${SITE.imagen}`
   return [
@@ -37,7 +38,7 @@ export function seo({ titulo, descripcion = SITE.descripcion, ruta = '/', indexa
     { property: 'og:image', content: imagen },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
-    { property: 'og:image:alt', content: 'Inport. Soluciones digitales a medida para problemas complejos' },
+    { property: 'og:image:alt', content: 'Inport' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: title },
     { name: 'twitter:description', content: descripcion },
@@ -62,6 +63,7 @@ function datosEstructurados() {
         image: `${SITE.dominio}${SITE.imagen}`,
         description: SITE.descripcion,
         email: SITE.contacto.correo,
+        telephone: SITE.contacto.telefonoEnlace,
         areaServed: 'ES',
         knowsLanguage: ['es', 'en'],
         knowsAbout: [
