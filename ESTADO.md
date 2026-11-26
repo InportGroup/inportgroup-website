@@ -24,7 +24,6 @@ A partir de la referencia "Web Inport V2" (papel, tinta y lima; por qué, cómo 
 
 ## Pendiente
 
-* Foto del equipo en la portada. Va en `public/fotos/` y su ruta en `PORTADA.foto.src` (`src/content/es/pagina.js`).
 * Aviso legal: razón social, NIF y domicilio.
 
 ## Cómo retomarlo
