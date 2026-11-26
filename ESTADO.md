@@ -26,8 +26,6 @@ A partir de la referencia "Web Inport V2" (papel, tinta y lima; por qué, cómo 
 
 * Foto del equipo en la portada. Va en `public/fotos/` y su ruta en `PORTADA.foto.src` (`src/content/es/pagina.js`).
 * Aviso legal: razón social, NIF y domicilio.
-* El prototipo del pistacho está en el plan gratuito de Render y tarda cerca de un minuto en despertar. Conviene pasarlo a GitHub Pages o a un plan de pago.
-* Revisar y fusionar `webv2` con `main` para publicarla.
 
 ## Cómo retomarlo
 

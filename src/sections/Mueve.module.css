@@ -25,8 +25,8 @@
 .list {
   counter-reset: m;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px clamp(20px, 4vw, 56px);
+  grid-template-columns: 1fr;
+  gap: 4px;
 }
 
 .list li {

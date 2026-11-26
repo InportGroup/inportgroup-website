@@ -79,20 +79,32 @@ export default function Que() {
   )
 }
 
+// Un párrafo por elemento. { negrita: '...' } es la frase destacada del caso (GUIA.md, sección 3, regla 2).
+function Parrafos({ lista }) {
+  return lista.map((p) =>
+    typeof p === 'string' ? (
+      <p key={p}>{p}</p>
+    ) : (
+      <p key={p.negrita}>
+        <strong>{p.negrita}</strong>
+      </p>
+    ),
+  )
+}
+
 function Panel({ sector: x }) {
   return (
     <>
-      <div className={s.panelHead}>
-        <h3 className={s.h3}>{x.titulo}</h3>
-        <div className={s.textos}>
-          <div>
-            <h4 className={s.chip}>El problema</h4>
-            <p>{x.problema}</p>
-          </div>
-          <div>
-            <h4 className={s.chip}>La solución</h4>
-            <p>{x.solucion}</p>
-          </div>
+      <p className={`hand ${s.nota}`}>{x.nota}</p>
+      <h3 className={s.h3}>{x.titulo}</h3>
+      <div className={s.cols}>
+        <div>
+          <h4 className={s.chip}>El problema</h4>
+          <Parrafos lista={x.problema} />
+        </div>
+        <div>
+          <h4 className={s.chip}>La solución</h4>
+          <Parrafos lista={x.solucion} />
         </div>
       </div>
 
@@ -114,16 +126,7 @@ function Panel({ sector: x }) {
 
       <div className={s.foot}>
         <p className={`mono ${s.fine}`}>{x.limites}</p>
-        <p className={`mono ${s.proto}`}>
-          {x.prototipo.url ? (
-            <a href={x.prototipo.url} target="_blank" rel="noopener noreferrer">
-              {x.prototipo.texto}
-            </a>
-          ) : (
-            x.prototipo.texto
-          )}
-          {x.prototipo.nota && <span className={s.protoNota}>{x.prototipo.nota}</span>}
-        </p>
+        <p className={`mono ${s.proto}`}>{x.prototipo.texto}</p>
       </div>
     </>
   )

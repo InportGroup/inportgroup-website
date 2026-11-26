@@ -1,7 +1,7 @@
 // Un caso por sector, en el orden de las pestañas (GUIA.md, sección 7.4). El id es también su ancla: /#retail.
-// Sin nombres de clientes (GUIA.md, sección 2.4). Cada caso: el problema, la solución, su vídeo
+// Sin nombres de clientes (GUIA.md, sección 2.4). Cada caso: nota a mano, titular, el problema y la solución (un párrafo por elemento; { negrita } es la frase destacada del caso, una por sector), su vídeo
 // (escena en src/scenes/registry.js), otras aplicaciones en el mismo sector, sus límites y el prototipo si existe.
-// prototipo.url: solo prototipos abiertos. Los privados no llevan dirección: este repositorio es público.
+// Sin enlaces a otras webs: los prototipos no llevan dirección y se enseñan en una reunión.
 
 export const SECTORES = [
   {
@@ -9,29 +9,39 @@ export const SECTORES = [
     escena: 'astilleros',
     letra: 'A',
     nombre: 'Marítimo y portuario',
-    titulo: 'El casco medido y presupuestado en un día.',
-    problema:
-      'Cada día de un buque en dique cuesta dinero. Medir a mano la corrosión de la obra viva exige andamios, lleva jornadas y depende de quién mire. Mientras tanto, el presupuesto de la reparación espera.',
-    solucion:
-      'Digitalizamos el buque con dron y visión artificial, y conectamos lo que se ve con un motor de medición y presupuesto. El astillero empieza la reparación con el alcance ya definido.',
+    nota: 'del casco al presupuesto ↓',
+    titulo: 'Del activo real al plan de actuación.',
+    problema: [
+      'Cuando un buque, una plataforma o una unidad FPSO entra en dique, cada día cuenta. Inspeccionar, documentar daños, medirlos y presupuestar exige personal, accesos complejos y muchas horas, con la información repartida entre fotos, informes y sistemas distintos.',
+      { negrita: 'Más tiempo para inspeccionar, más incertidumbre para presupuestar.' },
+    ],
+    solucion: [
+      'Digitalizamos el activo con drones, reconstrucción 3D y visión artificial. Sobre ese modelo documentamos corrosión, pintura deteriorada o incrustaciones y los conectamos con un motor de medición y presupuestación.',
+      'Resultado: llegar al dique con el alcance mucho mejor definido.',
+    ],
     otras: [
       { titulo: 'Plataformas y unidades FPSO', texto: 'La misma inspección con dron donde el acceso es difícil y cada hora de andamio cuesta.' },
       { titulo: 'Cubiertas y carga', texto: 'El estado de cubiertas y bodegas documentado con dron, para revisarlo desde la oficina.' },
       { titulo: 'Contenedores en terminal', texto: 'Cámaras en la puerta que registran los daños visibles de cada contenedor al entrar.' },
     ],
     limites: 'La medición y el presupuesto los valida personal cualificado. No sustituye la inspección de la sociedad de clasificación.',
-    prototipo: { texto: 'Ver el prototipo de inspección naval', url: 'https://arnaucarol-inportgroup.github.io/naval-solutions/' },
+    prototipo: { texto: 'Prototipo privado. Te lo enseñamos en una reunión.' },
   },
   {
     id: 'industria',
     escena: 'hornos',
     letra: 'B',
     nombre: 'Industria',
-    titulo: 'El fuego de la parrilla, en veinte números.',
-    problema:
-      'En una planta de valorización energética la combustión condiciona toda la operación. Las cámaras del horno enseñan el fuego a quien tenga tiempo de mirarlas, pero lo que ven no queda registrado y cada turno lo interpreta a su manera.',
-    solucion:
-      'Convertimos el vídeo de las cámaras que ya existen en medidas que llegan al DCS junto a temperaturas, caudales y aire. Todo se analiza en memoria y no se graba ninguna imagen.',
+    nota: 'El horno habla. Ahora podemos interpretarlo.',
+    titulo: 'De dentro del horno a la sala de control.',
+    problema: [
+      'En una planta de valorización energética de residuos, la combustión condiciona toda la operación. Llama, temperatura, movimiento de residuos… pasan muchas cosas a la vez y es difícil observarlas de forma continua o relacionarlas con el sistema de control.',
+      { negrita: 'El horno está trabajando. ¿Cuánto sabemos de lo que pasa dentro?' },
+    ],
+    solucion: [
+      'Conectamos las cámaras de combustión con una plataforma que convierte imágenes en información operativa en tiempo real, y la cruzamos con los datos de planta (PLC, SCADA, DCS).',
+      'No es otra pantalla en la sala de control: es dar significado a lo que ya se está viendo.',
+    ],
     otras: [
       { titulo: 'Estabilidad de la combustión', texto: 'Patrones de la llama relacionados con los cambios de carga, aire y empujadores.' },
       { titulo: 'Aviso temprano', texto: 'Comportamientos inusuales señalados para revisarlos antes de que afecten a la operación.' },
@@ -46,11 +56,15 @@ export const SECTORES = [
     escena: 'cultivo',
     letra: 'C',
     nombre: 'Agricultura y ganadería',
-    titulo: 'La helada se mide en la yema, no en la garita.',
-    problema:
-      'En una noche despejada de marzo la estación marca 0,4 grados y la yema del pistachero ya está a 2,8 bajo cero. La estación mide el aire a metro y medio, no el frío que llega a la yema, y cuando avisa ya es tarde.',
-    solucion:
-      'Medimos el frío donde hace daño y lo cruzamos con lo que ya hay en la finca. El técnico recibe el aviso con margen para actuar.',
+    nota: 'El campo, con más información.',
+    titulo: 'Datos dispersos, una sola visión.',
+    problema: [
+      'Cultivos y explotaciones generan datos, pero repartidos entre sensores, imágenes, satélites y herramientas que no se hablan. Cuesta anticiparse, medir la rentabilidad y detectar desviaciones a tiempo.',
+    ],
+    solucion: [
+      'Conectar sensores, imágenes, datos satelitales e IA para ver mejor lo que ocurre en cada explotación.',
+      { negrita: 'Resultado: más visibilidad y capacidad de anticiparse antes de que haya pérdidas.' },
+    ],
     otras: [
       { titulo: 'Previsión de cosecha', texto: 'Un vuelo de dron en floración cuenta los racimos y adelanta la previsión cinco meses.' },
       { titulo: 'Riego y estrés hídrico', texto: 'Un mapa árbol a árbol para regar donde hace falta.' },
@@ -61,22 +75,23 @@ export const SECTORES = [
       },
     ],
     limites: 'No sustituye al técnico de campo ni decide por él. Si un sensor de la finca deriva, se marca y no se usa hasta revisarlo.',
-    prototipo: {
-      texto: 'Ver el prototipo para el pistacho',
-      url: 'https://pistacho-mockup.onrender.com/',
-      nota: 'La primera carga puede tardar un minuto.',
-    },
+    prototipo: { texto: 'Prototipo privado. Te lo enseñamos en una reunión.' },
   },
   {
     id: 'retail',
     escena: 'boutique',
     letra: 'D',
     nombre: 'Retail',
+    nota: 'La tienda también habla. Hay que saber leerla.',
     titulo: 'Qué pasa en la tienda antes de que alguien compre.',
-    problema:
-      'El TPV dice qué vendes y cuánto. No dice por dónde se mueven los clientes, dónde se paran ni qué piezas pasan desapercibidas. Sin esos datos, el personal, el espacio y el escaparate se deciden a ojo.',
-    solucion:
-      'Las cámaras que ya tiene la tienda convierten cada visita en un punto anónimo sobre el plano. Lo cruzamos con las ventas para saber qué zonas atraen, cuáles venden y cuáles solo se atraviesan.',
+    problema: [
+      'Sabes qué vendes. Quizá cuánto. Pero ¿por dónde se mueven los clientes, dónde se detienen, qué productos pasan desapercibidos?',
+      { negrita: 'Sin datos de comportamiento, muchas decisiones se toman por intuición.' },
+    ],
+    solucion: [
+      'Visión artificial y analítica para convertir la actividad en tienda en mapas de calor, recorridos y tiempos de permanencia, cruzados cuando se puede con ventas y otras fuentes.',
+      'Capturamos. Interpretamos. Conectamos. Mejoramos.',
+    ],
     otras: [
       { titulo: 'Personal', texto: 'Previsión de afluencia con cruceros, festivos y el tiempo, para ajustar los turnos.' },
       { titulo: 'Espacio y producto', texto: 'Qué ubicación capta más interés y qué piezas se prueban mucho y se venden poco.' },

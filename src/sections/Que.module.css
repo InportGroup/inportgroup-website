@@ -60,25 +60,35 @@
   outline-offset: -5px;
 }
 
-.panelHead {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 56px);
-  align-items: start;
+.nota {
+  margin-bottom: 10px;
+  font-size: 30px;
 }
 
 .h3 {
-  max-width: 14ch;
-  font-size: clamp(34px, 5.4vw, 76px);
+  max-width: 16ch;
+  font-size: clamp(32px, 6vw, 84px);
 }
 
-.textos {
+.cols {
   display: grid;
-  gap: 26px;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 4vw, 56px);
+  margin-top: 34px;
 }
 
-.textos p {
-  max-width: 54ch;
+.cols p {
+  max-width: 52ch;
+  margin: 0 0 12px;
+}
+
+.cols .chip {
+  margin-bottom: 8px;
+}
+
+/* Frase destacada del caso: la única negrita de la web (GUIA.md, sección 3, regla 2) */
+.cols strong {
+  font-weight: 700; /* negrita permitida */
 }
 
 .chip {
@@ -147,30 +157,11 @@
   text-align: right;
 }
 
-.proto a {
-  display: inline-block;
-  padding: 10px 14px;
-  border: 2px solid var(--line);
-  text-decoration: none;
-}
-
-.proto a:hover {
-  background: var(--lime);
-  color: #0c0c0b;
-  border-color: #0c0c0b;
-}
-
-.protoNota {
-  display: block;
-  margin-top: 8px;
-  color: var(--mute);
-}
-
 @media (max-width: 900px) {
   .tabs {
     grid-template-columns: 1fr 1fr;
   }
-  .panelHead,
+  .cols,
   .foot {
     grid-template-columns: 1fr;
   }

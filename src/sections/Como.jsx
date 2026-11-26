@@ -14,6 +14,7 @@ export default function Como() {
               {COMO.titulo}
             </h2>
             <p className={s.lead}>{COMO.entradilla}</p>
+            <p className={`hand ${s.big}`}>{COMO.nota}</p>
           </div>
         </div>
 

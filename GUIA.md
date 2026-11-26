@@ -36,7 +36,7 @@ Lo que nos distingue, y que la web dice con hechos:
 En la web pública no aparecen nombres de clientes, ubicaciones de plantas, precios, condiciones contractuales ni cifras de un proyecto real sin permiso por escrito. Este repositorio es público: tampoco aquí.
 
 * Se habla de "una planta de valorización", "una finca de pistacheros", "una integradora de porcino".
-* Los prototipos privados no llevan dirección en el código. La web dice "Prototipo privado. Te lo enseñamos en una reunión."
+* Ningún enlace a otras webs. Los prototipos no llevan dirección en el código. La web dice "Prototipo privado. Te lo enseñamos en una reunión."
 
 ---
 
@@ -49,7 +49,7 @@ Quien visita la web es director de operaciones, jefe de planta, responsable de r
 Obligatorias en textos, títulos, metadatos, botones, `aria-label`, `alt` y `title`.
 
 1. Ningún guion de ningún tipo (-, ‐, –, —, −). Rangos: "de dos a cinco segundos". Temperaturas bajo cero: "2,8 bajo cero". Compuestos: "en tiempo real", "correo".
-2. Nada en negrita. Ningún peso tipográfico calculado mayor que 400, ni `<b>` ni `<strong>`. Archivo Black es gruesa de diseño y se usa en peso 400.
+2. Nada en negrita. Ningún peso tipográfico calculado mayor que 400, ni `<b>` ni `<strong>`. Archivo Black es gruesa de diseño y se usa en peso 400. Única excepción: la frase destacada de cada caso de uso, un `<strong>` en Archivo 700 dentro de `#que`, como en la plantilla V2.
 3. Ni emojis, ni flechas, ni iconos decorativos, ni puntos suspensivos.
 4. Nada que suene a inteligencia artificial:
    * Palabras: revolucionar, potenciar, impulsar, desbloquear, transformar, sin fisuras, sin fricción, de vanguardia, innovador, disruptivo, ecosistema, sinergia, holístico, robusto, escalable, inteligente como adorno, clave como muletilla.
@@ -80,7 +80,7 @@ Papel, tinta y lima. Filetes de 2 px, esquinas rectas, sin sombras ni degradados
 * Bandas oscuras (`.dark`): cómo, contacto y pie. Redefinen los tokens, así que lo de dentro se invierte solo.
 * La web sigue el modo oscuro del sistema.
 
-Tipografía, todo en peso 400:
+Tipografía, todo en peso 400 salvo la frase destacada de cada caso de uso (Archivo 700):
 
 * Archivo Black: titulares, números grandes, títulos de tarjeta. Nunca por debajo de 22 px: en pantallas normales el punto de la i se pega al palo.
 * Archivo: texto.
@@ -102,14 +102,14 @@ Una sola página. Las anclas son una palabra sin guiones.
 | Ancla | Bloque | Contenido |
 |---|---|---|
 | `#porque` | Portada | Lema, titular con "así" en lima, entradilla con qué hacemos, sectores, foto del equipo con nota a mano y pie |
-| | Lo que nos mueve | Cuatro frases numeradas |
-| `#como` | Cómo (banda oscura) | "04" en lima, titular, entradilla y las cuatro fases; la última sobre lima |
+| | Lo que nos mueve | Cinco frases numeradas en una columna |
+| `#como` | Cómo (banda oscura) | "04" en lima, titular, entradilla, nota a mano sobre lima y las cuatro fases; la última sobre lima |
 | `#que` | Qué | Titular, entradilla y cuatro pestañas, una por sector |
 | `#maritimo`, `#industria`, `#campo`, `#retail` | Pestaña de cada sector | Abren su pestaña al entrar y se actualizan al cambiar de pestaña, para poder compartir el enlace |
 | `#contacto` | Contacto (banda oscura) | Titular, texto, botón de correo y persona de contacto |
 | | Pie | Año y aviso legal desplegable |
 
-Cada panel de sector tiene siempre el mismo orden: titular junto al problema y la solución, el vídeo a todo el ancho, otras aplicaciones (tres o cuatro tarjetas), límites y prototipo.
+Cada panel de sector tiene siempre el mismo orden: nota a mano, titular, el problema y la solución en dos columnas, el vídeo a todo el ancho, otras aplicaciones (tres o cuatro tarjetas), límites y prototipo.
 
 Las pestañas cumplen el patrón de WAI-ARIA: flechas, Inicio y Fin. Todos los paneles salen en el HTML prerenderizado, los inactivos con `hidden`, para que el buscador los lea. Los vídeos no se prerenderizan: solo se carga el del sector abierto, cuando se acerca a la pantalla.
 
@@ -148,9 +148,9 @@ Descartados en el rediseño: automatización de albaranes al ERP (es un producto
 
 ## 7. Lista de comprobación
 
-1. `node scripts/check.mjs all` en verde: sin guiones, sin negritas, sin desbordamientos, sin errores en consola, a 1440 y 390 px.
+1. `node scripts/check.mjs all` en verde: sin guiones, sin negritas fuera de la frase destacada de los casos, sin desbordamientos, sin errores en consola, a 1440 y 390 px.
 2. Ningún nombre de cliente.
-3. Los prototipos abiertos responden.
+3. Ningún enlace a otras webs.
 4. Cada caso dice sus límites.
 5. El texto se lee como escrito por alguien del oficio.
 
